@@ -83,6 +83,11 @@ STATIC_URL = '/static/'
 
 # Customisations
 # ===========
+INSTALLED_APPS = (
+    'django.contrib.contenttypes',
+    'django.contrib.staticfiles',
+    'static_precompiler',
+)
 TEMPLATE_DIRS = ( BASE_DIR + "/templates" )
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "templates/static")
