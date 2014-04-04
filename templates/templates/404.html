@@ -1,0 +1,45 @@
+{% extends "templates/base.html" %}
+
+{% block title %}Canonical | Page not found{% endblock %}
+
+{% block extra_body_class %}error404{% endblock %}
+
+{% block head_extra %}{% endblock %}
+
+{% block header %}
+<div class="row no-border hero-box">
+	<div class="inner-wrapper">
+		<div class="six-col">
+			<img src="{{ STATIC_URL }}img/image-404.svg" alt="Error owl" />
+		</div>
+		<div class="six-col last-col">
+			<h1>404: Page not found.</h1>
+			<p class="intro">Sorry, we couldn&rsquo;t find that page.</p>
+		</div>
+	</div>
+</div><!-- / .row -->
+{% endblock %}
+{% block content %}
+<!--
+<div class="row">
+	<div class="eight-col pages">
+		<h2>Related pages from Ubuntu and Canonical</h2>
+		<p>You tried to visit <span id="current-page"></span>, which does not </br>exist. We found the following pages, which may be related.</p>
+		<div id="related-pages">
+
+		</div>
+	</div>
+	<div class="four-col box last-col events">
+		<h3>Relevant events</h3>
+		<p>Canonical events and webinars</p>
+		<div id="relevent-events">
+
+		</div>
+		<a href="#">See all events &rsaquo;</a>
+	</div>
+</div>
+-->
+{% endblock content %}
+{% block footer_extra %}
+<script src="/static/x/js/error.js"></script>
+{% endblock footer_extra %}

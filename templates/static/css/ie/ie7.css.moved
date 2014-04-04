@@ -1,0 +1,268 @@
+@charset "UTF-8";
+/**
+ * Ubuntu Patterns Stylesheet
+ *
+ * The CSS file required by Ubuntu patterns page
+ * 
+ * @project		Ubuntu Patterns
+ * @author		Web Team at Canonical Ltd
+ * @copyright	2012 Canonical Ltd
+ *
+ * @see 		http://design.ubuntu.com
+ */
+/**
+ * standard colors
+ *
+ * @colordef standard colors
+ */
+/* ubuntu orange (used for text links also on any site except canonical) */
+/* used as background on pre text */
+/* canonical aubergine */
+/* light aubergine (consumer) */
+/* mid aubergine (both) */
+/* dark aubergine (enterprise) */
+/* warm grey */
+/* cool grey */
+/* light grey */
+/* notifications */
+/* red */
+/* yellow */
+/* green */
+/* cyan */
+/* colour coded status - from negative to positive (Icon: canonical circle) */
+/* red, for status that require immediate attention */
+/* grey, for disabled status or ones that don’t require attention */
+/* yellow, for status that require attention */
+/* blue, for status that don’t require action */
+/* green, for positive status */
+/* misc colours */
+/* This is the global link color, mainly used for links in content */
+/* grid variables */
+/**
+ * mixins
+ *
+ * @section mixins
+ */
+html.lt-ie8 {
+  /* homepage */
+  /* ubuntu */
+  /* business */
+  /* cloud */
+  /*	@subsection download > desktop/server & cloud
+  -------------------------------------------------------------- */
+  /* min-height fixes */
+  /* body.download */
+  /* body.devices */
+  /* body.business */ }
+  html.lt-ie8 * {
+    zoom: 1; }
+  html.lt-ie8 .one-col {
+    width: 6.3053%; }
+  html.lt-ie8 .two-col {
+    width: 14.823%; }
+  html.lt-ie8 .three-col {
+    width: 23.3407%; }
+  html.lt-ie8 .four-col {
+    width: 28%; }
+  html.lt-ie8 .five-col {
+    width: 40.3761%; }
+  html.lt-ie8 .six-col {
+    width: 48.8938%; }
+  html.lt-ie8 .seven-col {
+    width: 57.4115%; }
+  html.lt-ie8 .eight-col {
+    width: 65.9292%; }
+  html.lt-ie8 .nine-col {
+    width: 74.4469%; }
+  html.lt-ie8 .ten-col {
+    width: 82.9646%; }
+  html.lt-ie8 .eleven-col {
+    width: 91.4823%; }
+  html.lt-ie8 .inline-icons {
+    margin-left: -10px; }
+  html.lt-ie8 .inline-icons li {
+    display: inline;
+    float: left;
+    text-align: center;
+    margin-left: 10px; }
+  html.lt-ie8 header.banner {
+    margin-bottom: 20px; }
+  html.lt-ie8 header.banner .nav-secondary ul {
+    margin-right: 10px; }
+  html.lt-ie8 .row-box {
+    overflow: hidden; }
+  html.lt-ie8 a.link-cta-ubuntu {
+    color: #fff; }
+  html.lt-ie8 .wrapper {
+    overflow: hidden;
+    border: 1px solid #e9e9e9;
+    /* to make up for the lack of box-shadow */
+    border-width: 0 1px; }
+  html.lt-ie8 .inner-wrapper {
+    border-bottom: 1px solid #c7c6c5;
+    /* to make up for the lack of box-shadow */
+    padding-bottom: 20px;
+    width: 984px; }
+  html.lt-ie8 header.banner .logo-ubuntu {
+    background: url('/static/css/img/ie/logo.gif') no-repeat;
+    width: 118px;
+    height: 27px;
+    display: block;
+    text-indent: -999em; }
+  html.lt-ie8 #box-search {
+    float: none;
+    position: absolute;
+    right: 20px;
+    top: 58px; }
+  html.lt-ie8 #box-search form input.form-text {
+    /* this is needed as we're using input[type="text"] in core.scss */
+    border: 1px solid #ccc;
+    float: left;
+    margin: 0 10px 0 0;
+    padding: 4px 4px 3px;
+    width: 14.89361%; }
+  html.lt-ie8 footer {
+    top: -10px;
+    margin-bottom: -10px;
+    float: left;
+    position: relative;
+    display: block;
+    width: 100%; }
+  html.lt-ie8 body.homepage .box a.link-cta-download {
+    color: #fff; }
+  html.lt-ie8 body.homepage header.banner .nav-secondary ul {
+    background: none; }
+  html.lt-ie8 .row-do-more {
+    padding-left: 0; }
+  html.lt-ie8 .row-do-more .six-col {
+    display: inline;
+    width: 48.93617%; }
+  html.lt-ie8 .quote-right-top {
+    background: none;
+    top: 0;
+    padding: 0; }
+  html.lt-ie8 .quote-right-top p {
+    color: #dd4814; }
+  html.lt-ie8 .ubuntu-why-use-ubuntu .quote-right-right {
+    position: absolute;
+    left: -999em; }
+  html.lt-ie8 .ubuntu-why-use-ubuntu .row-free .article .quote-right-alt {
+    height: 207px;
+    top: -62px;
+    padding-top: 20px; }
+  html.lt-ie8 body.ubuntu-why-is-it-free .quote-right {
+    background: none;
+    top: -60px;
+    right: -40px;
+    width: 220px; }
+  html.lt-ie8 body.ubuntu-why-is-it-free .quote-right p {
+    color: #dd4814; }
+  html.lt-ie8 body.business .row-hero p.strip {
+    background: none; }
+  html.lt-ie8 body.business .row-hero-business, html.lt-ie8 body.business-desktop-remix .row-hero {
+    left: 18px; }
+  html.lt-ie8 .row-ubuntu-advantage li {
+    width: 46.6938%; }
+  html.lt-ie8 body.business-desktop .row-ubuntu-advantage li.first {
+    height: 32.25em; }
+  html.lt-ie8 body.business-desktop .packages h2 {
+    padding: 50px 47px 50px 140px; }
+  html.lt-ie8 body.business-desktop .packages dl {
+    width: 175px; }
+  html.lt-ie8 body.business .row-enterprise .six-col {
+    overflow: hidden; }
+  html.lt-ie8 body.business .row-enterprise .quote-canonical {
+    background: #fff;
+    height: auto;
+    margin-top: 20px;
+    padding-bottom: 0; }
+  html.lt-ie8 body.business .row-community {
+    padding-bottom: 20px; }
+  html.lt-ie8 body.business .row-community .nine-col {
+    padding-left: 23.40425%;
+    width: 42.55319%; }
+  html.lt-ie8 .row-cloud-guest .eight-col,
+  html.lt-ie8 .row-consultancy .eight-col {
+    border-right: 1px solid #aea79f;
+    width: 65.95744%; }
+  html.lt-ie8 .row-providers .six-col {
+    width: 48.93617%; }
+  html.lt-ie8 body.download .row-hero {
+    width: 98.75%; }
+  html.lt-ie8 body.download .row-hero .intro {
+    padding-right: 0;
+    width: 48.93617%; }
+  html.lt-ie8 body.download .row-hero .intro p {
+    padding-right: 20px; }
+  html.lt-ie8 #download-help {
+    background: #f7f7f7;
+    width: 65.95744%; }
+  html.lt-ie8 #download-help li span {
+    margin-left: -5 em;
+    overflow: hidden;
+    position: absolute; }
+  html.lt-ie8 footer nav ul li.two-col {
+    height: 10em; }
+  html.lt-ie8 body.download .row-hero .intro {
+    height: 10em; }
+  html.lt-ie8 .one-col, html.lt-ie8 .two-col, html.lt-ie8 .three-col, html.lt-ie8 .four-col, html.lt-ie8 .five-col, html.lt-ie8 .six-col, html.lt-ie8 .seven-col, html.lt-ie8 .eight-col, html.lt-ie8 .nine-col, html.lt-ie8 .ten-col, html.lt-ie8 .eleven-col, html.lt-ie8 .twelve-col {
+    display: inline; }
+  html.lt-ie8 body.project .equal-height .box, html.lt-ie8 body.support .equal-height .box {
+    background: #fff; }
+  html.lt-ie8 body.partners .box {
+    border: none; }
+  html.lt-ie8 .row {
+    width: 904px;
+    float: left;
+    padding-left: 40px;
+    clear: both; }
+  html.lt-ie8 .row-box {
+    width: 904px;
+    float: left;
+    margin-left: 20px;
+    clear: both; }
+  html.lt-ie8 .row-image-centered span img {
+    position: absolute;
+    left: -999em; }
+  html.lt-ie8 body.devices-phone .row-interlinks .navigation li a {
+    padding-bottom: 0px; }
+  html.lt-ie8 body.devices-phone .edge-magic-content {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px; }
+  html.lt-ie8 body.devices-phone .meet-us {
+    border: 0;
+    background: #ececec url('/static/css/img/patterns/grey-textured-background.jpg'); }
+  html.lt-ie8 .ubuntu .box-get-ubuntu div {
+    height: 210px; }
+  html.lt-ie8 .ubuntu .box-get-ubuntu li {
+    width: 24.5%; }
+  html.lt-ie8 body.community-stay-connected .social-list li {
+    width: 100%; }
+  html.lt-ie8 body.download button {
+    cursor: pointer; }
+  html.lt-ie8 body.download-home .row-list-download .four-col {
+    width: 27.2%; }
+  html.lt-ie8 body.download #download-other .box {
+    min-height: 200px;
+    width: 41.3221%; }
+  html.lt-ie8 .download-cloud #download-other .cloud {
+    background-image: none; }
+  html.lt-ie8 body.download-cloud #download-other .cloud .box {
+    margin-bottom: 0;
+    width: 64.4%; }
+  html.lt-ie8 body.download-help #download-help {
+    width: 600px; }
+  html.lt-ie8 body.download-help .sidebar {
+    width: 280px;
+    display: inline; }
+  html.lt-ie8 body.download-arm .link-cta-ubuntu {
+    width: 100%; }
+  html.lt-ie8 body.devices .edge-magic-animation .screen {
+    background: url('/static/img/devices/phone-3-edge-magic-twitter.png') no-repeat;
+    z-index: 999; }
+  html.lt-ie8 body.business .row-hero-business {
+    margin-left: 2px; }
+
+/* end html.lt-ie7 */

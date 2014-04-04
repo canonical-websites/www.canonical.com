@@ -1,0 +1,135 @@
+{% load scss %}
+<!doctype html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" dir="ltr"> <!--<![endif]-->
+<head>
+
+<title>{% block title %}{% endblock %}</title>
+
+<meta charset="UTF-8" />
+<meta name="description" content="{% block meta_description %}Canonical provides engineering, online and professional services to Ubuntu partners and customers worldwide. As the company behind the Ubuntu project, Canonical is committed to the production and support of Ubuntu – an ever-popular and fast-growing open-source operating system. It aims to ensure Ubuntu is available to every organisation and individual on servers, desktops, laptops and netbooks.{% endblock %}" />
+<meta name="keywords" content="{% block meta_keywords %}{% endblock %}" />
+<meta name="author" content="Canonical" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<![endif]-->
+
+<link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico" type="image/x-icon" />
+
+<!-- modernizr -->
+<script src="{{ STATIC_URL }}js/plugins/modernizr.2.7.1.js"></script>
+
+
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" media="screen" href="//assets.ubuntu.com/sites/guidelines/css/dev/ubuntu-styles.css" />
+
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 768px)" href="//assets.ubuntu.com/sites/ubuntu/latest/u/css/global.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}{% scss "css/styles.scss"%}" />
+<link rel="stylesheet" type="text/css" media="print" href="{{ STATIC_URL }}{% scss "css/core-print.scss"%}" />
+
+
+<!--[if lte IE 8]>
+<link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}{% scss "css/ie/ie7.scss"%}" />
+<link rel="stylesheet" type="text/css" href="//assets.ubuntu.com/sites/ubuntu/latest/u/css/global.css" />
+<![endif]-->
+
+<link rel="shortcut icon" href="/static/img/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ STATIC_URL }}img/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}img/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}img/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}img/apple-touch-icon-precomposed.png">
+<link type="text/plain" rel="author" href="{{ STATIC_URL }}files/humans.txt" />
+
+{% block head_extra %}{% endblock %}
+
+</head>
+
+<body class="{% if level_1 != "" %}{% if level_1 == '2012' %}body-{% endif %}{{ level_1 }}{% endif %}{% if level_2 %} {% if level_1 == '2012' %}body-{% endif %}{{ level_1 }}-{{ level_2 }}{% endif %}{% if level_3 %} {% if level_1 == '2012' %}body-{% endif %}{{ level_1 }}-{{ level_2 }}-{{ level_3 }} {% endif %} {% include "templates/body-class.html" %}{% if extra_body_class != "" %} {% block extra_body_class %}{% endblock %}{% endif %}" itemscope itemtype="http://schema.org/Product">
+
+<header class="banner global" role="banner">
+{% block header_banner %}
+	<nav role="navigation" class="nav-primary nav-right">
+		<div class="logo">
+			<a class="logo-ubuntu" href="/">
+				<img width="139" height="19" src="{{ STATIC_URL }}img/logos/footer_logo.png" alt="Canonical logo for print" />
+			</a>
+		</div>
+		<ul>
+			<li class="accessibility-aid"><a accesskey="s" href="#main-content">Jump to content</a></li>
+			<li><a class="first{% if level_1 == 'products' %} active{% endif %}" href="/products">Products</a></li>
+			<li><a{% if level_1 == 'services' %} class="active"{% endif %} href="/services">Services</a></li>
+			<li><a{% if level_1 == 'partners' %} class="active"{% endif %} href="/partners">Partners</a></li>
+			<li><a{% if level_1 == 'about' %} class="active"{% endif %} href="/about">About</a></li>
+			<li><a{% if level_1 == 'careers' %} class="active"{% endif %} href="/careers">Careers</a></li>
+		</ul>
+		<a href="#canonlist" class="nav-toggle no-script">☰</a>
+	</nav>
+{% endblock header_banner %}
+</header>
+<div class="wrapper">
+<div id="main-content">
+{% if level_1 %}
+{% block second_level_nav %}
+{% endblock second_level_nav %}
+{% endif %}
+
+{% block header %}{% endblock %}
+{% block content_container %}
+{% block outer_content %}
+{% endblock outer_content %}
+{% endblock content_container %}
+</div><!-- /.inner-wrapper -->
+
+</div><!-- /.wrapper -->
+
+{% include "templates/footer.html" %}
+
+<script>
+	var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
+	if(isOperaMini) {
+		var root = document.documentElement;
+		root.className += " opera-mini";
+	}
+</script>
+
+<script src="//assets.ubuntu.com/sites/ubuntu/latest/u/js/plugins/yui-min.js"></script>
+<script>
+	if(!core){ var core = {}; }
+	core.globalPrepend = 'body';
+</script>
+<script src="//assets.ubuntu.com/sites/ubuntu/latest/u/js/core.js"></script>
+<script src="{{ STATIC_URL }}js/scratch.js"></script>
+<script src="//assets.ubuntu.com/sites/ubuntu/latest/u/js/global.js"></script>
+<script src="{{ STATIC_URL }}js/plugins/respond.min.js"></script>
+
+{% block footer_extra %}{% endblock %}
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1018242-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+{% if enable_crazyegg %}
+	<script type="text/javascript">
+	   setTimeout(function(){var a=document.createElement("script");
+	   var b=document.getElementsByTagName('script')[0];
+	   a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/8875.js?"+Math.floor(new Date().getTime()/3600000);
+	   a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+
+	</script>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,370 @@
+@keyframes fadeIn {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+@-moz-keyframes fadeIn {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeIn {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+/*scaleIn*/
+
+@keyframes scaleIn {
+    0% {
+        background-size: 0%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+@-moz-keyframes scaleIn {
+    0% {
+        background-size: 0%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+@-webkit-keyframes scaleIn {
+    0% {
+        background-size: 0%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+
+/*scaleInPop*/
+
+@keyframes scaleInPop {
+    0% {
+        background-size: 0%;
+    }
+    60% {
+        background-size: 100%;
+    }
+    100% {
+        background-size: 90%;
+    }
+}
+@-moz-keyframes scaleInPop {
+    0% {
+        background-size: 0%;
+    }
+    60% {
+        background-size: 100%;
+    }
+    100% {
+        background-size: 90%;
+    }
+}
+@-webkit-keyframes scaleInPop {
+    0% {
+        background-size: 0%;
+    }
+    60% {
+        background-size: 100%;
+    }
+    100% {
+        background-size: 90%;
+    }
+}
+
+/*rotateIn*/
+
+@keyframes rotateIn {
+    0% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@-moz-keyframes rotateIn {
+    0% {
+        -moz-transform: rotate(-45deg);
+    }
+    100% {
+        -moz-transform: rotate(0deg);
+    }
+}
+@-webkit-keyframes rotateIn {
+    0% {
+        -webkit-transform: rotate(-45deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+/* @section Products
+-------------------------------------------------------------- */
+body.products {
+
+	.inner-wrapper {
+	    margin-top: 0;
+	}
+	#main-content .row-hero .inner-wrapper img {
+		display: block;
+		margin: 0 auto;
+	}
+	.juju-connected {
+		position: relative;
+
+		.row {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		.connection {
+			display: none;
+			position: absolute;
+			background-color: #38B14A;
+			height: 2px;
+			width: 100%;
+			top: 50%;
+			margin-top: -3px;
+		}
+
+		img {
+			position: relative;
+			z-index: 2;
+			margin-left: 0;
+		}
+
+	}
+
+}
+
+
+/* Medium / Tablet viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width : 768px) {
+	body.products {
+		#main-content .row-hero {
+			padding-bottom: 0;
+			overflow: hidden;
+			margin-top: 0;
+			padding-top: 40px;
+		}
+
+		#main-content .row-hero .inner-wrapper {
+			margin-top: -60px;
+			padding-top: 50px;
+			overflow: visible;
+		}
+
+		#main-content .row-hero .inner-wrapper img {
+			display: none;
+		}
+
+		.juju-connected {
+			margin-bottom: 30px;
+			margin-top: 20px;
+			overflow: hidden;
+
+			.connection {
+				display: block;
+			}
+
+		}
+
+		.row-hero img {
+			display: none;
+		}
+
+		.products-hero-container {
+			position: absolute;
+			background: url('../img/products/products-hero-background.png') no-repeat center center;
+			width: 600px;
+		    height: 600px;
+		    margin: -61px 0 0 -427px;
+		    top: 50%;
+		    left: 50%;
+		}
+		.products-hero-ubuntu {
+			position: absolute;
+			width: 140px;
+			height: 140px;
+			top: 208px;
+			left: 330px;
+			background: url('../img/products/products-hero-ubuntu.png') 50% 50% no-repeat;
+			background: url('../img/products/products-hero-ubuntu.svg') 50% 50% no-repeat, none;
+			opacity: 0;
+			background-size: 0%;
+			animation: scaleIn 0.3s forwards, fadeIn 0.6s linear forwards, rotateIn 3.0s ease-out forwards;
+			-moz-animation: scaleIn 0.3s forwards, fadeIn 0.6s linear forwards, rotateIn 3.0s ease-out forwards;
+			-webkit-animation: scaleIn 0.3s forwards, fadeIn 0.6s linear forwards, rotateIn 3.0s ease-out forwards;
+			animation-delay: 1s;
+			-moz-animation-delay: 1s;
+			-webkit-animation-delay: 1s;
+		}
+		.products-hero-desktop, .products-hero-phone, .products-hero-tablet, .products-hero-server, .products-hero-cloud {
+			position: absolute;
+			width: 66px;
+			height: 66px;
+			opacity: 0;
+			animation: scaleInPop 0.2s forwards, fadeIn 0.2s linear forwards;
+			-moz-animation: scaleInPop 0.2s forwards, fadeIn 0.2s linear forwards;
+			-webkit-animation: scaleInPop 0.2s forwards, fadeIn 0.2s linear forwards;
+		}
+		.products-hero-desktop {
+			background: url('../img/products/products-hero-desktop.png') 50% 50% no-repeat;
+			background: url('../img/products/products-hero-desktop.svg') 50% 50% no-repeat, none;
+			background-size: 0%;
+			top: 65px;
+			left: 367px;
+			animation-delay: 1.6s;
+			-moz-animation-delay: 1.6s;
+			-webkit-animation-delay: 1.6s;
+		}
+		.products-hero-phone {
+			background: url('../img/products/products-hero-phone.png') 50% 50% no-repeat;
+			background: url('../img/products/products-hero-phone.svg') 50% 50% no-repeat, none;
+			background-size: 0%;
+			top: 118px;
+			left: 494px;
+			animation-delay: 1.85s;
+			-moz-animation-delay: 1.85s;
+			-webkit-animation-delay: 1.85s;
+		}
+		.products-hero-tablet {
+			background: url('../img/products/products-hero-tablet.png') 50% 50% no-repeat;
+			background: url('../img/products/products-hero-tablet.svg') 50% 50% no-repeat, none;
+			background-size: 0%;
+			top: 245px;
+			left: 547px;
+			animation-delay: 2s;
+			-moz-animation-delay: 2s;
+			-webkit-animation-delay: 2s;
+		}
+		.products-hero-server {
+			background: url('../img/products/products-hero-server.png') 50% 50% no-repeat;
+			background: url('../img/products/products-hero-server.svg') 50% 50% no-repeat, none;
+			background-size: 0%;
+			top: 425px;
+			left: 367px;
+			animation-delay: 2.15s;
+			-moz-animation-delay: 2.15s;
+			-webkit-animation-delay: 2.15s;
+		}
+		.products-hero-cloud {
+			background: url('../img/products/products-hero-cloud.png') 50% 50% no-repeat;
+			background: url('../img/products/products-hero-cloud.svg') 50% 50% no-repeat, none;
+			background-size: 0%;
+			top: 372px;
+			left: 240px;
+			animation-delay: 2.3s;
+			-moz-animation-delay: 2.3s;
+			-webkit-animation-delay: 2.3s;
+		}
+		.products-hero-line-1, .products-hero-line-2, .products-hero-line-3, .products-hero-line-4, .products-hero-line-5 {
+			position: absolute;
+			opacity: 0;
+			animation: fadeIn 0.3s linear forwards;
+			-moz-animation: fadeIn 0.3s linear forwards;
+			-webkit-animation: fadeIn 0.3s linear forwards;
+		}
+		.products-hero-line-1 {
+			top: 147px;
+			left: 399px;
+			width: 2px;
+			height: 52px;
+			background: url('../img/products/products-hero-line-vertical.png');
+			animation-delay: 1.85s;
+			-moz-animation-delay: 1.85s;
+			-webkit-animation-delay: 1.85s;
+		}
+		.products-hero-line-2 {
+			top: 185px;
+			left: 455px;
+			width: 38px;
+			height: 38px;
+			background: url('../img/products/products-hero-line-diagonal.png');
+			animation-delay: 2s;
+			-moz-animation-delay: 2s;
+			-webkit-animation-delay: 2s;
+		}
+		.products-hero-line-3 {
+			top: 277px;
+			left: 479px;
+			width: 52px;
+			height: 2px;
+			background: url('../img/products/products-hero-line-horizontal.png');
+			animation-delay: 2.15s;
+			-moz-animation-delay: 2.15s;
+			-webkit-animation-delay: 2.15s;
+		}
+		.products-hero-line-4 {
+			top: 357px;
+			left: 399px;
+			width: 2px;
+			height: 52px;
+			background: url('../img/products/products-hero-line-vertical.png');
+			animation-delay: 2.3s;
+			-moz-animation-delay: 2.3s;
+			-webkit-animation-delay: 2.3s;
+		}
+		.products-hero-line-5 {
+			top: 333px;
+			left: 307px;
+			width: 38px;
+			height: 38px;
+			background: url('../img/products/products-hero-line-diagonal.png');
+			animation-delay: 2.45s;
+			-moz-animation-delay: 2.45s;
+			-webkit-animation-delay: 2.45s;
+		}
+	}
+
+}
+
+/* @section Large / Desktop viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width : 984px) {
+	body.products {
+
+		#main-content .row-hero .inner-wrapper {
+			background-size: auto;
+		}
+
+		.row-hero {
+			margin-top: 0;
+			padding: 40px 40px 50px;
+		}
+		.juju-connected {
+			margin-bottom: 0;
+			margin-top: 0;
+
+			.inner-wrapper {
+				overflow: visible;
+			}
+
+			img {
+				margin-left: -10px;
+			}
+		}
+	}
+}

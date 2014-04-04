@@ -1,0 +1,55 @@
+{% extends "careers/base_careers.html" %}
+
+{% block title %}Canonical | Careers | All Marketing and Business Development vacancies{% endblock %}
+{% block meta_description %}If you’re interested in open source software, the cloud or mobile devices, Canonical is an incredible place to work. Whether you’re a technologist, a designer or a business professional, opportunities exist to work from home or at one of our key offices around the world.{% endblock %}
+{% block meta_keywords %}Canonical, Ubuntu, Linux, open source, free, software, design, designer, development, developer, programmer, engineer, UX, user, experience, interface, technology, IT, job, career, work, vacancy, vacancies, London, Taipei, Montreal, Boston, Shanghai, work from home, working from home, cloud, phone, smartphone, mobile{% endblock %}
+{% block head_extra %}
+	<script src="//www.google.com/jsapi"></script>
+	<script>google.load("feeds", "1");</script>
+{% endblock %}
+
+{% block content %}
+<div class="strip row">
+	<div class="inner-wrapper">
+		<div class="eight-col">
+			<h1>All Marketing and Business Development vacancies</h1>
+		</div>
+		<div class="eight-col">
+			<p class="intro">If you are interested in a role in a specific department or location, you can <a href="https://tbe.taleo.net/CH03/ats/careers/jobSearch.jsp?org=CANONICAL&amp;cws=1&amp;rid=86">search jobs</a>.</p>
+		</div>
+		<div class="eight-col">
+			<div class="spinner" id="spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+			<noscript><p>Please enable javascript to display this feed. Otherwise you can view <a href="https://tbe.taleo.net/CH03/ats/careers/searchResults.jsp?org=CANONICAL&cws=1&act=sort&sortColumn=2&sortColumn=0">all vacancies here</a>.</p></noscript>
+			<ul class="vacancies list with-total" id="job-feed"></ul>
+		</div>
+	</div>
+</div>
+
+<div class="row row-contextual-footer">
+	<div class="inner-wrapper vertical-divider">
+	    <div class="featured six-col">
+	        <h3><a href="https://tbe.taleo.net/CH03/ats/careers/jobSearch.jsp?org=CANONICAL&cws=1&rid=86">Search roles &rsaquo;</a></h3>
+	        <p>Search for vacant positions by location, department or by using keywords.</p>
+	    </div>
+	    <div class="three-col">
+	        <h3><a href="/careers/all-vacancies">View all roles &rsaquo;</a></h3>
+	        <p>We're always on the lookout for people with experience in open source software, the cloud or mobile devices.</p>
+	    </div>
+	    <div class="three-col last-col">
+	        <h3><a href="/careers">Working at Canonical &rsaquo;</a></h3>
+	        <p>Whether you&rsquo;re a designer, a technologist or a business professional, Canonical is an incredible place to work. </p>
+	    </div>
+	</div>
+</div><!-- /.row -->
+
+<script type="text/javascript">
+	window.onload = function() {
+		core.rssLoader.getFeed("https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_755=11588%2C6158%2C616", null, "job-feed");
+	}
+</script>
+
+{% endblock content %}

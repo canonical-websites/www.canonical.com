@@ -1,0 +1,129 @@
+{% extends "services/base_services.html" %}
+
+{% block title %}Canonical | Services for enterprise{% endblock %}
+{% block meta_description %}Canonical provides commercial services for Ubuntu’s users, while working with hardware manufacturers, software vendors and cloud partners to certify Ubuntu.{% endblock %}
+{% block meta_keywords %}Canonical, Ubuntu, Advantage, services, support, enterprise, IT, desktop, server, cloud, OpenStack, device, corporate, business, government, global, commercial, contract, private, public, sector{% endblock %}
+
+{% block extra_body_class %}services-home{% endblock %}
+
+{% block head_extra %}
+	<script src="http://www.google.com/jsapi"></script>
+	<script>google.load("feeds", "1")</script>
+{% endblock %}
+
+{% block content %}
+<div class="row row-hero">
+	<div class="inner-wrapper">
+		<h1 class="twelve-col">Services that make the most of Ubuntu</h1>
+		<div class="eight-col">
+			<p class="intro">With our flagship service, Ubuntu Advantage, we help our customers deploy and manage Ubuntu on the desktop, server and cloud. We also offer design and consulting services for customers considering large scale Ubuntu deployments. On delivery, all projects are supplemented with an Ubuntu Advantage service agreement, providing access to Canonical&rsquo;s management software as well as 24/7 support.</p>
+			<p class="intro"><a href="http://www.ubuntu.com/management" class="external">Learn more on ubuntu.com</a></p>
+		</div>
+	</div>
+</div>
+
+<div class="row row-management strip-light"><div></div></div><!-- /.row -->
+<div class="row strip-light">
+	<div class="inner-wrapper">
+		<div class="eight-col">
+			<h2>The best management skills for Ubuntu</h2>
+			<p>When it comes to making Ubuntu work at scale for enterprise sectors including telecommunications, media, finance and government, no one else can draw on the knowledge, experience and partner network of Canonical.  Because we help make Ubuntu, we are able to offer the best tools and services to help you set up and manage your infrastructure, delivering high performance systems at real cost savings. We are already doing this for thousands of organisations worldwide &mdash; and Ubuntu is by far the most popular OS in the cloud.</p>
+			<p><a href="/services/contact-us">Contact us about our services&nbsp;&rsaquo;</a></p>
+		</div><!-- /.six-col -->
+	</div><!-- /.row -->
+</div>
+
+<div class="row row-companies">
+	<div class="inner-wrapper">
+		<h2 class="caps-centered">A selection of customers using our services</h2>
+		<ul class="no-bullets">
+			<li><img src="{{ STATIC_URL }}img/logos/logo-wikimedia-foundation.png" alt="Wikimedia logo" /></li>
+			<li><img src="{{ STATIC_URL }}img/logos/logo-bloomberg.png" alt="Bloomberg logo" /></li>
+			<li><img src="{{ STATIC_URL }}img/logos/logo-deutsche-telekom.png" alt="Deutsche Telekom logo" /></li>
+			<li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-intel.png" alt="Intel logo" /></li>
+			<li><img src="{{ STATIC_URL }}img/logos/logo-china-telecom.png" alt="China Telecom logo" /></li>
+			<li><img src="{{ STATIC_URL }}img/logos/logo-ebay.png" alt="Ebay logo" /></li>
+			<li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-windows-azure.png" alt="Windows Azurelogo" /></li>
+			<li><img src="{{ STATIC_URL }}img/logos/logo-samsung.png" alt="Samsung logo" /></li>
+			<li><img src="{{ STATIC_URL }}img/logos/logo-google.png" alt="Google logo" /></li>
+			<li><img src="{{ STATIC_URL }}img/logos/logo-ntt-communications.png" alt="NTT Communications logo" /></li>
+			<li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-mercado-libre.png" alt="Mercado libre logo" /></li>
+			<li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-cisco.png" alt="Cisco logo" /></li>
+		</ul>
+	</div>
+</div>
+
+<div class="row strip-dark">
+	<div class="inner-wrapper">
+		 <h2>What happens when you engage us?</h2>
+		 <ol class="connected-list">
+		 	<li class="step-one six-col">
+		 		<span>1</span>
+		 		<h3>Plan and install</h3>
+		 		<p>We examine your business problem and operational requirements, before building and installing a proposed solution on designated trial systems. Performance is monitored and a full report accompanies the resulting deployment recommendations.</p>
+		 	</li>
+		 	<li class="step-two six-col last-col">
+		 		<span>2</span>
+		 		<h3>Deploy</h3>
+		 		<p>The system is now rolled out, configured for optimum security and performance. At this stage, your Ubuntu Advantage subscription begins, making management and support more cost-effective from this point.</p>
+		 	</li>
+		 	<li class="step-three six-col">
+		 		<span>3</span>
+		 		<h3>Train</h3>
+		 		<p>A vital element of the handover of the new system concerns the transfer of detailed knowledge to your team on how to manage your deployment. For clouds, we also cover scaling and moving workloads.</p>
+		 	</li>
+		 	<li class="step-four six-col last-col">
+		 		<span>4</span>
+		 		<h3>Manage</h3>
+		 		<p>As your business evolves, we collaborate closely with your team to monitor and optimise your deployment on an ongoing basis, taking advantage of any opportunities to enhance effectiveness and efficiency.</p>
+		 	</li>
+		 </ol>
+	</div><!-- /.row -->
+</div><!-- /.strip-dark -->
+
+<div class="row row-contextual-footer">
+	<div class="inner-wrapper vertical-divider equal-height">
+	    <div class="featured six-col">
+	        <h3><a href="http://www.ubuntu.com/management/ubuntu-advantage" class="external">Learn more about Ubuntu Advantage</a></h3>
+	        <p>On ubuntu.com you&rsquo;ll find more information about management with Landscape and Ubuntu Advantage.</p>
+	    </div>
+	    <div class="three-col">
+				<div id="resources-feed"></div>
+				<script>
+					var rssoutput = "<ul class='no-bullets'>";
+					var feedcontainer2 = document.getElementById("resources-feed");
+					var feeds = new Array("http://insights.ubuntu.com/topics/case-studies/feed/");
+
+					function rssfeedsetup2(feedURL) {
+						var feedpointer2 = new google.feeds.Feed(feedURL); //Google Feed API method
+							feedpointer2.setNumEntries(1); //Google Feed API method
+							feedpointer2.load(displayfeed2); //Google Feed API method
+					}
+
+					function displayfeed2(result) {
+						if (!result.error) {
+							var thefeeds2 = result.feed.entries;
+							for (var i = 0; i < thefeeds2.length; i++) {
+								var cat = thefeeds2[i].categories[0];
+								rssoutput += "<h3><a class='external' href='" + thefeeds2[i].link + "'>" + "View case study" + "&nbsp;</a>" + "</h3>";
+								rssoutput += "<p>" + thefeeds2[i].title + ".</p>";
+							}
+							feedcontainer2.innerHTML = rssoutput;
+						}
+					}
+
+					window.onload = function() {
+						var i = feeds.length;
+						while(i--) {
+							rssfeedsetup2(feeds[i]);
+						}
+					}
+				</script>
+	    </div>
+	    <div class="three-col last-col">
+	        <h3><a href="/services/contact-us">Contact us today &rsaquo;</a></h3>
+	        <p>Interested in Ubuntu Advantage? Talk to us today for more information.</p>
+	    </div>
+	</div>
+</div><!-- /.row -->
+{% endblock content %}

@@ -1,0 +1,274 @@
+/* @section Animations
+-------------------------------------------------------------- */
+@-webkit-keyframes bounce-in {
+    0% { -webkit-transform: scale(.2); }
+    80% { -webkit-transform: scale(1); }
+    100% { -webkit-transform: scale(0.9); }
+}
+@-moz-keyframes bounce-in {
+    0% { -moz-transform: scale(.2); }
+    80% { -moz-transform: scale(1); }
+    100% { -moz-transform: scale(0.9); }
+}
+@-o-keyframes bounce-in {
+    0% { -o-transform: scale(.2); }
+    80% { -o-transform: scale(1); }
+    100% { -o-transform: scale(0.9); }
+}
+@keyframes bounce-in {
+    0% { transform: scale(.2); }
+    80% { transform: scale(1); }
+    100% { transform: scale(0.9); }
+}
+
+/* @section Projects
+-------------------------------------------------------------- */
+body.projects-home {
+	.row-hero {
+
+		.inner-wrapper {
+			border-bottom: 1px dotted $warm_grey;
+			-webkit-border-radius: 0;
+			-moz-border-radius: 0;
+			border-radius: 0;
+		}
+
+		img {
+			display: none;
+		}
+	}
+
+	.row-project {
+
+		ul {
+			margin-bottom: 0;
+		}
+		li {
+			margin-bottom: 20px;
+
+			img.small {
+				width: 50px;
+				margin-right: 10px;
+				float: left;
+			}
+
+			img.large {
+				display: none;
+			}
+
+			h3 {
+				color: $cool_grey;
+				font-size: 18px;
+				background-repeat: no-repeat;
+				padding: 10px 0;
+				@include background_size(40px 40px);
+			}
+			a:hover,
+			a:focus {
+				text-decoration: none;
+			}
+			div a:hover {
+				text-decoration: underline;
+			}
+
+			.smaller {
+				font-size: 16px;
+			}
+		}
+
+		.three-col:nth-of-type(2n){
+			float: right;
+		}
+	}
+	.row-project li h3 img {
+		clear: both;
+		display: block;
+	}
+
+	.row-project li h3 span {
+		background-image: url("../img/arrow_down.svg");
+		background-position: 0 2px;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		clear: none;
+		display: inline-block;
+		float: none;
+		margin-left: 6px;
+		height: 13px;
+		width: 13px;
+	}
+
+	.row-project li a.active span {
+		background-image: url("../img/arrow_up.svg");
+		background-position: 0 0;
+	}
+
+
+	.row-contextual-footer {
+		border-top: 1px dotted $warm_grey;
+		margin-top: 20px;
+	}
+}
+
+.yui3-js-enabled body.projects-home {
+	.row-project li div {
+		display: block;
+	    transition: all .3s ease-in-out;
+	    opacity: 0;
+	    height: 0;
+	    overflow: hidden;
+	}
+
+	.row-project li div.active  {
+		opacity: 1;
+    height: auto;
+  }
+}
+
+/* Medium / Tablet viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width : 600px) {
+	body.projects-home {
+		.row-project {
+
+			margin-right: 18%;
+			margin-left: 18%;
+
+			.three-col {
+				width: 44%;
+				margin-right: 40px;
+			}
+
+			.three-col:nth-of-type(2n){
+				margin-right: 0;
+				float: right;
+			}
+
+			li {
+				width: 100%;
+
+				h3 {
+					font-size: 16px;
+					padding-left: 0;
+				}
+
+				img.small {
+					display: none;
+				}
+				img.large {
+					display: block;
+				}
+			}
+		}
+	}
+	body.projects-home .row-contextual-footer {
+		margin-top: 0;
+	}
+}
+
+/* @section Large / Desktop viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width : 984px) {
+
+	body.projects-home {
+
+		.row-hero img {
+				-moz-animation: bounce-in .5s ease 1s forwards;
+				-webkit-animation: bounce-in .5s ease 1s forwards;
+				-o-animation: bounce-in .5s ease 1s forwards;
+			animation: bounce-in .5s ease 1s forwards;
+
+				-moz-transform: scale(.2);
+				-webkit-transform: scale(.2);
+				-o-transform: scale(.2);
+			transform: scale(.2);
+			display: block;
+			margin: 0 auto;
+		}
+
+		.row-project {
+
+			margin-right: 0;
+			margin-left: 0;
+
+			.three-col {
+				width: 21.5%;
+			}
+
+			.three-col:nth-of-type(2n){
+				margin-right: 40px;
+				float: left;
+			}
+
+			.three-col.last-col {
+				margin-right: 0;
+			}
+
+			li {
+				width: auto;
+
+				h3 {
+					@include background_size(210px auto);
+					font-size: 18px;
+				}
+
+			}
+
+
+			/*
+			.project-ubuntu h3 {
+				background-image: url("../img/projects/image-project-ubuntu.png");
+				padding-top: 222px;
+			}
+			.project-mir h3 {
+				background-image: url("../img/projects/image-project-mir.png");
+				padding-top: 274px;
+			}
+			.project-maas h3 {
+				background-image: url("../img/projects/image-project-maas.png");
+				padding-top: 223px;
+			}
+			.project-upstart h3 {
+				background-image: url("../img/projects/image-project-upstart.png");
+				padding-top: 223px;
+			}
+			.project-juju h3 {
+				background-image: url("../img/projects/image-project-juju.png");
+				padding-top: 262px;
+			}
+			.project-open-input-framework h3 {
+				background-image: url("../img/projects/image-project-open-input-framework.png");
+				padding-top: 222px;
+			}
+			.project-bazaar h3 {
+				background-image: url("../img/projects/image-project-bazaar.png");
+				padding-top: 273px;
+			}
+			.project-openstack h3 {
+				background-image: url("../img/projects/image-project-openstack.png");
+				padding-top: 214px;
+			}
+			.project-ubuntu-sdk h3 {
+				background-image: url("../img/projects/image-project-ubuntu-sdk.png");
+				padding-top: 274px;
+			}
+			.project-launchpad h3 {
+				background-image: url("../img/projects/image-project-launchpad.png");
+				padding-top: 223px;
+			}
+			.project-debian h3 {
+				background-image: url("../img/projects/image-project-debian.png");
+				padding-top: 310px;
+			}
+			.project-cloud-init h3 {
+				background-image: url("../img/projects/image-project-cloud-init.png");
+				padding-top: 221px;
+			}
+			.project-unity h3 {
+				background-image: url("../img/projects/image-project-unity.png");
+				padding-top: 274px;
+			}*/
+		}
+	}
+}
+

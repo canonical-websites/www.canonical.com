@@ -1,0 +1,31 @@
+/* TEAM */
+	Chef: Peter Mahnke
+	Contact: webmaster[at]ubuntu.com
+	From: London, England
+
+	Web developer: Anthony Dillon
+	From: London, England
+
+	Web developer: Graham Bancroft
+	From: London, England
+
+	Web developer: Karl Williams
+	From: London, England
+
+	Web developer: Tristram Oaten
+	From: London, England
+
+	Web designer: Inayaili de León
+	From: London, England
+
+	Web designer: Matt Turnbull
+	From: London, England
+
+	User experience: Carla Berkers
+	From: London, England
+
+/* SITE */
+	Last update: 2014/01/08
+	Language: English
+	Doctype: HTML5
+	IDE: Bazaar, Sublime Text, Photoshop, Illustrator

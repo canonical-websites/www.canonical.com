@@ -1,0 +1,132 @@
+{% extends "products/base_products.html" %}
+
+{% block title %}Canonical | Products{% endblock %}
+{% block meta_description %}Canonical provides commercial services for Ubuntu’s users, while working with hardware manufacturers, software vendors and cloud partners to certify Ubuntu. {% endblock %}
+{% block meta_keywords %}Canonical, Ubuntu, open source, free, software, FOSS, Linux, operating system, OS, cloud, phone, smartphone, mobile, tablet, convergence, desktop, PC, server, service, commercial, support{% endblock %}
+
+{% block extra_body_class %}products-home{% endblock %}
+
+{% block content %}
+<div class="row row-hero">
+	<div class="inner-wrapper">
+    <div class="seven-col">
+        <h1>Ubuntu&#58; creating the world&rsquo;s best open source software platform</h1>
+    </div>
+    <div class="five-col last-col text-center">
+        <img src="{{ STATIC_URL }}img/products/products-hero-small.png" alt="" />
+        <div class= "products-hero-container">
+            <div class= "products-hero-ubuntu"></div>
+
+            <div class= "products-hero-desktop"></div>
+            <div class= "products-hero-line-1"></div>
+
+            <div class= "products-hero-phone"></div>
+            <div class= "products-hero-line-2"></div>
+
+            <div class= "products-hero-tablet"></div>
+            <div class= "products-hero-line-3"></div>
+
+            <div class= "products-hero-server"></div>
+            <div class= "products-hero-line-4"></div>
+
+            <div class= "products-hero-cloud"></div>
+            <div class= "products-hero-line-5"></div>
+        </div>
+    </div>
+    <div class="six-col">
+        <p class="intro">Ubuntu is a platform that spans from the PC and the smartphone  to the server and the cloud. It includes a comprehensive suite of enterprise-grade tools for development, configuration, management and service&nbsp;orchestration. </p>
+        <p class="intro"><a href="http://www.ubuntu.com" class="external">Learn more on ubuntu.com</a></p>
+    </div>
+   </div>
+</div>
+
+<div class="row strip-dark">
+    <div class="inner-wrapper">
+		<h2>Canonical and Ubuntu</h2>
+        <ul class="connected-list">
+            <li class="three-col">
+                <img src="{{ STATIC_URL }}img/icons/icon-canonical.svg" class="icon" alt="">
+                <p>Canonical defines Ubuntu&rsquo;s strategy and drives innovation with a team of over 500 dedicated designers, developers and project&nbsp;managers.</p>
+            </li>
+            <li class="three-col">
+                <img src="{{ STATIC_URL }}img/icons/icon-calendar.svg" class="icon" alt="">
+                <p>Since 2004, we have ensured that Ubuntu is released on time, twice every&nbsp;year.</p>
+            </li>
+            <li class="three-col">
+                <img src="{{ STATIC_URL }}img/icons/icon-ubuntu.svg" class="icon" alt="">
+                <p>Ubuntu is the leading OS in the cloud &mdash; OpenStack is built into Ubuntu Server and Ubuntu is the reference operating system for&nbsp;OpenStack.</p>
+            </li>
+            <li class="three-col last-col">
+                <img src="{{ STATIC_URL }}img/icons/icon-cloud.svg" class="icon" alt="">
+                <p>With our partner network, we make Ubuntu available globally through retail channels and on most major public&nbsp;clouds.</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+	<div class="inner-wrapper">
+    <div class="twelve-col">
+        <h2>In the cloud&#58; driving enterprise agility</h2>
+    </div>
+    <div class="eight-col">
+        <p>Ubuntu is at the forefront of large cloud infrastructure deployments, thanks to Canonical&rsquo;s experience in building clouds for our customers and our involvement in the OpenStack project as a founding member. Ubuntu is also optimised and certified for the most popular public clouds &mdash; so wherever you choose to run your applications and services, you can always use&nbsp;Ubuntu.</p>
+    </div>
+	</div>
+</div>
+<div class="juju-connected">
+    <i class="connection"></i>
+    <div class="row">
+			<div class="inner-wrapper">
+        <img src="{{ STATIC_URL }}img/products/juju-connected.png" alt="Juju charms connected" width="818" height="190" />
+			</div>
+    </div>
+</div>
+<div class="row">
+	<div class="inner-wrapper">
+    <div class="six-col">
+		<p>Canonical has also created several important tools to help customers build, manage and scale their clouds. For telcos and enterprises, <a href="http://www.ubuntu.com/management/landscape-features" class="external">Landscape</a> helps administrators deploy and manage Ubuntu clouds cost-effectively. And whether you are using your own cloud or someone else&rsquo;s, <a href="https://juju.ubuntu.com/" class="external">Juju</a> and <a href="http://maas.ubuntu.com/" class="external">MAAS</a> drastically reduce the time, cost and complexity of deploying and scaling in any cloud environment.</p>
+    </div>
+    <div class="prepend-two three-col last-col">
+        <blockquote class="pull-quote">
+        	<p><span>&ldquo;</span>Ubuntu remains the most popular operating system for&nbsp;OpenStack deployments&nbsp;<span>&rdquo;</span></p>
+			<p><cite>OpenStack User Survey, November 2013</cite></p>
+        </blockquote>
+    </div>
+	</div>
+</div>
+
+<div class="row strip-light">
+	<div class="inner-wrapper">
+	    <div class="twelve-col">
+	        <h2>On the client&#58; multiple devices, one experience</h2>
+	    </div>
+	    <div class="eight-col">
+	        <p>Ubuntu is a single software platform that runs across smartphones, tablets, PCs, and TVs. It is designed to help make converged computing a reality&#58; one system, one experience, multiple form factors.</p>
+	    </div>
+	    <div class="twelve-col no-margin-bottom">
+	        <img src="{{ STATIC_URL }}img/products/image-on-the-client.png" width="904" height="676" alt="Family of devices" />
+	    </div>
+	    <div class="eight-col">
+	        <p>Canonical works with most of the world&rsquo;s leading phone and PC makers, to certify Ubuntu for use on a huge range of devices. As a result, Ubuntu is now available on computers for sale in over 3,000 retailers across Mexico, China and India.</p>
+	    </div>
+	</div>
+</div>
+
+<div class="row row-contextual-footer">
+	<div class="inner-wrapper vertical-divider">
+		<div class="featured six-col">
+            <h3><a href="http://www.ubuntu.com" class="external">Explore ubuntu.com</a></h3>
+            <p>On ubuntu.com you&rsquo;ll find more information about the platform, our services, our management tools and our partner&nbsp;programs.</p>
+        </div>
+        <div class="three-col">
+            <h3><a href="/services">Learn more about services&nbsp;&rsaquo;</a></h3>
+            <p>Leading organisations all over the world turn to us for our management services and consultancy.</p>
+        </div>
+        <div class="three-col last-col">
+            <h3><a href="/partners">Learn more about partners&nbsp;&rsaquo;</a></h3>
+            <p>We help the biggest names in hardware, software and cloud to optimise, extend and deliver Ubuntu at scale.</p>
+        </div>
+	</div>
+</div>
+{% endblock content %}

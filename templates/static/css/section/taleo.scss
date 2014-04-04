@@ -1,0 +1,542 @@
+/* @section Taleo
+/* Taleo
+-------------------------------------------------------------- */
+
+.taleo {
+	.inner-wrapper {
+		padding: 20px 10px 10px 10px;
+	}
+	img[alt="Powered By Taleo"] {
+		display: none;
+	}
+	b a[href*="applicantView.jsp"] {
+		display: inline-block;
+		margin-bottom: 30px;
+	}
+	table,
+	thead,
+	tbody,
+	tr,
+	td {
+		border: none;
+		background-color: transparent;
+	}
+
+	b {
+		font-weight: 300;
+	}
+
+	table {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	table * {
+		max-width: 904px;
+	}
+
+	hr, br {
+		display: none;
+	}
+
+	td {
+		text-align: left;
+		padding: 0;
+		margin: 0;
+	}
+
+	.row-contextual-footer {
+		padding: 60px 0 0 0;
+	}
+
+	input[type="submit"],
+	input[type="button"] {
+		/* Clone of canoncical CTA button with overrides
+		   for taleo's hard-coded inline styles */
+		border: none !important;
+		font-size: 1em !important;
+		margin: 0 !important;
+		font-family: Ubuntu,Arial,"libra sans",sans-serif !important;
+		font-weight: 300 !important;
+		padding: 8px 14px !important;
+		color: #fff;
+		text-decoration: none;
+		display: inline-block;
+		-webkit-font-smoothing: subpixel-antialiased;
+		-moz-font-smoothing: subpixel-antialiased;
+		-o-font-smoothing: subpixel-antialiased;
+		font-smoothing: subpixel-antialiased;
+		margin-bottom: .75em;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+		background-color: #c03f11;
+		background-image: -moz-linear-gradient(#dd4814,#c03f11);
+		background-image: -webkit-gradient(linear,0% 0,0% 100%,from(#dd4814),to(#c03f11));
+		background-image: -webkit-linear-gradient(#dd4814,#c03f11);
+		background-image: -o-linear-gradient(#dd4814,#c03f11);
+		float: right;
+
+	}
+
+	input[type=password],
+	input[type=text] {
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		background: #fff;
+		border: 1px solid #999;
+		font-family: Ubuntu,Arial,"libra sans",sans-serif;
+		display: block;
+		padding: 4px;
+	}
+
+	input:focus,
+	select:focus {
+		outline: none !important;
+	}
+
+	/* search page */
+
+	.default-hide, form[name="loginForm"] {
+		display: none;
+	}
+
+	.hide-all td > * {
+		display: none;
+	}
+
+	.hide-all td .default-hide,
+	.hide-all td .default-hide *,
+	.hide-all form[name="loginForm"],
+	.hide-all form[name="loginForm"] * {
+		display: block;
+	}
+
+	.hide-all .row-contextual-footer.default-hide .inner-wrapper div{
+		display: table-cell;
+	}
+
+	.taleo-search-row {
+		border-bottom: 1px dotted #aea79f;
+		margin-bottom: 40px;
+		float: none;
+		width: 100%;
+	}
+
+	form[name="TBE_theForm"] {
+		table, tbody, tr, td {
+			display: block;
+		}
+
+		label {
+			width: 40.42553%;
+			/*width: 48.8938%;*/
+			margin-right: 2.12138%;
+			font-size: 1.438em;
+			float: left;
+			clear: both;
+		}
+
+		input,
+		select {
+			margin-bottom: 30px;
+		}
+
+		select {
+			height: 150px;
+		}
+
+		#label_for_field_keywords {
+			text-transform: lowercase;
+		}
+
+		#label_for_field_keywords::first-letter {
+			text-transform: uppercase;
+		}
+
+		table input[type="submit"]{
+			float: right;
+			width: 100px;
+			clear: both;
+		}
+	}
+
+	form[name="loginForm"] {		
+		label {
+			margin: 18px 0 8px 0;
+		}
+
+		input[type="submit"] {
+			float: left;
+			margin-top: 18px !important;
+			margin-bottom: 18px !important;
+		}
+
+		table tr:last-child {
+			display: none;
+		}
+	}
+
+	/* Job Page */
+	form[name="send"] {
+		display: none;
+	}
+
+	.job-description {
+		border-bottom: 1px dotted #aea79f;
+		border-top: 1px dotted #aea79f;
+		padding: 30px 0 15px 0;
+		margin: 30px 0 30px 0;
+
+		font {
+			font-size: 16px;
+			line-height: 1.5;
+		}
+
+		font b {
+			/*font-size: 1.438em !important;*/
+		}
+
+		p {
+			line-height: 1.5 !important;
+			margin-bottom: 16px !important;
+		}
+	}
+
+	/* Search results */
+	#cws-search-results {
+		margin-top: 20px;
+		border: none;
+	}
+
+	#cws-search-results {
+		tr th {
+			background-color: #efedec;
+			border: 1px solid #d9d9d9;
+			text-align: left;
+		}
+
+		tr th:nth-child(4) {
+			border-right: 1px solid #d9d9d9;
+			-webkit-border-top-right-radius: 4px;
+			-moz-border-radius-topright: 4px;
+			border-top-right-radius: 4px;
+
+		}
+
+		tr:first-child th:first-child {
+			-webkit-border-top-left-radius: 4px;
+			-moz-border-radius-topleft: 4px;
+			border-top-left-radius: 4px;
+		}
+
+		th a {
+			color: $cool_grey;
+		}
+	
+		td {
+			padding: 10px;
+			border: 1px solid #d9d9d9;
+			background-color: #fff;
+		}
+
+		img[src*="asc.gif"]{
+			width: 0px;
+			height: 0px;
+			padding: 12px 0 0 12px;
+			background-image: url(../img/taleo/icon-arrow-down.svg);
+			margin: -4px 0 0 4px;
+		}
+
+		img[src*="desc.gif"]{
+			width: 0px;
+			height: 0px;
+			padding: 12px 0 0 12px;
+			background-image: url(../img/taleo/icon-arrow-up.svg);
+			margin: -4px 0 0 4px;
+		}
+
+		tr:last-of-type td {
+			border-bottom: 1px solid #d9d9d9;
+			padding-bottom: 10px;
+		}
+
+		tr:last-child {
+			-webkit-border-bottom-right-radius: 4px;
+			-webkit-border-bottom-left-radius: 4px;
+			-moz-border-radius-bottomright: 4px;
+			-moz-border-radius-bottomleft: 4px;
+			border-bottom-right-radius: 4px;
+			border-bottom-left-radius: 4px;
+		}
+	}
+
+	a[title="Facebook"],
+	a[title="RSS"] {
+		display: none;
+	}
+
+	/* Application */
+	.application {
+		span.required {
+			color: #ff0000;
+		}
+		form,
+		form[name="TBE_theForm"] {
+			width: 100%;
+			border-top: 1px solid #d9d9d9;
+			margin-top: 30px;
+			padding-top: 30px;
+
+			label {
+				width: 49%%;
+				margin-right: 1.9%;
+				font-size: 16px;
+				line-height: 1.5;
+				margin-bottom: .75em;
+			}
+			input,
+			select{
+				width: 49%;
+			}
+
+			select {
+				height: 26px;
+			}
+
+			textarea {
+				margin-bottom: 18px;
+			}
+
+			table input[type="submit"] {
+				float: left;
+			}
+
+			i {
+				line-height: 1.5;
+				display: inherit;
+			}
+
+			.alert-error {
+				margin-bottom: 30px;
+				font-weight: 300;
+			}
+
+			.info {
+				color: $warm_grey;
+				margin-bottom: 30px;
+			}
+			
+		}
+	}
+
+	/* Forgot Password */
+	form[action="https://ch.tbe.taleo.net/CH03/ats/careers/forgotID2.jsp?org=CANONICAL&cws=7"] { /*Ensure that this URL hasn't changed */
+		label {
+			width: 100%;
+			font-size: inherit;
+			margin: 18px 0 8px 0;
+		}
+
+		a {
+			display: none;
+		}
+
+		table input[type="text"] {
+			margin-bottom: 18px !important;
+			clear: both;
+		}
+
+		table input[type="submit"] {
+			float: left;
+		}
+	}
+
+	/* Applicant View */
+	a[href="#jumptocontent"] {
+		display: none;
+	}
+
+	.applicant-view {
+		table table {
+			background-color: #ffffff;
+			margin: 30px 0;
+			th {
+				background-color: #efedec;
+				border: 1px solid #d9d9d9;
+				text-align: left;
+				display: table-cell;
+			}
+			td {
+				padding: 6px 10px;
+				background: #fff;
+				border: 1px dotted #aea79f;
+				display: table-cell;
+			}
+		}
+
+	}
+
+	/* Errors */
+	h1.alert-error {
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+		padding: 20px;
+		margin-bottom: 15px;
+		background-color: #fff;
+		font-size: 1.438em;
+		color: #333;
+		font-weight: 300;
+	}
+
+	h1.alert-error span.help-inline {
+		font-size: 16px;
+		color: #333;
+		line-height: 1.5;
+	}
+
+	h1.alert-error span.help-inline:first-of-type {
+		border-top: 1px dotted #aea79f;
+		margin-top: 20px;
+		padding-top: 20px;
+
+	}
+
+	/* Thank you */
+	td > a[href*="jobSearch.jsp"]:first-child {
+		display: none;
+	}
+
+	/* attachments */
+	.attachments {
+		form[name="TBE_theForm"]  {
+			label {
+				font-size: 16px;
+				line-height: 1.5;
+				margin-bottom: .75em;
+				float: left;
+				clear: both;
+			}
+		}
+	}
+
+	.search-results,
+	.requisition,
+	.applicant-view {
+		.row-contextual-footer .featured p {
+			background-image: url('/static/img/pictograms/image-footer-search.svg');
+			background-position: 96% 5px;
+		}
+	}
+}
+
+/* Medium / Tablet viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width : 768px) {
+	.taleo {
+		.inner-wrapper {
+			padding: 40px 20px 20px 20px;
+		}
+		/* Application */
+		.application {
+			form,
+			form[name="TBE_theForm"] {
+				width: 65.95744%;
+			}
+		}
+
+		.forgot {
+			margin-top: -48px;
+			margin-left: 90px;
+		}
+
+		form[name="loginForm"] {
+			input[type="text"],
+			input[type="password"] {
+				width: 40.42553%;
+			}
+		}
+
+		/* Errors */
+		h1.alert-error {
+			width: 65.95744%;
+		}
+
+		form[name="TBE_theForm"] {
+			input,
+			select {
+				width: 57.4468%;
+			}
+		}
+			/* attachments */
+			.attachments {
+				form[name="TBE_theForm"]  {
+					width: 65.95744%;
+
+					input[type="text"],
+					input[type="file"] {
+						-webkit-border-radius: 2px;
+						-moz-border-radius: 2px;
+						border-radius: 2px;
+						background: #fff;
+						border: 1px solid #999;
+						font-family: Ubuntu,Arial,"libra sans",sans-serif;
+						display: block;
+						padding: 4px;
+						width: 49%;
+						float: right;
+					}
+
+					input[type="text"] {
+						background: #fff;
+						border: 1px solid #999;
+					}
+
+					label {
+						width: 49%%;
+						margin-right: 1.9%;
+						font-size: 16px;
+						line-height: 1.5;
+						margin-bottom: .75em;
+						float: left;
+						clear: both;
+					}
+
+					input[name="submit1"] {
+						width: 150px;
+						float: right;
+						margin-top: 30px !important;
+					}
+
+
+
+					input[name="cancel1"] {
+						width: 150px;
+						float: left;
+						margin-top: 30px !important;
+					}
+				}
+			}
+	}
+}
+
+/* @section Large / Desktop viewport
+-------------------------------------------------------------- */
+@media only screen and (min-width : 984px) {
+	.taleo {
+		.inner-wrapper {
+			padding: 0px;
+		}
+
+		.taleo-search-row {	
+			background: url(../img/taleo/image-taleo.png) no-repeat 500px top;
+			height: 300px;
+		}
+	}
+}
+
+/* END Taleo
+-------------------------------------------------------------- */
