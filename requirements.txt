@@ -1,0 +1,2 @@
+django-static-precompiler==0.2
+./.packages/fenchurch
