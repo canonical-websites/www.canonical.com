@@ -1,15 +1,17 @@
 Setup
 ===
 
-This site depends on [Fenchurch](https://bitbucket.org/nottrobin/fenchurch) - which is currently a private repository. Make sure you have SSH access to the above repository before attempting to install dependencies.
-
 To prepare the site:
 
 ``` bash
-git submodule update --init # Check out fenchurch package
-pip install -r requirements.txt # Install packages to environment
-./manage.py syncdb # setup local database
+pip install -r requirements.txt # Install dependencies
+./manage.py syncdb # Create local database
 ```
+
+Fenchurch
+---
+
+This site depends on [Fenchurch](https://bitbucket.org/nottrobin/fenchurch) - which is currently a private repository. Make sure you have SSH access to the above repository before attempting to install dependencies.
 
 Run
 ===
