@@ -92,4 +92,3 @@ TEMPLATE_DIRS = ( BASE_DIR + "/templates" )
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "templates/static")
 STATICFILES_FINDERS = ('static_precompiler.finders.StaticPrecompilerFinder',)
-FENCHURCH_REDIRECTS_PATH = BASE_DIR + '/redirects.txt'
