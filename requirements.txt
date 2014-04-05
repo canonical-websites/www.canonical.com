@@ -1,3 +1,3 @@
 Django==1.6
 django-static-precompiler==0.2
-./packages/fenchurch
+git+ssh://git@bitbucket.org/nottrobin/fenchurch.git
