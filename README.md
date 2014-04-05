@@ -1,6 +1,8 @@
 Setup
 ===
 
+This site depends on [Fenchurch](https://bitbucket.org/nottrobin/fenchurch) - which is currently a private repository. Make sure you have SSH access to the above repository before attempting to install dependencies.
+
 To prepare the site:
 
 ``` bash
