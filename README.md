@@ -9,7 +9,7 @@ pip install -r requirements.txt # Install packages to environment
 ./manage.py syncdb # setup local database
 ```
 
-Run the development server
+Run
 ===
 
 To run the local development server:
