@@ -4,7 +4,7 @@ Setup
 To prepare the site:
 
 ``` bash
-pip install -r requirements.txt # Install dependencies
+make setup # Install ruby and python dependencies
 ```
 
 Fenchurch
@@ -18,7 +18,7 @@ Run
 To run the local development server:
 
 ``` bash
-./manage.py runserver
+make # Run sass compiler and the server
 ```
 
 Now visit <http://127.0.0.1:8000>
