@@ -4,7 +4,7 @@ develop:
 	bundle exec sass --watch templates/static/css/styles.scss:templates/static/css/styles.css &
 	./manage.py runserver_plus
 
-setup: setup-venv setup-ruby
+setup: setup-ruby setup-venv
 
 setup-ruby:
 	##
