@@ -5,7 +5,6 @@ To prepare the site:
 
 ``` bash
 pip install -r requirements.txt # Install dependencies
-./manage.py syncdb # Create local database
 ```
 
 Fenchurch
