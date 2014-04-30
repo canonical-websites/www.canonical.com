@@ -1,7 +1,19 @@
-SHELL := /bin/bash
+SHELL := /bin/bash # Use bash syntax
 
-develop:
+so: develop
+
+develop: sass-watch dev-server
+
+sass-watch:
+	##
+	# Run SASS watcher
+	##
 	bundle exec sass --watch templates/static/css/styles.scss:templates/static/css/styles.css &
+
+dev-server:
+	##
+	# Run server
+	##
 	./manage.py runserver_plus
 
 setup: setup-ruby setup-venv
@@ -46,3 +58,6 @@ setup-venv:
 	# > deactivate
 	#
 	##
+
+it:
+	# Nothing
