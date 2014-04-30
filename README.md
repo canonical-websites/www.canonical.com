@@ -18,7 +18,16 @@ Run
 To run the local development server:
 
 ``` bash
-make # Run sass compiler and the server
+# source the virtualenv
+source env/bin/activate
+
+# Run sass compiler and the server
+make 
+
+#...
+
+# Deactivate virtualenv when finished
+deactivate
 ```
 
 Now visit <http://127.0.0.1:8000>
