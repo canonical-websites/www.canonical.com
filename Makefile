@@ -8,7 +8,7 @@ sass-watch:
 	##
 	# Run SASS watcher
 	##
-	bundle exec sass --watch templates/static/css/styles.scss:templates/static/css/styles.css &
+	bundle exec sass --debug-info --watch templates/static/css/styles.scss:templates/static/css/styles.css &
 
 dev-server:
 	##
