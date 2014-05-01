@@ -1,2 +1,1 @@
-Django==1.6
-git+ssh://git@bitbucket.org/nottrobin/fenchurch.git@v0.1
+requirements/dev.txt
