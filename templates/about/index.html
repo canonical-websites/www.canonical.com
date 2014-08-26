@@ -63,15 +63,15 @@
 </div><!-- /row -->
 
 <div class="row strip-light">
-	<div class="inner-wrapper row-image-centered">
-		<div class="seven-col no-margin-bottom">
+	<div class="inner-wrapper">
+		<div class="seven-col">
 			<h2>Canonical and open source</h2>
 			<p>We believe in the power of open source software; Ubuntu could not exist without its worldwide community of voluntary developers. We are committed to creating it, refining it, certifying it for reliability and promoting its use. As well as launching and running our own projects, we contribute staff, code and funding to many more.</p>
 			<p><a href="/projects">Open source projects &rsaquo;</a></p>
 		</div>
-		<span>
+		<div class="text-center five-col last-col">
 			<img src="{{ STATIC_URL }}img/icons/image-picto-projects-we-love.svg" width="195" height="196" alt="Heart pictogram" class="priority-0" />
-		</span><!-- /col -->
+		</div><!-- /col -->
 	</div><!-- /inner-wrapper -->
 </div><!-- /row -->
 
@@ -288,28 +288,19 @@ function initialize() {
 	});
 	var shanghaiInfo = new google.maps.InfoWindow({
 	    content: '<h2>Shanghai, China</h2>' +
-				'<p>Unit 2763, 27th Floor, K.Wah Center <br />' +
-				'No.1010 Huaihai Zhong Road <br />' +
+				'<p>Room 1246, 12F <br />' +
+				'No. 331 North Caoxi Road <br />' +
 				'Shanghai 200031 <br />' +
 				'China <br />' +
-				'上海市淮海中路1010号嘉华中心27层2763单元 200031</p>'
+				'上海市漕溪北路331号12楼1246室 200231</p>'
 	});
 	var beijingInfo = new google.maps.InfoWindow({
 	    content: '<h2>Beijing, China</h2>' +
-				'<p>7th Floor, Metropolis Tower <br />' +
-				'No. 2 Dongsan St., Zhongguancun Xi Zone Haidian District, <br />' +
-				'Beijing P.R.C. 100080 <br />' +
+				'<p>Room 17- 01Z, Floor B17, 101 Nei, Floor 3- 24<br />' +
+				'No. 3, Xinyuan South Road, Chaoyang District <br />' +
+				'Beijing P.R.C. 100027 <br />' +
 				'China <br />' +
-				'北京市海淀区中关村西区海淀东三街2号欧美汇大厦7层 100080</p>'
-	});
-	var montrealInfo = new google.maps.InfoWindow({
-	    content: '<h2>Montreal, Canada</h2>' +
-				'<p>Canonical Canada Limited <br />' +
-				'4200, boulevard Saint-Laurent <br />' +
-				'Suite 1200 (12e étage) <br />' +
-				'Montréal, QC <br />' +
-				'H2W 2R2 <br />' +
-				'Canada</p>'
+				'北京市朝阳区新源南路3号- 3至24层101内B17层17- 01Z室 100027</p>'
 	});
 	var taipeiInfo = new google.maps.InfoWindow({
 	    content: '<h2>Taipei, Taiwan</h2>' +
@@ -340,19 +331,14 @@ function initialize() {
 	    title:"Boston, United States"
 	});
 	var shanghai = new google.maps.Marker({
-	    position: new google.maps.LatLng(31.209134,121.455786),
+	    position: new google.maps.LatLng(31.1747322,121.4351965),
 	    map: map,
 	    title:"Shanghai, China"
 	});
 	var beijing = new google.maps.Marker({
-	    position: new google.maps.LatLng(39.976031,116.294962),
+	    position: new google.maps.LatLng(39.940926,116.447657),
 	    map: map,
 	    title:"Beijing, China"
-	});
-	var montreal = new google.maps.Marker({
-	    position: new google.maps.LatLng(45.518066,-73.582031),
-	    map: map,
-	    title:"Montreal, Canada"
 	});
 	var taipei = new google.maps.Marker({
 	    position: new google.maps.LatLng(25.091075,121.559834),
@@ -369,7 +355,6 @@ function initialize() {
 		bostonInfo.close();
 		shanghaiInfo.close();
 		beijingInfo.close();
-		montrealInfo.close();
 		taipeiInfo.close();
 		iomInfo.close();
 	    londonInfo.open(map,london);
@@ -378,7 +363,6 @@ function initialize() {
 		londonInfo.close();
 		shanghaiInfo.close();
 		beijingInfo.close();
-		montrealInfo.close();
 		taipeiInfo.close();
 		iomInfo.close();
 	    bostonInfo.open(map,boston);
@@ -387,7 +371,6 @@ function initialize() {
 		bostonInfo.close();
 		londonInfo.close();
 		beijingInfo.close();
-		montrealInfo.close();
 		taipeiInfo.close();
 		iomInfo.close();
 	    shanghaiInfo.open(map,shanghai);
@@ -396,25 +379,14 @@ function initialize() {
 		bostonInfo.close();
 		shanghaiInfo.close();
 		londonInfo.close();
-		montrealInfo.close();
 		taipeiInfo.close();
 		iomInfo.close();
 	    beijingInfo.open(map,beijing);
-	});
-	google.maps.event.addListener(montreal, 'click', function() {
-		bostonInfo.close();
-		shanghaiInfo.close();
-		beijingInfo.close();
-		londonInfo.close();
-		taipeiInfo.close();
-		iomInfo.close();
-	    montrealInfo.open(map,montreal);
 	});
 	google.maps.event.addListener(taipei, 'click', function() {
 		bostonInfo.close();
 		shanghaiInfo.close();
 		beijingInfo.close();
-		montrealInfo.close();
 		londonInfo.close();
 		iomInfo.close();
 	    taipeiInfo.open(map,taipei);
@@ -423,7 +395,6 @@ function initialize() {
 		bostonInfo.close();
 		shanghaiInfo.close();
 		beijingInfo.close();
-		montrealInfo.close();
 		taipeiInfo.close();
 		londonInfo.close();
 	    iomInfo.open(map,iom);
@@ -468,12 +439,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		<a class="accordion-button slideless" href="#">Shanghai, China</a>
 		<div>
 			<h3 class="title">Shanghai, China</h3>
-			<p itemprop="streetAddress">Unit 2763, 27th Floor, K.Wah Center<br />
-			<span itemprop="streetAddress">No.1010 Huaihai Zhong Road</span><br />
+			<p itemprop="streetAddress">Room 1246, 12F<br />
+			<span itemprop="streetAddress">No. 331 North Caoxi Road</span><br />
 			<span itemprop="addressRegion">Shanghai 200031</span><br />
 			<span itemprop="addressCountry">China</span><br />
-			<span itemprop="postalCode">上海市淮海中路1010号嘉华中心27层2763单元 200031</span><br />
-			<a href="https://maps.google.co.uk/maps?q=K.Wah+Center+No.1010+Huaihai+Zhong+Road+Shanghai+200031+China&amp;hl=en&amp;sll=42.47209,-71.262879&amp;sspn=0.009275,0.019956&amp;hq=K.Wah+Center+No.1010+Huaihai+Zhong+Road+Shanghai+200031+China&amp;radius=15000&amp;t=m&amp;z=13">View map &rsaquo;</a></p>
+			<span itemprop="postalCode">上海市漕溪北路331号12楼1246室 200031</span><br />
+			<a href="https://www.google.co.uk/maps/place/331+Cao+Xi+Bei+Lu/@31.1905161,121.4378999,16z/data=!4m2!3m1!1s0x35b26531db361fd5:0xac20ddade60d18cd">View map &rsaquo;</a></p>
 		</div>
 	</div><!-- /address -->
 
@@ -481,28 +452,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		<a class="accordion-button slideless" href="#">Beijing, China</a>
 		<div>
 			<h3 class="title">Beijing, China</h3>
-			<p itemprop="streetAddress">7th Floor, Metropolis Tower<br />
-			<span itemprop="streetAddress">No. 2 Dongsan St., Zhongguancun Xi Zone Haidian District,</span><br />
-			<span itemprop="addressRegion">Beijing P.R.C. 100080</span><br />
+			<p itemprop="streetAddress">Room 17- 01Z, Floor B17, 101 Nei, Floor 3- 24<br />
+			<span itemprop="streetAddress">No. 3, Xinyuan South Road, Chaoyang District</span><br />
+			<span itemprop="addressRegion">Beijing P.R.C. 100027</span><br />
 			<span itemprop="addressCountry">China</span><br />
-			<span itemprop="postalCode">北京市海淀区中关村西区海淀东三街2号欧美汇大厦7层 100080</span><br />
-			<a href="https://maps.google.co.uk/maps?q=Metropolis+Tower,+No.2+Dongsan+Street&amp;hl=en&amp;ll=39.979619,116.323242&amp;spn=0.077082,0.159645&amp;sll=40.007895,116.359291&amp;sspn=0.1541,0.31929&amp;hq=Metropolis+Tower,+No.2+Dongsan+Street&amp;t=m&amp;z=13">View map &rsaquo;</a></p>
+			<span itemprop="postalCode">北京市朝阳区新源南路3号- 3至24层101内B17层17- 01Z室 100027</span><br />
+			<a href="https://www.google.co.uk/maps/place/Gucci/@39.940926,116.447657,16z/data=!4m2!3m1!1s0x35f1ac96a16515c9:0x7746eb837ea0f8cc">View map &rsaquo;</a></p>
 		</div>
 	</div><!-- /address -->
 
-	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="tabbed-content box-grey hide address">
-		<a class="accordion-button slideless" href="#">Montreal, Canada</a>
-		<div>
-			<h3 class="title">Montreal, Canada</h3>
-			<p>Canonical Canada Limited<br />
-			<span itemprop="streetAddress">4200, boulevard Saint-Laurent</span><br />
-			<span class="extended-address">Suite 1200 (12e étage)</span><br />
-			<span itemprop="addressRegion">Montréal, QC</span><br />
-			<span itemprop="postalCode">H2W 2R2</span><br />
-			<span itemprop="addressCountry">Canada</span><br />
-			<a href="https://maps.google.co.uk/maps?q=4200,+boulevard+Saint-Laurent+Suite+1200+QC+H2W+2R2+Canada&amp;hl=en&amp;ie=UTF8&amp;sll=39.979619,116.323242&amp;sspn=0.077082,0.159645&amp;hnear=4200+Boulevard+Saint-Laurent+%231200,+Montr%C3%A9al,+Qu%C3%A9bec+H2W+1Z3,+Canada&amp;t=m&amp;z=16">View map &rsaquo;</a></p>
-		</div>
-	</div><!-- /address -->
 
 	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="tabbed-content box-grey hide address">
 		<a class="accordion-button slideless" href="#">Taipei, Taiwan</a>
@@ -560,74 +518,79 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			<div class="twelve-col">
 				<h2>Further information</h2>
 			</div>
-			<div class="four-col">
-				<h3><a href="http://insights.ubuntu.com/topics/news/" class="further-news">News &rsaquo;</a></h3>
-				<div id="news-feed"></div>
-				<script>
-					var feedcontainer1 = document.getElementById("news-feed");
-					var feedurl1 = "http://insights.ubuntu.com/topics/news/feed/";
-					var rssoutput1 = rssoutput = "<ul class='no-bullets'>";
-					var feedlimit = 3;
-					var monthNames = [ "January", "February", "March", "April", "May", "June",
-"July", "August", "September", "October", "November", "December" ];
+		<div class="four-col">
+			<h3><a href="https://insights.ubuntu.com/topics/news/" class="further-news">News &rsaquo;</a></h3>
+			<div><ul class="no-bullets" id="news-feed"><noscript><li><a href="https://insights.ubuntu.com/topics/news/" title="go the Press centre on the Ubuntu insights" class="external">See all our Press centre on Ubuntu insights</a></li></noscript></ul></div>
+		</div>
+		<div class="four-col">
+			<h3><a href="https://insights.ubuntu.com/" class="further-resources">Resources &rsaquo;</a></h3>
+			<div><ul class="no-bullets" id="resources-feed"><noscript><li><a href="//insights.ubuntu.com" title="go the Ubuntu insights blog" class="external">See all our white papers, case studies and fact-sheets on Ubuntu insights</a></li></noscript></ul></div>
 
-					function rssfeedsetup1() {
+<script>
 
-						var feedpointer1 = new google.feeds.Feed(feedurl1); //Google Feed API method
-							feedpointer1.setNumEntries(feedlimit); //Google Feed API method
-							feedpointer1.load(displayfeed1); //Google Feed API method
-					}
+// this script gets news and resources from insights.ubuntu.com
+ 
+var html_id = "";
 
-					function displayfeed1(result) {
-						if (!result.error){
-							var thefeeds1 = result.feed.entries;
-							for (var i = 0; i < thefeeds1.length; i++) {
-								var date = new Date(thefeeds1[i].publishedDate);
-								rssoutput1 += "<li><a href='" + thefeeds1[i].link + "'>" + thefeeds1[i].title + "&nbsp;&rsaquo;</a><p class='note'>" + date.getDay() + " " + monthNames[date.getMonth()] + " " + date.getFullYear() + "</li>";
-							}
-							rssoutput1 += "</ul>";
-							feedcontainer1.innerHTML = rssoutput1;
-						}
-					}
-				</script>
-			</div><!-- /col -->
-			<div class="four-col">
-				<h3><a href="http://insights.ubuntu.com/topics/resources/" class="further-resources">Resources &rsaquo;</a></h3>
-				<div id="resources-feed"></div>
-				<script>
-					var rssoutput = "<ul class='no-bullets'>";
-					var feedcontainer2 = document.getElementById("resources-feed");
-					var feeds = new Array("http://insights.ubuntu.com/topics/factsheet/feed/",
-									  	  "http://insights.ubuntu.com/topics/whitepapers/feed/",
-									  	  "http://insights.ubuntu.com/topics/case-studies/feed/");
+function get_insights_list(url, limit, html_id, type) {
 
-					function rssfeedsetup2(feedURL) {
-						var feedpointer2 = new google.feeds.Feed(feedURL); //Google Feed API method
-							feedpointer2.setNumEntries(1); //Google Feed API method
-							feedpointer2.load(displayfeed2); //Google Feed API method
-					}
+	var container = document.getElementById(html_id);
+	var monthNames = [ "January", "February", "March", "April", "May", "June",
+						"July", "August", "September", "October", "November", "December" ];
 
-					function displayfeed2(result) {
-						if (!result.error) {
-							var thefeeds2 = result.feed.entries;
-							for (var i = 0; i < thefeeds2.length; i++) {
-								var cat = thefeeds2[i].categories[0];
-								rssoutput += "<li><a href='" + thefeeds2[i].link + "'>" + thefeeds2[i].title + "&nbsp;&rsaquo;</a><p class='note'>" + cat + "</li>";
-							}
-							feedcontainer2.innerHTML = rssoutput;
-						}
-					}
+	feed = new google.feeds.Feed(url);          // gets the feed
+	feed.setNumEntries(limit);                      // set the number of articles you want back 
+	feed.load(format_feed);							// get the feed
 
-					window.onload = function() {
-						rssfeedsetup1();
-						var i = feeds.length;
-						while(i--) {
-							rssfeedsetup2(feeds[i]);
-						}
-						feedcontainer2.innerHTML = '</ul>';
-					}
-				</script>
-			</div><!-- /col -->
+	function format_feed(result) {
+	
+		var output = "";
+	
+		if (!result.error) {
+
+			console.log("html_id: " + html_id)
+
+			var entries = result.feed.entries;
+
+			for (var i = 0; i < entries.length; i++) {
+		
+				if (type == "cat") {
+					// format for category display
+					var cat = entries[i].categories[0];
+					output = "<a href='" + entries[i].link + "'>" + entries[i].title + "&nbsp;&rsaquo;</a><p class='note'>" + cat + "</p>";
+				
+				} else {
+					// format with a date - default
+					var date = new Date(entries[i].publishedDate);
+					output = "<a href='" + entries[i].link + "'>" + entries[i].title + "&nbsp;&rsaquo;</a><p class='note'>" + date.getDay() + " " + monthNames[date.getMonth()] + " " + date.getFullYear() + "</p>";
+				
+				}		
+
+				var list = document.createElement("li");
+				list.insertAdjacentHTML('beforeend', output);
+				container.appendChild(list);
+			}
+		}	
+	} // end function format_feed
+} // end function get_insights_list
+
+function OnLoad() {
+	// news list
+	output = "";
+	get_insights_list("https://insights.ubuntu.com/category/news/feed/", 3, "news-feed", "date");
+	
+	// resources list
+	output = "";
+	get_insights_list("https://insights.ubuntu.com/category/factsheets/feed/", 1, "resources-feed", "cat");
+	get_insights_list("https://insights.ubuntu.com/category/white-papers/feed/", 1, "resources-feed", "cat");
+	get_insights_list("https://insights.ubuntu.com/category/case-studies/feed/", 1, "resources-feed", "cat");
+	
+}
+google.setOnLoadCallback(OnLoad);
+
+</script>
+
+			</div> <!-- prm /col -->
 			<div class="four-col last-col">
 				<h3><a href="http://community.ubuntu.com" class="further-community">Community &rsaquo;</a></h3>
 				<p>There are many ways you can contribute to Ubuntu, either as an individual user or an organisation. </p>

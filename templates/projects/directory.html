@@ -1,6 +1,6 @@
 {% extends "projects/base_projects.html" %}
 
-{% block title %}Canonical | Overview of open source projects{% endblock %}
+{% block title %}Canonical | Open source projects directory{% endblock %}
 {% block meta_description %}{% endblock %}
 {% block meta_keywords %}Canonical, Ubuntu, operating system, OS, open source, free, FOSS, technology, technologies, software, projects, Unity, user, interface, MIR, graphics, stack, Juju, service, orchestration, cloud, MAAS, metal as a service, server, provisioning, hyperscale,  Launchpad, collaboration, online, code, developer, tool, Upstart, init, daemon
 {% endblock %}
@@ -13,7 +13,7 @@
     </div>
     <div class="eight-col">
         <p>The following projects are covered by Canonical&rsquo;s contributor agreement. If you want to contribute to any of the projects below, please contact the project contacts listed in the third column.</p>
-        <p>In order to contribute, you need to sign <a href="/contributor-license-agreement">Canonical&rsquo;s contributor agreement</a>.</p>
+        <p>In order to contribute, you need to sign <a href="http://www.ubuntu.com/legal/contributors" class="external">Canonical&rsquo;s contributor agreement</a>.</p>
     </div>
 	</div>
 </div>
@@ -45,7 +45,8 @@
                 <td>click-update-manager,<br />
                 unity-scope-click,<br />
                 packagekit-plugin-click,<br />
-                click-apparmor</td>
+                click-apparmor,<br />
+                clickmanager-plugin</td>
                 <td>Martin Albisetti  (martin.albisetti&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>
@@ -170,23 +171,25 @@
             </tr>
             <tr>
                 <th scope="row">Phablet tools help install and manage Ubuntu for Phones and Tablets</th>
-            <td>phablet-tools</td>
-            <td>Sergio Schvezov (sergio.schvezov&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
+                <td>phablet-tools,<br />
+                goget-ubuntu-touch</td>
+                <td>Sergio Schvezov (sergio.schvezov&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
-            
+
             <tr>
                 <th scope="row"><span class="caps">RDP PAM </span>module</th>
                 <td>libpam-freerdp</td>
                 <td>David Barth (david.barth&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>
-                <th scope="row">Scopes and Lenses for dash</th>
+                <th scope="row">Scopes and lenses for dash</th>
                 <td>unity-lens-*,<br />
-                unity-scope-*</td>
+                unity-scope-*,<br />
+                pay-ui</td>
                 <td>Thomas Strehl (thomas.strehl&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>
-                <th scope="row">Software Installtion and Removal</th>
+                <th scope="row">Software installation and removal</th>
                 <td>software-center,<br />
                 software-properties-*</td>
                 <td>Steve Langasek (slangasek&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
@@ -208,7 +211,7 @@
                 <td>Gustavo Niemeyer (gustavo.niemeyer&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>
-                <th scope="row">System indictors and related plugins</th>
+                <th scope="row">System indicators and related plugins</th>
                 <td>indicator-*,<br />
                 libappindicator,<br />
                 qmenumodel,<br />
@@ -219,7 +222,9 @@
                 libdbusmenu,<br />
                 bamf,<br />
                 ido,<br />
-                appmenu-qt</td>
+                appmenu-qt,<br />
+                appmenu-qt5,<br />
+                ubuntu-geoip</td>
                 <td>Thomas Strehl (thomas.strehl&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>
@@ -236,7 +241,7 @@
                 <td>Patricia Gaughen (patricia.gaughen&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>
-                <th scope="row">Ubntu Software Developer Kit</th>
+                <th scope="row">Ubuntu Software Developer Kit</th>
                 <td>ubuntu-ui-extras,<br />
                 ubuntu-html5-theme,<br />
                 u1db-qt,<br />
@@ -246,7 +251,10 @@
                 dee-qt,<br />
                 ubuntu-settings-components,<br />
                 ubuntu-ui-toolkit,<br />
-                cordova-ubuntu</td>
+                cordova-ubuntu,<br />
+                cordova-cli,<br />
+                qtcreator-plugin-cmake,<br />
+                ubuntu-touch-customization-hooks</td>
                 <td>Zoltan Balogh (zoltan.balogh&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>
@@ -281,7 +289,8 @@
                 calendar-app,<br />
                 weather-app,<br />
                 music-app,<br />
-                calculator-app</td>
+                calculator-app,<br />
+                sync-monitor</td>
                 <td>Bill Filler (bill.filler&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>
@@ -322,7 +331,15 @@
                 qtubuntu-media,<br />
                 mediascanner,<br />
                 qtubuntu-media-signals,<br />
-                android-audiosystem</td>
+                android-audiosystem,<br />
+                connectivity-api,<br />
+                dbus-cpp,<br />
+                mediascanner2,<br />
+                process-cpp,<br />
+                properties-cpp,<br />
+                qtpowerd,<br />
+                qtubuntu-cameraplugin-fake,<br />
+                usensord</td>
                 <td>Michael Frey (michael.frey&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>
@@ -335,7 +352,14 @@
                 location-service,<br />
                 url-dispatcher,<br />
                 download-manager,<br />
-                qtorganizer5-eds</td>
+                qtorganizer5-eds,<br />
+                infographic-service,<br />
+                media-hub,<br />
+                pay-service,<br />
+                thumbnailer,<br />
+                ubuntu-download-manager,<br />
+                ubuntu-purchase-service,<br />
+                unity-voice</td>
                 <td>Thomas Voss (thomas.voss&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>
@@ -357,7 +381,10 @@
                 nux,<br />
                 unity-asset-pool,<br />
                 liblauncher,<br />
-                gnome-control-center-unity</td>
+                gnome-control-center-unity,<br />
+                overlay-scrollbar,<br />
+                unity-control-center,<br />
+                unity-settings-daemon</td>
                 <td>Stephen Webb (stephen.webb&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>
@@ -365,7 +392,9 @@
                 <td>unity8,<br />
                 unity-mir,<br />
                 unity-api,<br />
-                unity-notifications</td>
+                unity-notifications,<br />
+                unity-scopes-api,<br />
+                unity-scopes-shell</td>
                 <td>Kevin Gunn  (kevin.gunn&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>
@@ -377,7 +406,9 @@
             <tr>
                 <th scope="row">Visual Assets</th>
                 <td>ubuntu-wallpapers,<br />
-                ubuntu-mono</td>
+                ubuntu-mono,<br />
+                notify-osd-icons,<br />
+                ubuntu-themes</td>
                 <td>Marcus Haslam (masrcus.haslam&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>
@@ -400,12 +431,18 @@
                 libaccounts-glib,<br />
                 account-plugins,<br />
                 signon-keyring-extension,<br />
-                uoa-integration-tests</td>
+                uoa-integration-tests,<br />
+                account-plugin-evernote,<br />
+                ubuntuone-client-data</td>
                 <td>David Barth (david.barth&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>
                 <th scope="row">Webapps</th>
-                <td>unity-webapps-*</td>
+                <td>unity-webapps-*,<br />
+                libunity-webapps,<br />
+                unity-chromium-extension,<br />
+                unity-firefox-extension,<br />
+                webapps-applications</td>
                 <td>David Barth (david.barth&nbsp;{at}&nbsp;canonical&nbsp;{dot}&nbsp;com)</td>
             </tr>
             <tr>

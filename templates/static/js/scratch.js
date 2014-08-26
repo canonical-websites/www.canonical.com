@@ -133,8 +133,13 @@ core.tabbedContent = function() {
 };
 
 core.rssLoader = {
-	"outputFeed" : function(el) {
+	"outputFeed" : function(el, jobType) {
 		var element = document.getElementById(el);
+		if (jobType === undefined) {
+			jobType = '';
+		} else {
+			jobType = ' ' + jobType;
+		}
 		return function(result){
 			if (!result.error){
 				var output = '';
@@ -144,7 +149,7 @@ core.rssLoader = {
 					spinner.style.display = 'none';
 				}
 				if(element.className.indexOf('with-total') != -1){
-					output += '<li>We currently have '+thefeeds.length+' vacancies';
+					output += '<li>We currently have '+thefeeds.length+jobType+' vacancies';
 				}
 				console.log(thefeeds);
 				for (var i = 0; i < thefeeds.length; i++){
@@ -156,7 +161,7 @@ core.rssLoader = {
 		}
 	},
 
-	"getFeed" : function(url, numItems, el){
+	"getFeed" : function(url, numItems, el, jobType){
 		var feedpointer = new google.feeds.Feed(url); //Google Feed API method
 		console.log(numItems);
 		if(numItems != null){
@@ -164,7 +169,7 @@ core.rssLoader = {
 		}else{
 			feedpointer.setNumEntries(250); //Google Feed API method
 		}
-		feedpointer.load(this.outputFeed(el)); //Google Feed API method
+		feedpointer.load(this.outputFeed(el, jobType)); //Google Feed API method
 	}
 };
 

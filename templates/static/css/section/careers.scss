@@ -83,10 +83,20 @@
 
 /*	@section careers
 -------------------------------------------------------------- */
+.question {
+	color: #666;
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+
 .careers {
 	.strip {
 		padding-bottom: 0;
 		border-bottom: 1px dotted $warm_grey;
+
+		&.strip-light {
+			border: none;
+		}
 	}
 }
 
@@ -98,9 +108,9 @@
 		overflow: visible;
 
 		.inner-wrapper {
-			margin-top: -50px;
+			margin-top: -40px;
 			overflow: visible;
-			padding-top: 50px;
+			padding-top: 40px;
 			.intro {
 				margin-bottom: 10px;
 			}
@@ -182,12 +192,6 @@
 			margin-bottom: 10px;
 		}
 
-		.question {
-			color: #666;
-			margin-top: 20px;
-			margin-bottom: 5px;
-		}
-
 		.small-menu {
 			margin-top: 20px;
 		}
@@ -205,6 +209,14 @@
 	.row-contextual-footer {
 		border-top: 1px dotted $warm_grey;
 		margin-top: 20px;
+	}
+}
+
+/* Vacancies pages */
+.careers-cloud-vacancies,
+.careers-go-vacancies {
+	.vacancies li:first-child {
+		font-size:  1.438em;
 	}
 }
 
@@ -325,4 +337,51 @@ html.no-svg body.careers-home {
 	html.yui3-js-enabled #main-content .tabbed-content {
 		padding-bottom: 0;
 	}
+
+	/* Vacancies pages */
+	.careers-cloud-vacancies,
+	.careers-go-vacancies {
+		.vacancies li:first-child {
+			font-size: 2em;
+		}
+	}
 }
+
+/* Golang / Gophercon-specific */
+.careers-go-vacancies {
+	.row-hero {
+		.six-col {
+			padding-bottom: 40px;
+		}
+		img {
+			margin-top: 16px;
+		}
+	}
+	.strip-gophercon {
+		form {
+			margin-top: 40px;
+		}
+		fieldset h3 {
+			margin-bottom: .522em;
+			padding: 0;
+			border: none;
+		}
+		fieldset div {
+			margin-bottom: 20px;
+			padding-bottom: 10px;
+			border-bottom: 1px dotted #dfdcd9;
+		}
+	}
+	form fieldset {
+		background-color: rgba(255, 255, 255, 1);
+	}
+}
+
+/* Cloud-specific */
+.careers-cloud-vacancies {
+	.row-hero .last-col {
+		padding-top: 20px;
+		padding-left: 20px;
+	}
+}
+

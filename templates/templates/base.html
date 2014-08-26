@@ -18,30 +18,26 @@
 <![endif]-->
 
 <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico" type="image/x-icon" />
-
-<!-- modernizr -->
-<script src="{{ STATIC_URL }}js/plugins/modernizr.2.7.1.js"></script>
-
-
-<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono' rel='stylesheet' type='text/css' />
-<link rel="stylesheet" type="text/css" media="screen" href="//assets.ubuntu.com/sites/guidelines/css/dev/ubuntu-styles.css" />
-
-<link rel="stylesheet" type="text/css" media="screen and (min-width: 768px)" href="//assets.ubuntu.com/sites/ubuntu/latest/u/css/global.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/styles.css" />
-<link rel="stylesheet" type="text/css" media="print" href="{{ STATIC_URL }}css/core-print.css" />
-
-
-<!--[if lte IE 8]>
-<link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/ie/ie7.scss" />
-<link rel="stylesheet" type="text/css" href="//assets.ubuntu.com/sites/ubuntu/latest/u/css/global.css" />
-<![endif]-->
-
-<link rel="shortcut icon" href="/static/img/favicon.ico">
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ STATIC_URL }}img/apple-touch-icon-144x144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}img/apple-touch-icon-114x114-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}img/apple-touch-icon-72x72-precomposed.png">
 <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}img/apple-touch-icon-precomposed.png">
+
 <link type="text/plain" rel="author" href="{{ STATIC_URL }}files/humans.txt" />
+
+<!-- google fonts -->
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" media="screen" href="//assets.ubuntu.com/sites/guidelines/css/responsive/latest/ubuntu-styles.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="//assets.ubuntu.com/sites/ubuntu/latest/u/css/beta/global-responsive.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/styles.css" />
+<link rel="stylesheet" type="text/css" media="print" href="{{ STATIC_URL }}css/core-print.css" />
+
+<!--[if lte IE 8]>
+<link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/ie/ie7.css" />
+<![endif]-->
+
+<!-- modernizr -->
+<script src="{{ STATIC_URL }}js/plugins/modernizr.2.7.1.js"></script>
 
 {% block head_extra %}{% endblock %}
 
@@ -100,7 +96,7 @@
 	if(!core){ var core = {}; }
 	core.globalPrepend = 'body';
 </script>
-<script src="//assets.ubuntu.com/sites/ubuntu/latest/u/js/core.js"></script>
+<script src="//assets.ubuntu.com/sites/guidelines/js/responsive/core.js"></script>
 <script src="{{ STATIC_URL }}js/scratch.js"></script>
 <script src="//assets.ubuntu.com/sites/ubuntu/latest/u/js/global.js"></script>
 <script src="{{ STATIC_URL }}js/plugins/respond.min.js"></script>
@@ -115,7 +111,7 @@
 
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 

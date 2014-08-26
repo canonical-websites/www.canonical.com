@@ -4,8 +4,10 @@
 # that comments do not strictly need a #hdevices/androidash but include it for clarity.
 # The web server needs to be reloaded when changes are made to this file
 rss.xml  http://insights.ubuntu.com/feed/  #
-aboutus/privacypolicy  /privacy-policy  #
-aboutus/trademarkpolicy  /intellectual-property-rights-policy  #
+aboutus/privacypolicy  http://www.ubuntu.com/legal/terms-and-policies/privacy-policy  #
+aboutus/trademarkpolicy  http://www.ubuntu.com/legal/terms-and-policies/intellectual-property-policy  #
+careers/OpenStack  /careers/cloud-vacancies  #
+careers/openstack  /careers/cloud-vacancies  #
 content  http://insights.ubuntu.com/news/  #
 content/touch-developer-preview-ubuntu-be-published-21-february-2013  http://insights.ubuntu.com/news/touch-developer-preview-of-ubuntu-to-be-published-on-21-february-2013/  #
 about-ubuntu  /about  #
@@ -15,8 +17,12 @@ about-ubuntu/for-you  /about  #
 content/latest-ubuntu-1310-includes-first-step-mobile-pc-convergence  http://insights.ubuntu.com/news/latest-ubuntu-13-10-includes-first-step-to-mobile-pc-convergence/  #
 consumer-services  /about  #
 consumer-services/ubuntu-one  /about  #
-contributors  /contributor-license-agreement  #
-contributors/faq  /contributor-license-agreement  #
+contributors  http://www.ubuntu.com/legal/contributors  #
+contributors/faq  http://www.ubuntu.com/legal/contributors/licence-agreement-faq  #
+contributor-license-agreement  http://www.ubuntu.com/legal/contributors  #
+contributor-license-agreement/  http://www.ubuntu.com/legal/contributors  #
+contributor-license-agreement/submit  http://www.ubuntu.com/legal/contributors/submit  #
+contributor-license-agreement/thank-you  http://www.ubuntu.com/legal/contributors/submit  #
 employment/HowToApply  /about  #
 employment/SSEBzr  /about  #
 employment/UOOM  /about  #
@@ -55,6 +61,7 @@ enterprise-services/support/server  /services  #
 enterprise-services/support/server/service-level-agreements  /services  #
 enterprise-services/support/server/support-life-cycles  /services  #
 enterprise-services/support/server/support-scope  /services  #
+enterprise-services/training  /services  #
 enterprise-services/ubuntu-advantage  /services  #
 enterprise-services/ubuntu-advantage/assurance  http://www.ubuntu.com/ua-assurance-terms  #
 enterprise-services/ubuntu-advantage/assurance-terms  /services  #
@@ -75,13 +82,13 @@ enterprise-services/ubuntu-advantage/support/technical-account-manager  /service
 enterprise-services/ubuntu-advantage/trial  /services  #
 hp  http://www.ubuntu.com/partners/hp  #
 intel  /partners  #
-intellectual-property-policy  /intellectual-property-rights-policy  #
+intellectual-property-policy  http://www.ubuntu.com/legal/terms-and-policies/intellectual-property-policy  #
 news/504Released  /terms-and-conditions  #
 partners/isv  http://www.ubuntu.com/partners/partner-programmes  #
 partners/oem  http://www.ubuntu.com/partners/partner-programmes  #
 projects/ubuntu/unr  /about  #
 ua-dell-tc  http://www.ubuntu.com/ua-dell-tc  #
-ua-servicedescription  http://www.ubuntu.com/ua-servicedescription  #
+ua-servicedescription  http://www.ubuntu.com/legal/ubuntu-advantage/service-description  #
 ubuntu-advantage-free-trial-landscape  http://insights.ubuntu.com/news/canonical-celebrates-new-ua-landscape-interface-with-ubuntu-advantage-free-trial-offer-2/  #
 vodafone  http://www.ubuntu.com/partner  #
 about-canonical/canonical-and-open-source  /projects  #
@@ -121,7 +128,7 @@ about-canonical/news-and-events/events/2013/08/05/live-events/debian-conference-
 about-canonical/news-and-events/events/2013/08/05/live-events/debian-conference-debconf13-2013/aboutus/privacypolicy  http://insights.ubuntu.com/events  #
 about-canonical/news-and-events/events/2013/08/14/live-events/dept-energy-los-alamos-national-labora  http://insights.ubuntu.com/events  #
 about-canonical/news-and-events/events/2013/08/14/live-events/dept-energy-los-alamos-national-labora/about-canonical  http://insights.ubuntu.com/events  #
-about-canonical/news-and-events/events/2013/08/14/live-events/dept-energy-los-alamos-national-labora/aboutus/privacypolicy  /privacy-policy  #
+about-canonical/news-and-events/events/2013/08/14/live-events/dept-energy-los-alamos-national-labora/aboutus/privacypolicy  http://www.ubuntu.com/legal/terms-and-policies/privacy-policy  #
 about-canonical/news-and-events/events/2013/08/26/live-events/dell-solutions-summit-dss-2013  http://insights.ubuntu.com/events  #
 about-canonical/news-and-events/events/2013/08/26/live-events/dell-solutions-summit-dss-2013/about-canonical  http://insights.ubuntu.com/events  #
 about-canonical/news-and-events/events/2013/08/26/live-events/dell-solutions-summit-dss-2013/aboutus/privacypolicy  http://insights.ubuntu.com/events  #
@@ -390,5 +397,13 @@ vodafone  http://www.ubuntu.com/partners  #
 contributors  /contributor-license-agreement  #
 contributors/faq  /contributor-license-agreement  #
 ua-dell-tc  http://www.ubuntu.com/ua-dell-tc  #
-ua-servicedescription  http://www.ubuntu.com/ua-servicedescription  #
-legal  /terms-and-conditions  #
+legal  http://ubuntu.com/legal  #
+partners/become-a-partner  /partners/contact-us  #
+terms-and-conditions/  http://www.ubuntu.com/legal/terms-and-policies/  #
+terms-and-conditions  http://www.ubuntu.com/legal/terms-and-policies/  #
+intellectual-property-rights-policy  http://www.ubuntu.com/legal/terms-and-policies/intellectual-property-policy  #
+intellectual-property-rights-policy/  http://www.ubuntu.com/legal/terms-and-policies/intellectual-property-policy  #
+intellectual-property-rights-policy/contact-us  http://www.ubuntu.com/legal/terms-and-policies/contact-us  #
+intellectual-property-rights-policy/thank-you  http://www.ubuntu.com/legal/terms-and-policies/contact-us  #
+privacy-policy  http://www.ubuntu.com/legal/terms-and-policies/privacy-policy  #
+privacy-policy/  http://www.ubuntu.com/legal/terms-and-policies/privacy-policy  #

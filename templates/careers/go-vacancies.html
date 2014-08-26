@@ -1,0 +1,84 @@
+{% extends "careers/base_careers.html" %}
+
+{% block title %}Canonical | Careers | Go vacancies{% endblock %}
+{% block meta_description %}Current vacancies for Go experts to work in our cloud development teams, primarily on Juju, Ubuntu’s revolutionary service deployment and orchestration tool.{% endblock %}
+{% block meta_keywords %}Canonical, Ubuntu, cloud, job, career, work, vacancy, vacancies, London, Taipei, Montreal, Boston, Shanghai, work from home, working from home, Go language, GopherCon, Juju{% endblock %}
+{% block head_extra %}
+	<script src="//www.google.com/jsapi"></script>
+	<script>google.load("feeds", "1");</script>
+{% endblock %}
+
+{% block content %}
+<div class="row row-hero">
+	<div class="inner-wrapper">
+		<div class="six-col">
+			<h1>All Go vacancies</h1>
+			<p>The Juju Engineering Team is responsible for turning our service orchestration strategy into reality &mdash; and we need more great Go engineers. These roles involve more than just coding, however. We need people who can solve complex problems, collaborate with a global community and work directly with our biggest clients. </p>
+			<p><a href="https://jujucharms.com" class="external">Try our GUI-based demo</a></p>
+			<p><a href="https://juju.ubuntu.com" class="external">Learn more about Juju</a></p>
+			<p><a href="https://code.launchpad.net/juju-core" class="external">Check out the code</a></p>
+		</div>
+		<div class="push-one five-col last-col">
+			<img src="/static/img/careers/gophercon/image-govacancies.svg" alt="Golang Gopher">
+		</div>
+	</div>
+</div>
+
+<div class="row strip strip-light">
+	<div class="inner-wrapper">
+		<div class="four-col profile">
+			<img class="portrait" itemprop="image" src="/static/img/careers/gophercon/image-dimiter.png" alt="Dimiter">
+			<ul class="personal-info">
+				<li class="name" itemprop="name">Dimiter</li>
+				<li class="role" itemprop="jobTitle">Software Engineer &dash; Juju Core</li>
+				<li class="location">Bulgaria</li>
+			</ul>
+		</div>
+		<div class="six-col last-col">
+			<blockquote class="pull-quote">
+				<p><span>“</span>One of the best things about Gophercon was hearing people ask about Juju. It must be the biggest Go&dash;based product outside Google.<span>”</span></p>
+			</blockquote>
+			<p class="question">What is your greatest accomplishment at Canonical?</p>
+			<p>Definitely my work on Juju &mdash; it&rsquo;s the reason I learned Go. I worked on the library that talks to the OpenStack API, Goose (Go OpenStack Exchange), to help implement OpenStack as a provider in Juju.</p>
+		</div>
+	</div>
+</div>
+
+<div class="strip row">
+	<div class="inner-wrapper">
+		<div class="eight-col">
+			<div class="spinner" id="spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+			<noscript><p>Please enable javascript to display this feed. Otherwise you can view <a href="https://tbe.taleo.net/CH03/ats/careers/searchResults.jsp?org=CANONICAL&cws=1&act=sort&sortColumn=2&sortColumn=0">all vacancies here</a>.</p></noscript>
+			<ul class="vacancies list with-total" id="job-feed"></ul>
+		</div>
+	</div>
+</div>
+
+<div class="row row-contextual-footer">
+	<div class="inner-wrapper vertical-divider">
+	    <div class="featured six-col">
+	        <h3><a href="https://tbe.taleo.net/CH03/ats/careers/jobSearch.jsp?org=CANONICAL&cws=1&rid=86">Search roles &rsaquo;</a></h3>
+	        <p>Search for vacant positions by location, department or by using keywords.</p>
+	    </div>
+	    <div class="three-col">
+	        <h3><a href="/careers/all-vacancies">View all roles &rsaquo;</a></h3>
+	        <p>We're always on the lookout for people with experience in open source software, the cloud or mobile devices.</p>
+	    </div>
+	    <div class="three-col last-col">
+	        <h3><a href="/careers">Working at Canonical &rsaquo;</a></h3>
+	        <p>Whether you&rsquo;re a designer, a technologist or a business professional, Canonical is an incredible place to work. </p>
+	    </div>
+	</div>
+</div><!-- /.row -->
+
+<script type="text/javascript">
+	window.onload = function() {
+		core.rssLoader.getFeed("https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_1123=1372", 20, "job-feed", "Go");
+	}
+</script>
+
+{% endblock content %}

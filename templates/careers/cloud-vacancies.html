@@ -1,0 +1,83 @@
+{% extends "careers/base_careers.html" %}
+
+{% block title %}Canonical | Careers | Cloud vacancies{% endblock %}
+{% block meta_description %}Current vacancies for Go experts to work in our cloud development teams, primarily on Juju, Ubuntu’s revolutionary service deployment and orchestration tool.{% endblock %}
+{% block meta_keywords %}Canonical, Ubuntu,cloud, job, career, work, vacancy, vacancies, London, Taipei, Montreal, Boston, Shanghai, work from home, working from home{% endblock %}
+{% block head_extra %}
+	<script src="//www.google.com/jsapi"></script>
+	<script>google.load("feeds", "1");</script>
+{% endblock %}
+
+{% block content %}
+<div class="row row-hero">
+	<div class="inner-wrapper">
+		<div class="six-col">
+			<h1>All cloud vacancies</h1>
+			<p>No other operating system can compete with Ubuntu’s long history of integration with the open cloud – and we are always working to widen that lead. Our cloud teams work on MaaS, our provisioning software, and Juju, our service orchestration tool – not to mention OpenStack itself. 
+In short, we’re all about cloud. Are you?</p>
+			<p><a href="http://www.ubuntu.com/cloud" class="external">More about our cloud products</a></p>
+		</div>
+		<div class="six-col last-col text-center">
+			<img src="/static/img/careers/cloud/image-cloudvacancies.svg" width="350" alt="Cloud">
+		</div>
+	</div>
+</div>
+
+<div class="row strip strip-light">
+	<div class="inner-wrapper">
+		<div class="four-col profile">
+			<img class="portrait" itemprop="image" src="/static/img/careers/cloud/image-jeff.png" alt="Jeff">
+			<ul class="personal-info">
+				<li class="name" itemprop="name">Jeff</li>
+				<li class="role" itemprop="jobTitle">Server Certification Engineer</li>
+				<li class="location">USA</li>
+			</ul>
+		</div>
+		<div class="six-col last-col">
+			<blockquote class="pull-quote">
+				<p><span>“</span>It’s about the awesome people I get to work with daily and the opportunity to directly affect the direction of Ubuntu.<span>”</span></p>
+			</blockquote>
+			<p class="question">What is your greatest accomplishment at Canonical?</p>
+			<p>Building the Server Certification Programme up from just a concept to a full, self&dash;sustaining programme.  Also designing most of the server test suite and applying that to the cloud.</p>
+		</div>
+	</div>
+</div>
+
+<div class="strip row">
+	<div class="inner-wrapper">
+		<div class="eight-col">
+			<div class="spinner" id="spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+			<noscript><p>Please enable javascript to display this feed. Otherwise you can view <a href="https://tbe.taleo.net/CH03/ats/careers/searchResults.jsp?org=CANONICAL&cws=1&act=sort&sortColumn=2&sortColumn=0">all vacancies here</a>.</p></noscript>
+			<ul class="vacancies list with-total" id="job-feed"></ul>
+		</div>
+	</div>
+</div>
+
+<div class="row row-contextual-footer">
+	<div class="inner-wrapper vertical-divider">
+	    <div class="featured six-col">
+	        <h3><a href="https://tbe.taleo.net/CH03/ats/careers/jobSearch.jsp?org=CANONICAL&cws=1&rid=86">Search roles &rsaquo;</a></h3>
+	        <p>Search for vacant positions by location, department or by using keywords.</p>
+	    </div>
+	    <div class="three-col">
+	        <h3><a href="/careers/all-vacancies">View all roles &rsaquo;</a></h3>
+	        <p>We're always on the lookout for people with experience in open source software, the cloud or mobile devices.</p>
+	    </div>
+	    <div class="three-col last-col">
+	        <h3><a href="/careers">Working at Canonical &rsaquo;</a></h3>
+	        <p>Whether you&rsquo;re a designer, a technologist or a business professional, Canonical is an incredible place to work. </p>
+	    </div>
+	</div>
+</div><!-- /.row -->
+
+<script type="text/javascript">
+	window.onload = function() {
+		core.rssLoader.getFeed("https://ch.tbe.taleo.net/CH03/ats/servlet/Rss?org=CANONICAL&cws=1&WebPage=SRCHR&WebVersion=0&_rss_version=2&CUSTOM_1123=1371", 20, "job-feed", 'cloud');
+	}
+</script>
+
+{% endblock content %}
