@@ -1,0 +1,7 @@
+.git/
+*.pyc
+db.sqlite3
+env
+.sass-cache
+templates/static/css/styles.css
+*.pid
