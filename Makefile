@@ -46,13 +46,13 @@ dev-server:
 # Run SASS watcher
 ##
 sass-watch:
-	sass --debug-info --watch templates/static/css/styles.scss &
+	sass --debug-info --watch static/css/styles.scss &
 
 ##
 # Build SASS
 ##
 sass-build:
-	sass --style compressed --update templates/static/css/styles.scss
+	sass --style compressed --update static/css/styles.scss
 
 ##
 # Get virtualenv ready
