@@ -1,4 +1,3 @@
--r base.txt
-git+ssh://git@bitbucket.org/nottrobin/fenchurch.git@v0.1
+-r standard.txt
 django-extensions
 werkzeug
