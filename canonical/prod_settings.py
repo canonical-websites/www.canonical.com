@@ -89,4 +89,4 @@ INSTALLED_APPS = (
 )
 TEMPLATE_DIRS = (BASE_DIR + "/templates")
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(TEMPLATE_DIRS, "static"), )
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
