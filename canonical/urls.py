@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 # Standard patterns
 urlpatterns = patterns(
     '',
-    url(r'^(?P<template>.*)$', TemplateFinder.as_view()),  # Fenchurch
+    url(r'^(?P<template>.*)/?$', TemplateFinder.as_view()),  # Fenchurch
 )
 
 # Static files
