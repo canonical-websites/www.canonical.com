@@ -5,3 +5,4 @@ env
 .sass-cache
 templates/static/css/styles.css
 *.pid
+*.css.map
