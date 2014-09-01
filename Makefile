@@ -95,6 +95,12 @@ brew-dependencies:
 	if [ ! $$(command -v pip) ]; then sudo easy_install pip; fi
 	if [ ! $$(command -v sass) ]; then sudo gem install sass; fi
 
+##
+# Delete any generated files
+##
+clean:
+	rm -rf env .sass-cache static/css/styles.css
+
 update-templates:
 	rm -rf templates static
 	bzr branch lp:canonical-website-content templates
