@@ -19,6 +19,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',  # Needed for STATICFILES_DIRS to work
 )
 
+DEBUG = True
 ROOT_URLCONF = 'canonical.urls'
 WSGI_APPLICATION = 'canonical.wsgi.application'
 LANGUAGE_CODE = 'en-us'
