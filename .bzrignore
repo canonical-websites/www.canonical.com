@@ -1,4 +1,5 @@
 .git/
+*.css
 *.pyc
 db.sqlite3
 env
