@@ -99,7 +99,8 @@ brew-dependencies:
 # Delete any generated files
 ##
 clean:
-	rm -rf env .sass-cache static/css/styles.css
+	rm -rf env .sass-cache
+	find static/css -name '*.css*' -exec rm {} +  # Remove any .css files - should only be .sass files
 
 update-templates:
 	rm -rf templates static
@@ -108,10 +109,14 @@ update-templates:
 
 	mv ./templates/static .
 
-	# Remove references to scss module
-	find templates -type f -name '*.html' | xargs sed -i '/^ *[{][%] load scss [%][}] *$$/d'
-	find templates -type f -name '*.html' | xargs sed -i 's/[{][%]\s*scss\s\+["]\([^"]\+\).scss["]\s*[%][}]/\1.css/g'
-	find static/css -type f -name '*.scss' | xargs sed -i 's/[%][%]/%/g'
+	# Templates
+	find templates -type f -name '*.html' | xargs sed -i '/^ *[{][%] load scss [%][}] *$$/d'  # Remove references to scss module
+	find templates -type f -name '*.html' | xargs sed -i 's/[{][%]\s*scss\s\+["]\([^"]\+\).scss["]\s*[%][}]/\1.css/g'  # Point directly to CSS files
+
+	# Sass fixes
+	find static/css -name '*.css*' -exec rm {} +  # Remove any .css files - should only be .sass files
+	find static/css -name '*.scss' -not -regex '.*/\(styles.scss\|core-print.scss\|ie/.*\)' | rename 's/(.*\/)?([^\/]*)/$1_$2/'  # Rename .scss include files to have underscores
+	find static/css -type f -name '*.scss' | xargs sed -i 's/[%][%]/%/g'  # Remove double %s
 
 # The below targets
 # are just there to allow you to type "make it so"
