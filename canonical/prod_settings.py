@@ -14,7 +14,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # Keep it secret, keep it safe!
 SECRET_KEY = 'o@kjnphb9#+3fl80i#$v$+0la3u^atow)b33h*bafbcwir0w04'
 
-INSTALLED_APPS = ('django.contrib.staticfiles',)
+INSTALLED_APPS = (
+    'django.contrib.staticfiles',  # Needed for STATIC_URL to work
+)
 
 ROOT_URLCONF = 'canonical.urls'
 WSGI_APPLICATION = 'canonical.wsgi.application'
