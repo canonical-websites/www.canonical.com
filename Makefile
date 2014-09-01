@@ -46,13 +46,13 @@ dev-server:
 # Run SASS watcher
 ##
 sass-watch:
-	sass --debug-info --watch templates/static/css/styles.scss &
+	sass --debug-info --watch static/css/styles.scss &
 
 ##
 # Build SASS
 ##
 sass-build:
-	sass --style compressed --update templates/static/css/styles.scss
+	sass --style compressed --update static/css/styles.scss
 
 ##
 # Get virtualenv ready
@@ -96,14 +96,16 @@ brew-dependencies:
 	if [ ! $$(command -v sass) ]; then sudo gem install sass; fi
 
 update-templates:
-	rm -rf templates
+	rm -rf templates static
 	bzr branch lp:canonical-website-content templates
 	rm -rf templates/.bzr*
+
+	mv ./templates/static .
 
 	# Remove references to scss module
 	find templates -type f -name '*.html' | xargs sed -i '/^ *[{][%] load scss [%][}] *$$/d'
 	find templates -type f -name '*.html' | xargs sed -i 's/[{][%]\s*scss\s\+["]\([^"]\+\).scss["]\s*[%][}]/\1.css/g'
-	find templates/static/css -type f -name '*.scss' | xargs sed -i 's/[%][%]/%/g'
+	find static/css -type f -name '*.scss' | xargs sed -i 's/[%][%]/%/g'
 
 # The below targets
 # are just there to allow you to type "make it so"

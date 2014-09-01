@@ -27,9 +27,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-TEMPLATE_DIRS = (BASE_DIR + "/templates")
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(TEMPLATE_DIRS, "static"), )
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, "templates")]
 
 # See http://tinyurl.com/django-context-processors
 TEMPLATE_CONTEXT_PROCESSORS = (
