@@ -29,7 +29,7 @@ help:
 ##
 # Start the development server
 ##
-develop: sass-watch dev-server
+develop: watch-sass dev-server
 
 ##
 # Prepare the project
@@ -45,7 +45,7 @@ dev-server:
 ##
 # Run SASS watcher
 ##
-sass-watch:
+watch-sass:
 	sass --debug-info --watch static/css/ &
 
 ##
@@ -115,8 +115,10 @@ update-templates:
 
 	# Sass fixes
 	find static/css -name '*.css*' -exec rm {} +  # Remove any .css files - should only be .sass files
-	find static/css -name '*.scss' -not -regex '.*/\(styles.scss\|core-print.scss\|ie/.*\)' | rename 's/(.*\/)?([^\/]*)/$1_$2/'  # Rename .scss include files to have underscores
+	find static/css -name '*.scss' -not -regex '.*/\(styles.scss\|core-print.scss\|ie/.*\)' | rename 's/(.*\/)?([^\/]*)/$$1_$$2/'  # Rename .scss include files to have underscores
 	find static/css -type f -name '*.scss' | xargs sed -i 's/[%][%]/%/g'  # Remove double %s
+
+	$(MAKE) sass  # Update local CSS files
 
 # The below targets
 # are just there to allow you to type "make it so"
