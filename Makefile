@@ -102,6 +102,20 @@ clean:
 	rm -rf env .sass-cache
 	find static/css -name '*.css*' -exec rm {} +  # Remove any .css files - should only be .sass files
 
+##
+# Rebuild the pip requirements cache, for non-internet-visible builds
+##
+rebuild-dependencies-cache:
+	rm -rf pip-cache
+	mkdir pip-cache
+	cd pip-cache && bzr init
+	# bzr branch lp:~webteam-backend/ubuntu-website/dependencies pip-cache
+	pip install --exists-action=w --download pip-cache/ -r requirements/standard.txt
+	cd pip-cache && bzr add .
+	bzr commit pip-cache/ -m 'automatically updated ubuntu website requirements'
+	bzr push --directory pip-cache lp:~webteam-backend/canonical-website/dependencies
+	rm -rf pip-cache src
+
 update-templates:
 	rm -rf templates static
 	bzr branch lp:canonical-website-content templates
@@ -110,6 +124,7 @@ update-templates:
 	mv ./templates/static .
 
 	# Templates
+	rm "static/img/icons/ .desktop"
 	find templates -type f -name '*.html' | xargs sed -i '/^ *[{][%] load scss [%][}] *$$/d'  # Remove references to scss module
 	find templates -type f -name '*.html' | xargs sed -i 's/[{][%]\s*scss\s\+["]\([^"]\+\).scss["]\s*[%][}]/\1.css/g'  # Point directly to CSS files
 
