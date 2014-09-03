@@ -32,6 +32,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, "templates")]
 
 # See http://tinyurl.com/django-context-processors
-TEMPLATE_CONTEXT_PROCESSORS = (
+TEMPLATE_CONTEXT_PROCESSORS = [
     "django.core.context_processors.static",  # Provides STATIC_URL
-)
+    "assets_template_context.asset_server_url",  # {{ ASSET_SERVER_URL }}
+]
