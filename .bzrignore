@@ -8,3 +8,4 @@ templates/static/css/styles.css
 *.pid
 *.css.map
 src/
+bzr-repo/
