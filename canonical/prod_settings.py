@@ -15,9 +15,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'o@kjnphb9#+3fl80i#$v$+0la3u^atow)b33h*bafbcwir0w04'
 
 # See https://docs.djangoproject.com/en/dev/ref/contrib/
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.staticfiles',  # Needed for STATICFILES_DIRS to work
-)
+    'template_extensions'
+]
+
+MIDDLEWARE_CLASSES = []
 
 DEBUG = True
 ROOT_URLCONF = 'canonical.urls'
@@ -34,5 +37,5 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, "templates")]
 # See http://tinyurl.com/django-context-processors
 TEMPLATE_CONTEXT_PROCESSORS = [
     "django.core.context_processors.static",  # Provides STATIC_URL
-    "assets_template_context.asset_server_url",  # {{ ASSET_SERVER_URL }}
+    "template_extensions.asset_server_url",  # {{ ASSET_SERVER_URL }}
 ]
