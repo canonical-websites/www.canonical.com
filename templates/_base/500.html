@@ -1,6 +1,6 @@
-{% extends "templates/base.html" %}
+{% extends "_base/base.html" %}
 
-{% block title %}Canonical | Page not found{% endblock %}
+{% block title %}Canonical | Server error{% endblock %}
 
 {% block extra_body_class %}error404{% endblock %}
 
@@ -11,12 +11,12 @@
 	<div class="inner-wrapper">
 		<div class="six-col">
 			<img src="{{ STATIC_URL }}img/image-404.svg" alt="Error owl" />
+			</div>
+			<div class="six-col last-col">
+				<h1>500: Server error.</h1>
+				<p>Sorry for the inconvenience, please pop back soon.</p>
+			</div>
 		</div>
-		<div class="six-col last-col">
-			<h1>404: Page not found.</h1>
-			<p class="intro">Sorry, we couldn&rsquo;t find that page.</p>
-		</div>
-	</div>
 </div><!-- / .row -->
 {% endblock %}
 {% block content %}
