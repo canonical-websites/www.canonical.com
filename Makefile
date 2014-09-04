@@ -121,19 +121,39 @@ update-templates:
 	bzr branch lp:canonical-website-content templates
 	rm -rf templates/.bzr*
 
-	mv ./templates/static .
+	mv ./templates/redirects.txt .  # Put redirects in the project root
+
+	mv ./templates/static .  # Put static folder in a nicer place
 
 	# Templates
+	# ==
+	# Remove silly files
 	rm "static/img/icons/ .desktop"
-	find templates -type f -name '*.html' | xargs sed -i '/^ *[{][%] load scss [%][}] *$$/d'  # Remove references to scss module
-	find templates -type f -name '*.html' | xargs sed -i 's/[{][%]\s*scss\s\+["]\([^"]\+\).scss["]\s*[%][}]/\1.css/g'  # Point directly to CSS files
+	# Rename that bloody templates dir
+	mv templates/templates templates/_base
+	# Rename "shared" dirs to "_includes"
+	find templates -type d -name shared | rename 's/shared/_includes/'
+	# Remove references to scss module
+	find templates -type f -name '*.html' | xargs sed -i '/^ *[{][%] load scss [%][}] *$$/d'
+	# Point directly to CSS files
+	find templates -type f -name '*.html' | xargs sed -i 's/[{][%]\s*scss\s\+["]\([^"]\+\).scss["]\s*[%][}]/\1.css/g'
+	# Replace any reference to shared with _includes
+	find templates/* -type f -name '*.html' | xargs sed -i "s/[{][%]\s\+\(extends\|include\|with\)\s\+[\"']\([^\"']+[/]\)\?shared[/]/{% \1 \"\2_includes\//g"
+	# Replace any reference to templates with _base
+	find templates/* -type f -name '*.html' | xargs sed -i "s/[{][%]\s\+\(extends\|include\|with\)\s\+[\"']\([^\"']+[/]\)\?templates[/]/{% \1 \"\2_base\//g"
 
 	# Sass fixes
-	find static/css -name '*.css*' -exec rm {} +  # Remove any .css files - should only be .sass files
-	find static/css -name '*.scss' -not -regex '.*/\(styles.scss\|core-print.scss\|ie/.*\)' | rename 's/(.*\/)?([^\/]*)/$$1_$$2/'  # Rename .scss include files to have underscores
-	find static/css -type f -name '*.scss' | xargs sed -i 's/[%][%]/%/g'  # Remove double %s
-
-	$(MAKE) sass  # Update local CSS files
+	# ==
+	# Add "core-constants" to IE6 styles
+	echo -e "@import \"../core-constants\";\n" | cat - static/css/ie/ie6.scss > /tmp/out && mv /tmp/out static/css/ie/ie6.scss
+	# Remove any .css files - should only be .sass files
+	find static/css -name '*.css*' -exec rm {} +
+	# Rename .scss include files to have underscores
+	find static/css -name '*.scss' -not -regex '.*/\(styles.scss\|core-print.scss\|ie/.*\)' | rename 's/(.*\/)?([^\/]*)/$$1_$$2/'
+	# Remove double %s
+	find static/css -type f -name '*.scss' | xargs sed -i 's/[%][%]/%/g'
+	# Update local CSS files
+	$(MAKE) sass
 
 # The below targets
 # are just there to allow you to type "make it so"
