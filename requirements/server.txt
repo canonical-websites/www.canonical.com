@@ -1,2 +1,2 @@
--r base.txt
+-r standard.txt
 fenchurch==0.1
