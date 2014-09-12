@@ -116,6 +116,11 @@ rebuild-dependencies-cache:
 	bzr push --directory pip-cache lp:~webteam-backend/canonical-website/dependencies
 	rm -rf pip-cache src
 
+dokku-start: sass run-gunicorn
+
+run-gunicorn:
+	gunicorn canonical.wsgi
+
 update-templates:
 	rm -rf templates static
 	bzr branch lp:canonical-website-content templates
