@@ -1,1 +1,1 @@
-requirements/standard.txt
+-r requirements/standard.txt
