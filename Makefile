@@ -116,6 +116,17 @@ rebuild-dependencies-cache:
 	bzr push --directory pip-cache lp:~webteam-backend/canonical-website/dependencies
 	rm -rf pip-cache src
 
+##
+# For dokku - build sass and run gunicorn
+##
+dokku-start: sass run-gunicorn
+
+##
+# Run the gunicorn app
+##
+run-gunicorn:
+	gunicorn canonical.wsgi
+
 update-templates:
 	rm -rf templates static
 	bzr branch lp:canonical-website-content templates
@@ -154,6 +165,10 @@ update-templates:
 	find static/css -type f -name '*.scss' | xargs sed -i 's/[%][%]/%/g'
 	# Update local CSS files
 	$(MAKE) sass
+
+update-bzr-repo:
+	-bzr init-repo bzr-repo
+	git fast-export -M --all | (cd bzr-repo; bzr fast-import -)
 
 # The below targets
 # are just there to allow you to type "make it so"
