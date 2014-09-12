@@ -1,1 +1,1 @@
--r requirements/standard.txt
+-r requirements/dokku.txt

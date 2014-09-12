@@ -1,1 +1,1 @@
-web: gunicorn canonical.wsgi
+web: make dokku-start
