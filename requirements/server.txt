@@ -1,2 +1,3 @@
 -r base.txt
 fenchurch==0.1
+django-template-extensions
