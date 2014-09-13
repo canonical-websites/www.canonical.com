@@ -23,8 +23,8 @@ INSTALLED_APPS = [
 MIDDLEWARE_CLASSES = []
 
 DEBUG = True
-ROOT_URLCONF = 'canonical.urls'
-WSGI_APPLICATION = 'canonical.wsgi.application'
+ROOT_URLCONF = 'webapp.urls'
+WSGI_APPLICATION = 'webapp.wsgi.application'
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True

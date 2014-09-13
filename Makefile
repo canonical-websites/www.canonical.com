@@ -125,7 +125,7 @@ dokku-start: sass run-gunicorn
 # Run the gunicorn app
 ##
 run-gunicorn:
-	gunicorn canonical.wsgi
+	gunicorn webapp.wsgi
 
 update-templates:
 	rm -rf templates static
