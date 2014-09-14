@@ -15,23 +15,24 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'o@kjnphb9#+3fl80i#$v$+0la3u^atow)b33h*bafbcwir0w04'
 
 # See https://docs.djangoproject.com/en/dev/ref/contrib/
-INSTALLED_APPS = [
-    'django.contrib.staticfiles',  # Needed for STATICFILES_DIRS to work
-    'template_extensions'
+INSTALLED_APPS = ['template_extensions']
+
+ALLOWED_HOSTS = [
+    '0.0.0.0', '127.0.0.1', 'localhost',
+    '*.ubuntu.qa', '*.ubuntu.com', 'ubuntu.com'
 ]
 
 MIDDLEWARE_CLASSES = []
 
-DEBUG = True
 ROOT_URLCONF = 'webapp.urls'
 WSGI_APPLICATION = 'webapp.wsgi.application'
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
-USE_I18N = True
+USE_I18N = False
 USE_L10N = True
 USE_TZ = True
+STATIC_ROOT = "static"
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, "templates")]
 
 # See http://tinyurl.com/django-context-processors
