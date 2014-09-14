@@ -31,9 +31,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = False
 USE_L10N = True
 USE_TZ = True
-STATIC_ROOT = "static"
+STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
-STATICFILES_FINDERS = []
+STATICFILES_FINDERS = ['template_extensions.finders.RootFileFinder']
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, "templates")]
 
 # See http://tinyurl.com/django-context-processors
