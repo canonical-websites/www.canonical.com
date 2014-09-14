@@ -7,6 +7,7 @@ DEBUG = True
 # For some reason, django.contrib.staticfiles.views.serve()
 # doesn't work with only STATIC_ROOT set,
 # even though it's supposed to
-# https://docs.djangoproject.com/en/dev/howto/static-files/
+# see: https://docs.djangoproject.com/en/dev/howto/static-files/#serving-static-files-during-development
+STATICFILES_FINDERS += ['django.contrib.staticfiles.finders.FileSystemFinder']
 STATICFILES_DIRS = [os.path.join(BASE_DIR, STATIC_ROOT)]
 STATIC_ROOT = ''
