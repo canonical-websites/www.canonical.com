@@ -16,8 +16,13 @@ endef
 
 ENVPATH=${VIRTUAL_ENV}
 VEX=vex --path ${ENVPATH}
+
 ifeq ($(ENVPATH),)
 	ENVPATH=env
+endif
+
+ifeq ($(PORT),)
+	PORT=8002
 endif
 
 ##
@@ -40,7 +45,7 @@ setup: install-dependencies update-env
 # Run server
 ##
 dev-server:
-	${VEX} ./manage.py runserver_plus 0.0.0.0:8000
+	${VEX} ./manage.py runserver_plus 0.0.0.0:${PORT}
 
 ##
 # Run SASS watcher
