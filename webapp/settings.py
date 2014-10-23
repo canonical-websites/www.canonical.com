@@ -41,3 +41,27 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.core.context_processors.static",  # Provides STATIC_URL
     "django_asset_server_url.asset_server_url",  # {{ ASSET_SERVER_URL }}
 ]
+
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'error_file': {
+            'level': 'WARNING',
+            'filename': os.path.join(BASE_DIR, 'django-error.log'),
+            'class':'logging.handlers.RotatingFileHandler',
+            'maxBytes': 1 * 1024 * 1024,
+            'backupCount': 2
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['error_file'],
+            'level': 'WARNING',
+            'propagate': True
+        }
+    }
+}
