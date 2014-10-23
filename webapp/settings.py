@@ -17,10 +17,7 @@ SECRET_KEY = 's0l40(!bw*+8@d-47(q@__qe9^ha1j1kh0rn4r)c#uvs0vmeyr'
 # See https://docs.djangoproject.com/en/dev/ref/contrib/
 INSTALLED_APPS = ['django_versioned_static_url']
 
-ALLOWED_HOSTS = [
-    '0.0.0.0', '127.0.0.1', 'localhost',
-    '*.ubuntu.qa', '*.ubuntu.com', 'ubuntu.com'
-]
+ALLOWED_HOSTS = ['*']
 
 MIDDLEWARE_CLASSES = []
 
