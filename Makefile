@@ -6,7 +6,7 @@ Canonical.com website project
 
 Usage:
 
-> make setup    # Install dependencies
+> make setup    # Install dependencies & setup environment
 > make develop  # Auto-compile sass files and run the dev server
 
 endef
@@ -31,10 +31,15 @@ endif
 help:
 	$(info ${HELP_TEXT})
 
+clean:
+	rm -rf pip-cache
+
 ##
 # Start the development server
 ##
-develop: watch-sass dev-server
+develop:
+	$(MAKE) watch-sass &
+	$(MAKE) dev-server
 
 ##
 # Prepare the project
@@ -51,13 +56,13 @@ dev-server:
 # Run SASS watcher
 ##
 watch-sass:
-	sass --debug-info --watch static/css/ &
+	sass --debug-info --watch static/css/
 
 ##
 # Build SASS
 ##
 sass:
-	sass --style compressed --update static/css/
+	sass --force --style compressed --update static/css/
 
 ##
 # Get virtualenv ready
@@ -101,20 +106,24 @@ brew-dependencies:
 	if [ ! $$(command -v sass) ]; then sudo gem install sass; fi
 
 ##
-# Delete any generated files
+# Delete any generated files that effect the site
 ##
 clean:
 	rm -rf env .sass-cache
 	find static/css -name '*.css*' -exec rm {} +  # Remove any .css files - should only be .sass files
 
 ##
+# Also delete pip-cache
+##
+clean-all: clean
+	rm -rf pip-cache
+
+##
 # Rebuild the pip requirements cache, for non-internet-visible builds
 ##
 rebuild-dependencies-cache:
 	rm -rf pip-cache
-	mkdir pip-cache
-	cd pip-cache && bzr init
-	# bzr branch lp:~webteam-backend/ubuntu-website/dependencies pip-cache
+	bzr branch lp:~webteam-backend/ubuntu-website/dependencies pip-cache
 	pip install --exists-action=w --download pip-cache/ -r requirements/standard.txt
 	cd pip-cache && bzr add .
 	bzr commit pip-cache/ -m 'automatically updated ubuntu website requirements'
@@ -177,10 +186,10 @@ update-bzr-repo:
 
 # The below targets
 # are just there to allow you to type "make it so"
-# as a replacement for "make" or "make develop"
+# as a replacement for "make develop"
 # - Thanks to https://directory.canonical.com/list/ircnick/deadlight/
 
 it:
-	# Nothing
+	$(MAKE) watch-sass &
 
-so: develop
+so: dev-server
