@@ -1,4 +1,10 @@
 @charset "UTF-8";
+
+// Import the framework
+@import '../../node_modules/vanilla-framework/scss/vanilla';
+// Run the framework
+@include vanilla;
+
 /* ---------------------------------------------------------------
 ------------------------------------------------------------------
 	DO NOT EDIT STYLES.CSS
