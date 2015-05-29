@@ -10,7 +10,7 @@
 		<h1 class="twelve-col">We partner with industry leaders</h1>
 		<div class="nine-col">
 			<p class="intro">At Canonical, we provide the services our partners need to ensure their hardware and software works optimally with the Ubuntu platform. This means working with OEMs, ODMs, ISVs and IHVs, delivering the software and services to complement their core competencies in design, manufacture and distribution. We help our partners deliver their products without the cost and complexity of operating system development, software engineering or global content distribution agreements.</p>
-			<p class="intro"><a href="http://www.ubuntu.com/partners" class="external">Learn more on ubuntu.com</a></p>
+			<p class="intro"><a href="http://partners.ubuntu.com" class="external">Learn more on partners.ubuntu.com</a></p>
 		</div>
 	</div>
 </div><!-- /.row -->
@@ -30,22 +30,19 @@
 		<div class="six-col">
 			<p class="no-margin-bottom">We also certify Ubuntu as a guest OS on public clouds. Our Certified Public Cloud program gives public cloud providers an optimised Ubuntu image to offer on their platforms, and includes options for Canonical support agreements for the cloud users. It&rsquo;s a complete package which provides a consistent, reliable Ubuntu experience to public cloud users.</p>
 		</div>
+		<div class="six-col">
+			<p><a href="http://partners.ubuntu.com/find-a-partner?Technology=Cloud/server" class="external">Browse all cloud partners</a></p>
+		</div>
 	</div><!-- /.row -->
 </div>
 
 <div class="row row-companies">
 	<div class="inner-wrapper">
-		<h2 class="muted-heading">A selection of our cloud partners</h2>
-		<ul class="no-bullets">
-			<li><img src="{{ STATIC_URL }}img/logos/logo-hp-cloud-services.png" alt="HP cloud services" /></li>
-			<li><img src="{{ STATIC_URL }}img/logos/logo-windows-azure.png" alt="Windows azure" /></li>
-			<li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-joyent.png" alt="Joyent" /></li>
-			<li><img src="{{ STATIC_URL }}img/logos/logo-vmware.png" alt="VMWare" /></li>
-			<li><img src="{{ STATIC_URL }}img/logos/logo-inktank.png" alt="Inktank" /></li>
-			<li><img src="{{ STATIC_URL }}img/logos/logo-emc.png" alt="EMC" /></li>
-			<li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-fusion-io.png" alt="Fusion IO" /></li>
-			<li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-amd.png" alt="AMD" /></li>
-		</ul>
+		<div class="box-white twelve-col">
+			<h2 class="muted-heading">A selection of our cloud partners</h2>
+			<ul class="inline-logos no-bullets clear list-auto" id="cloud-logos"></ul>
+			<p class="align-center"><a href="http://partners.ubuntu.com/find-a-partner?technology=cloud/server" class="external">Browse all cloud partners</a></p>
+		</div>
 	</div>
 </div><!-- /.row -->
 
@@ -65,23 +62,18 @@
 		</div>
 		<div class="five-col last-col">
 			<p>Thanks to Canonical&rsquo;s hardware enablement partnerships, Ubuntu is now pre-installed on laptops and desktops from the world&rsquo;s top brands in all major global markets. Ubuntu is also coming to the smartphone, with the specific needs of network operators, OEMs and ODMs in mind. It offers great performance on handsets with a low bill of materials, while opening up new opportunities for phone and PC convergence at the top end of the market.</p>
-			<p><a href="http://www.ubuntu.com/partners/find-a-partner/hardware" class="external">See all our hardware partners</a></p>
+			<p><a href="http://partners.ubuntu.com/find-a-partner?programme=technical-partner-programme" class="external">See all our hardware partners</a></p>
 		</div>
 	</div><!-- /.row -->
 </div>
 
 <div class="row row-companies">
 	<div class="inner-wrapper">
-		<h2 class="muted-heading">A selection of our client partners</h2>
-		<ul class="no-bullets">
-			<li><img src="{{ STATIC_URL }}img/logos/logo-dell.png" alt="Dell" /></li>
-			<li><img src="{{ STATIC_URL }}img/logos/logo-asus.png" alt="Asus" /></li>
-			<li><img src="{{ STATIC_URL }}img/logos/logo-lenovo.png" alt="Lenovo" /></li>
-			<li class="last-item"><img src="{{ STATIC_URL }}img/logos/logo-hp.png" alt="HP" /></li>
-			<li><img src="{{ STATIC_URL }}img/logos/logo-steam.png" alt="Steam" /></li>
-			<li><img src="{{ STATIC_URL }}img/logos/logo-arm.png" alt="ARM" /></li>
-			<li><img src="{{ STATIC_URL }}img/logos/logo-intel.png" alt="Intel" /></li>
-		</ul>
+		<div class="box-white twelve-col">
+			<h2 class="muted-heading">A selection of our client partners</h2>
+			<ul class="inline-logos no-bullets clear list-auto" id="client-logos"></ul>
+			<p class="align-center"><a href="http://partners.ubuntu.com/find-a-partner?technology=personal-computing/devices" class="external align-center">Browse all client partners</a></p>
+		</div>
 	</div>
 </div><!-- /.row -->
 
@@ -129,8 +121,8 @@
 			<p>Interested in becoming a partner? Talk to us today for more information about our services and certification.</p>
 		</div>
 		<div class="three-col">
-			<h3><a href="http://www.ubuntu.com/partners" class="external">Learn more about partners</a></h3>
-			<p>On ubuntu.com, you will find more information about hardware, software, cloud and reseller partners.</p>
+			<h3><a href="http://partners.ubuntu.com" class="external">Learn more about partners</a></h3>
+			<p>On partners.ubuntu.com, you'll find more information about hardware, software, cloud and reseller partners.</p>
 		</div>
 		<div class="three-col last-col">
 			<h3><a href="/services/contact-us">Contact us about Ubuntu Advantage&nbsp;&rsaquo;</a></h3>
@@ -139,3 +131,16 @@
 	</div>
 </div>
 {% endblock content %}
+
+{% block footer_extra %}
+
+<script>
+	YUI().use('event-base', function (Y) {
+		Y.on('domready', function () {
+			core.loadPartners('?technology__name=Cloud/server&featured=true', '#cloud-logos');
+			core.loadPartners('?programme__name=Technical Partner Programme', '#client-logos');
+		});
+	});
+</script>
+
+{% endblock %}

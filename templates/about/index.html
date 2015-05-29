@@ -318,6 +318,15 @@ function initialize() {
 				'Isle of Man  <br />' +
 				'IM1 1SB</p>'
 	});
+	var japanInfo = new google.maps.InfoWindow({
+	    content: '<h2>Tokyo, Japan</h2>' +
+				'<p>Canonical Limited  <br />' +
+				'Level 21, Shiodome Shibarikyu Building  <br />' +
+				'1-2-3 Kalgan  <br />' +
+				'Minato-ku  <br />' +
+				'Tokyo 105-0022 <br />' + 
+				'Japan </p>'
+	});
 
 
 	var london = new google.maps.Marker({
@@ -350,6 +359,11 @@ function initialize() {
 	    map: map,
 	    title:"Isle of Man"
 	});
+	var japan = new google.maps.Marker({
+	    position: new google.maps.LatLng(35.6472046,139.758064),
+	    map: map,
+	    title:"Japan"
+	});
 
 	google.maps.event.addListener(london, 'click', function() {
 		bostonInfo.close();
@@ -357,6 +371,7 @@ function initialize() {
 		beijingInfo.close();
 		taipeiInfo.close();
 		iomInfo.close();
+		japanInfo.close();
 	    londonInfo.open(map,london);
 	});
 	google.maps.event.addListener(boston, 'click', function() {
@@ -365,6 +380,7 @@ function initialize() {
 		beijingInfo.close();
 		taipeiInfo.close();
 		iomInfo.close();
+		japanInfo.close();
 	    bostonInfo.open(map,boston);
 	});
 	google.maps.event.addListener(shanghai, 'click', function() {
@@ -373,6 +389,7 @@ function initialize() {
 		beijingInfo.close();
 		taipeiInfo.close();
 		iomInfo.close();
+		japanInfo.close();
 	    shanghaiInfo.open(map,shanghai);
 	});
 	google.maps.event.addListener(beijing, 'click', function() {
@@ -381,6 +398,7 @@ function initialize() {
 		londonInfo.close();
 		taipeiInfo.close();
 		iomInfo.close();
+		japanInfo.close();
 	    beijingInfo.open(map,beijing);
 	});
 	google.maps.event.addListener(taipei, 'click', function() {
@@ -389,6 +407,7 @@ function initialize() {
 		beijingInfo.close();
 		londonInfo.close();
 		iomInfo.close();
+		japanInfo.close();
 	    taipeiInfo.open(map,taipei);
 	});
 	google.maps.event.addListener(iom, 'click', function() {
@@ -397,7 +416,17 @@ function initialize() {
 		beijingInfo.close();
 		taipeiInfo.close();
 		londonInfo.close();
+		japanInfo.close();
 	    iomInfo.open(map,iom);
+	});
+	google.maps.event.addListener(japan, 'click', function() {
+		bostonInfo.close();
+		shanghaiInfo.close();
+		beijingInfo.close();
+		taipeiInfo.close();
+		londonInfo.close();
+		iomInfo.close();
+	    japanInfo.open(map,japan);
 	});
 
 }

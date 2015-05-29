@@ -46,7 +46,8 @@
 
 <header class="banner global" role="banner">
 {% block header_banner %}
-	<nav role="navigation" class="nav-primary nav-right">
+	<nav role="navigation" class="nav-primary nav-right" id="nav">
+        <span id="main-navigation-link"><a href="#main-navigation">Jump to site nav</a></span>
 		<div class="logo">
 			<a class="logo-ubuntu" href="/">
 				<img width="139" height="19" src="{{ STATIC_URL }}img/logos/footer_logo.png" alt="Canonical logo for print" />
@@ -60,8 +61,11 @@
 			<li><a{% if level_1 == 'about' %} class="active"{% endif %} href="/about">About</a></li>
 			<li><a{% if level_1 == 'careers' %} class="active"{% endif %} href="/careers">Careers</a></li>
 		</ul>
-		<a href="#canonlist" class="nav-toggle no-script">☰</a>
 	</nav>
+    <div class="nav-toggle">
+        <a href="#nav" class="nav-toggle__link open"></a>
+        <a href="#" class="nav-toggle__link close"></a>
+    </div>
 {% endblock header_banner %}
 </header>
 <div class="wrapper">
