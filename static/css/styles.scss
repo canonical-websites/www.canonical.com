@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 // Import the framework
-@import '../../node_modules/vanilla-framework/scss/vanilla';
+@import '../../node_modules/canonical-vanilla-theme/scss/theme';
 // Run the framework
-@include vanilla;
+@include canonical-vanilla-theme;
 
 /* ---------------------------------------------------------------
 ------------------------------------------------------------------
@@ -25,9 +25,6 @@
 	@section Footer
 	@section Tabbed menu in accordion mode (TODO: WIP)
 	@section Taleo
-
-	@section Medium / Tablet viewport
-	@section Large / Desktop viewport
 
 	Rounded corners
 	-----------------------------------------------------------------
@@ -53,35 +50,6 @@
 	padding: $gutter_width;
 	width: $twelve_col - ( 2 * $gutter_width );
 
-	Colour definitiions are in /sites/core/static/core-constants.scss
-	-----------------------------------------------------------------
-	$ubuntu_orange:			#dd4814; ubuntu orange (used for text links also on any site except canonical)
-	$canonical_aubergine:	#772953; @warmcanonical aubergine
-	$light_aubergine:		#77216f; light aubergine (consumer)
-	$mid_aubergine:			#5e2750; mid aubergine (both)
-	$dark_aubergine:		#2c001e; dark aubergine (enterprise)
-	$warm_grey:				#aea79f; warm grey
-	$cool_grey:				#333333; cool grey
-	$light_grey:			#f7f7f7; light grey
-
-	Notifications
-	$error:					#df382c; red
-	$warning:				#eca918; yellow
-	$success:				#38b44a; green
-	$information:			#19b6ee; cyan
-
-	Colour coded status - from negative to positive (icon: canonical circle)
-	$status_red:			#df382c; red, for status that require immediate attention
-	$status_grey:			#aea79f; grey, for disabled status or ones that don’t require attention
-	$status_yellow:			#efb73e; yellow, for status that require attention
-	$status_blue:			#19b6ee; blue, for status that don’t require action
-	$status_green:			#38b44a; green, for positive status
-
-	misc colours
-	$box_solid_grey:		#efefef;
-
-	$link_color:			$ubuntu_orange; This is the global link color, mainly used for links in content
-
 	Notes:
 	-----------------------------------------------------------------
 	Using '.yui3-js-enabled' for CSS with JS enabled as it's there for free atm, be nice to have just js-enabled as a class.
@@ -97,18 +65,6 @@
   -o-background-size: $size;
   background-size: $size;
 }
-
-//$header_bg: $light_aubergine;
-//$header_bg: $mid_aubergine;
-$header_bg: $canonical_aubergine;
-//$header_bg: $ubuntu_orange;
-
-$nav_bg:			#f0f0f0;
-$nav_link_color:	#333;
-$nav_border_dark:	#d4d7d4;
-$nav_border_light:	#f2f2f4;
-$nav_hover_bg:      #d0d0d0;
-$nav_active_bg:     #ddd;
 
 /*	@section import scss files
 import all the scss and css files in the order they should be combined.
@@ -212,23 +168,6 @@ table th { background: white; }
 		}
 	}
 
-	/* Smartphones (portrait and landscape) -----------
-	@media only screen
-	and (min-device-width : 320px)
-	and (max-device-width : 480px) {
-		body {
-			padding: 0;
-			margin: 0;
-			width: 320px; }
-		}
-
-	iPads (portrait and landscape) ----------
-	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-		body {
-			width: 495px;
-		}
-	} */
-
 .wrapper {
 	background: none;
 	width: 100%;
@@ -250,36 +189,6 @@ table th { background: white; }
 	border: 0;
 }
 
-h1 {
-	color: $header_bg;
-	font-size: 1.625em;
-	margin-bottom: .5em;
-}
-h2 {
-	font-size: 1.438em;
-	margin-bottom: .5em;
-}
-h3 {
-	font-size: 1.219em;
-	margin-bottom: .522em;
-}
-h4 {
-	font-size: 1em;
-	font-weight: 400;
-	margin-bottom: .615em;
-}
-h5 {
-	font-size: .813em;
-	font-weight: 700;
-	margin-bottom: 1em;
-}
-h6 {
-	font-size: .723em;
-	font-weight: 400;
-	margin-bottom: 1em;
-	letter-spacing: .1em;
-	text-transform: uppercase;
-}
 p, li {
 	font-size: 1em;
 	line-height: 1.5;
@@ -323,16 +232,8 @@ blockquote.pull-quote p {
 /* @section header
 -------------------------------------------------------------- */
 header.banner {
-	background: $header_bg;
-		-moz-box-shadow:
-			 inset 0  2px 2px -2px darken($header_bg, 7%);
-		-webkit-box-shadow:
-			 inset 0  2px 2px -2px darken($header_bg, 7%);
-	box-shadow:
-		 inset 0  2px 2px -2px darken($header_bg, 7%);
-	float: none;
-	margin: 0 auto;
-		
+	border-bottom: none;
+
 	.nav-primary.nav-right .logo-ubuntu {
 		@include background_size(130px 19px);
 		background-image: url(../img/logos/logo.svg);
@@ -340,194 +241,17 @@ header.banner {
 		background-repeat: no-repeat;
 		min-width: 156px;
 		padding-top: 10px;
-	}
-	
-	.nav-primary {
-		ul li:nth-last-child(-n+2) a:link, 
-		ul li:nth-last-child(-n+2) a:visited {
-			border-bottom: 1px solid $nav-border-dark;
+
+		img {
+			display: none;
 		}
 	}
 
-	nav ul {
-		background-color: $nav_bg;
-		display: none;
-		float: left;
-
-		li {
-			width: 100%;
-		}
-		
+	.nav-primary ul li a, 
+	.nav-primary ul li a:link,
+	.nav-primary ul li a:visited {
+		font-weight: 400;
 	}
-}
-
-html.opera-mini header.banner .logo-ubuntu,
-html.no-svg header.banner .logo-ubuntu {
-	background-image: url(../img/logos/logo-canonical-white.png);
-}
-
-@media only screen and (max-width : 768px) {
-
-	header.banner .nav-primary {
-		box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
-		padding-left: 0;
-	}
-	header.banner .nav-primary.active {
-		box-shadow: 0 1px 2px 1px rgba(120, 120, 120, 0.2);
-		padding: 0;
-	}
-
-	header nav ul.active {
-		display: block;
-	}
-	header.banner .nav-primary ul {
-		position: relative;
-		width: 100%;
-	}
-
-	header.banner .nav-primary ul li,
-	header.banner .nav-primary ul li a:link,
-	header.banner .nav-primary ul li a:visited,
-	header.banner .nav-primary ul li a:active {
-		border: none;
-		display: block;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-	}
-
-	header.banner .nav-primary ul li a:link,
-	header.banner .nav-primary ul li a:visited,
-	header.banner .nav-primary ul li a:hover,
-	header.banner .nav-primary ul li a:active {
-		border-bottom: 1px solid $nav_border_dark;
-		font-size: 1em;
-		color: #333333;
-		background-color: $nav_bg;
-	}
-
-	header.banner .nav-primary ul li a:hover {
-		-moz-box-shadow: none;
-		-webkit-box-shadow: none;
-		box-shadow: none;
-		background-color: $nav_hover_bg;
-	}
-	header.banner .nav-primary ul li a.active {
-		background-color: $nav_active_bg;
-	}
-
-	header.banner .nav-primary ul li {
-		border-bottom: 1px solid $nav_border_light;
-		font-size: 16px;
-	}
-
-	header.banner .nav-primary ul li:last-child {
-		border: 0;
-	}
-
-	header.banner nav.nav-primary ul li a:link,
-	header.banner .nav-primary ul li a:visited,
-	header.banner .nav-primary ul li a:hover,
-	header.banner .nav-primary ul li a:active {
-		padding: 8px 10px;
-		text-align: left;
-	}
-}
-
-header.banner .nav-toggle {
-	@include background_size(25px auto);
-	background-image: url(../img/icons/navigation-menu-plain.svg);
-	background-position: center center;
-	background-repeat: no-repeat;
-	cursor: pointer;
-	display: block;
-	height: 48px;
-	position:absolute;
-	right: 0;
-	text-indent: -99999px;
-	width: 48px;
-}
-
-header.banner .no-script {
-	display: none;
-}
-
-.opera-mini header.banner .nav-toggle,
-.no-svg header.banner .nav-toggle {
-	background-image: url(../img/icons/navigation-menu-plain.png);
-}
-
-html.no-js,
-html.opera-mini {
-	.no-script {
-		display: block;
-	}
-}
-
-/* Menu breakpoint
--------------------------------------------------------------- */
-@media only screen and (min-width : 768px) {
-
-	html.no-js .no-script,
-	html.opera-mini .no-script,
-	#menu {
-		display: none;
-	}
-
-	header.banner nav.nav-primary {
-		ul {
-			border-right: 1px solid lighten($header_bg, 10%);
-			display: block;
-			background-color: transparent;
-			width: auto;
-			padding: 0;
-
-			li {
-				border-right: 1px solid darken($header_bg, 5%);
-				border: 0;
-				font-size: 14px;
-				width: auto;
-				a.active {
-					background: darken($header_bg, 7%);
-				}
-				&:last-child {
-					border-right: 0;
-					border-left: 0;
-				}
-				& a:link,
-				& a:visited{
-					background: transparent;
-					border-right: 1px solid darken($header_bg, 5%);
-					border-left: 1px solid lighten($header_bg, 7%);
-					border-bottom: 0;
-					color: #fff;
-					font-weight: 400;
-					padding: 12px 14px 14px;
-				}
-				& a:hover {
-					background: lighten($header_bg, 7%);
-					border-right: 1px solid lighten($header_bg, 7%);
-				}
-			}
-		}
-	} /* end nav-primary */
-
-	header.banner nav.nav-primary {
-		ul li:nth-last-child(-n+2) a:link, 
-		ul li:nth-last-child(-n+2) a:visited {
-			border-bottom: 0;
-		}
-	}
-
-	body header.banner nav.nav-primary li a.active {
-		background: darken($header_bg, 7%);
-	}
-
-
-	header.banner .logo{
-		border-right: 1px solid darken($header_bg, 5%);
-	}
-
 }
 
 .opera-mini header.banner .logo-ubuntu,
@@ -719,50 +443,7 @@ html.no-svg footer #additional-info h2:before {
 html.no-svg footer #additional-info h2:before {
 
 }
-/* @section forms
--------------------------------------------------------------- */
-form fieldset {
-	background-color: rgba(255,255,255,0.5);
-	padding-left: 20px;
-}
 
-form fieldset legend {
-	font-weight: normal;
-}
-
-form fieldset input[type="text"],
-form fieldset textarea {
-	border-color: #c2bdb7;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	font-size: 1em;
-	padding: .5em;
-	float: none;
-}
-
-form fieldset input[type="text"]:focus,
-form fieldset select:focus {
-  border: 1px solid #000;
-}
-
-
-form fieldset select {
-	border: 1px solid #c2bdb7;
-	font-size: 1em;
-	font-family: ubuntu, sans-serif;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	max-width: 15em;
-}
-
-form fieldset h3 {
-	margin-bottom: 20px;
-}
-
-/* end forms
--------------------------------------------------------------- */
 
 ol.connected-list {
 
@@ -1230,7 +911,7 @@ html.no-svg .cookie-policy .link-cta {
 
 /* @section global nav
 -------------------------------------------------------------- */
-#nav-global {
+/*#nav-global {
 	display: none;
 }
 
@@ -1380,8 +1061,8 @@ footer #nav-global {
 
 	li:nth-child(odd) { border-left: 0; }
 }
-
-.yes-js #additional-info {
+*/
+/*.yes-js #additional-info {
 	min-height: 0;
 	padding: 0;
 	width: 100%;
@@ -1476,7 +1157,7 @@ footer #nav-global {
 		}
 	}
 }
-
+*/
 
 /* @section
 -------------------------------------------------------------- */
@@ -1488,10 +1169,6 @@ footer #nav-global {
 		float: left;
 		margin-right: 10px;
 	}
-
-/*		.pull-quote {
-		clear: both;
-	}*/
 
 	.personal-info {
 		list-style-type: none;
@@ -1548,7 +1225,7 @@ html.no-svg {
 	}
 
 	#main-content .row-hero {
-		padding-top: 50px;
+		padding-top: 40px;
 	}
 
 	div.box-image-centered div,
@@ -1895,10 +1572,6 @@ html.no-svg {
 		overflow: hidden;
 	}
 
-	#main-content .row-hero {
-		padding-top: 0;
-	}
-
 	.row {
 		padding: 60px 40px 40px;
 	}
@@ -1930,6 +1603,9 @@ html.no-svg {
 	}
 
 	.connected-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
 		position: relative;
 
 		li img {
@@ -1961,33 +1637,6 @@ html.no-svg {
 
 	}
 
-
-	body {
-	}
-
-	/* get the desktop typography back in */
-	h1 {
-		font-size: 2.8125em;
-		/*margin-bottom:.267em;*/
-	}
-
-	h2 {
-		font-size: 2em;
-		margin-bottom:.375em;
-	}
-
-	h3 {
-		font-size:1.438em;
-		margin-bottom:.522em;
-	}
-
-	h4 {
-		font-size: 1em;
-		margin-bottom:.75em;
-	}
-
-	h5 { font-size: 1em; }
-
 	p, li, code, pre {
 		font-size: 16px;
 		line-height: 1.5;
@@ -2003,13 +1652,6 @@ html.no-svg {
 
 	header.banner .nav-primary li a {
 		padding-top: 13px !important;
-	}
-
-	.strip-dark,
-	.strip-light,
-	.strip {
-		width: 100%;
-		display: block;
 	}
 
 	.strip-light .icon,
@@ -2146,14 +1788,13 @@ html.no-svg {
 		top: 10px;
 	}
 
-	.row-companies { /* GB: Need to rename this it's pants */
+	.row-companies {
 
 		ul li {
 			height: auto;
 			margin: 0 0 40px 0;
 			padding-left: 40px;
 			padding-right: 40px;
-			border-right: 1px dotted #bbb;
 		}
 
 		ul li img {
