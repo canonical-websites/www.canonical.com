@@ -234,12 +234,12 @@ blockquote.pull-quote p {
 header.banner {
 	border-bottom: none;
 
-	.nav-primary.nav-right .logo-ubuntu {
+	.nav-primary.nav-right .logo a {
 		@include background_size(130px 19px);
 		background-image: url(../img/logos/logo.svg);
 		background-position: 0 15px;
 		background-repeat: no-repeat;
-		min-width: 156px;
+		min-width: 127px;
 		padding-top: 10px;
 
 		img {
@@ -254,8 +254,8 @@ header.banner {
 	}
 }
 
-.opera-mini header.banner .logo-ubuntu,
-.no-svg header.banner .logo-ubuntu {
+.opera-mini header.banner .logo a,
+.no-svg header.banner .logo a {
 	background-image: url(../img/logos/logo.png);
 }
 
