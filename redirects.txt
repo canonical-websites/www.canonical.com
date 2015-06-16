@@ -17,6 +17,7 @@ about-ubuntu/for-you  /about  #
 content/latest-ubuntu-1310-includes-first-step-mobile-pc-convergence  http://insights.ubuntu.com/news/latest-ubuntu-13-10-includes-first-step-to-mobile-pc-convergence/  #
 consumer-services  /about  #
 consumer-services/ubuntu-one  /about  #
+contact  /about#contact-row  #
 contributors  http://www.ubuntu.com/legal/contributors  #
 contributors/faq  http://www.ubuntu.com/legal/contributors/licence-agreement-faq  #
 contributor-license-agreement  http://www.ubuntu.com/legal/contributors  #
