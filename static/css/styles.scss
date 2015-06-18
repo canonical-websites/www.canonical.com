@@ -444,6 +444,15 @@ html.no-svg footer #additional-info h2:before {
 
 }
 
+/* @section box-white 
+------------------------------------------------------------- */
+.box-white {
+	background: $white;
+	border-radius: 4px;
+	color: $cool-grey;
+	padding: 1.333em $gutter-width;
+}
+
 
 ol.connected-list {
 
