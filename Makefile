@@ -1,29 +1,50 @@
-SHELL := /bin/bash # Use bash syntax
+SHELL := /bin/bash  # Use bash syntax
+
+# Settings
+# ===
+
+# Default port for the dev server - can be overridden e.g.: "PORT=1234 make run"
+ifeq ($(PORT),)
+	PORT=8001
+endif
+
+# Settings
+# ===
+PROJECT_NAME=canonical-website
+APP_IMAGE=${PROJECT_NAME}
+SASS_CONTAINER=${PROJECT_NAME}-sass
+
+# Help text
+# ===
 
 define HELP_TEXT
-Canonical.com website project
+
+${PROJECT_NAME} - A Django website by the Canonical web team
 ===
 
-Usage:
+Basic usage
+---
 
-> make setup    # Install dependencies & setup environment
-> make develop  # Auto-compile sass files and run the dev server
+> make run         # Prepare Docker images and run the Django site
+
+Now browse to http://127.0.0.1:${PORT} to run the site
+
+All commands
+---
+
+> make help               # This message
+> make run                # build, watch-sass and run-app-image
+> make it so              # a fun alias for "make run"
+> make build-app-image    # Build the docker image
+> make run-app-image      # Use Docker to run the website
+> make watch-sass         # Setup the sass watcher, to compile CSS
+> make compile-sass       # Setup the sass watcher, to compile CSS
+> make stop-sass-watcher  # If the watcher is running in the background, stop it
+> make clean              # Delete all created images and containers
+
+(To understand commands in more details, simply read the Makefile)
 
 endef
-
-# Variables
-##
-
-ENVPATH=${VIRTUAL_ENV}
-VEX=vex --path ${ENVPATH}
-
-ifeq ($(ENVPATH),)
-	ENVPATH=env
-endif
-
-ifeq ($(PORT),)
-	PORT=8002
-endif
 
 ##
 # Print help text
@@ -31,165 +52,89 @@ endif
 help:
 	$(info ${HELP_TEXT})
 
-clean:
-	rm -rf pip-cache
+##
+# Use docker to run the sass watcher and the website
+##
+run:
+	${MAKE} build-app-image
+	${MAKE} node_modules
+	${MAKE} compile-sass
+	${MAKE} watch-sass &
+	${MAKE} run-app-image
 
 ##
-# Start the development server
+# Build the docker image
 ##
-develop:
-	$(MAKE) watch-sass &
-	$(MAKE) dev-server
+build-app-image:
+	docker build -t ${APP_IMAGE} .
 
 ##
-# Prepare the project
+# Run the Django site using the docker image
 ##
-setup: install-dependencies update-env
+run-app-image:
+	# Make sure IP is correct for mac etc.
+	$(eval docker_ip := `hash boot2docker 2> /dev/null && echo "\`boot2docker ip\`" || echo "127.0.0.1"`)
+
+	@echo ""
+	@echo "======================================="
+	@echo "Running server on http://${docker_ip}:${PORT}"
+	@echo "======================================="
+	@echo ""
+	docker run -p ${PORT}:5000 -v `pwd -P`:/app -w=/app ${APP_IMAGE}
 
 ##
-# Run server
-##
-dev-server:
-	${VEX} ./manage.py runserver_plus 0.0.0.0:${PORT}
-
-##
-# Run SASS watcher
+# Create or start the sass container, to rebuild sass files when there are changes
 ##
 watch-sass:
-	sass --debug-info --watch static/css/
+	$(eval is_running := `docker inspect --format="{{ .State.Running }}" ${SASS_CONTAINER} 2>/dev/null || echo "missing"`)
+	@if [[ "${is_running}" == "true" ]]; then docker attach ${SASS_CONTAINER}; fi
+	@if [[ "${is_running}" == "false" ]]; then docker start -a ${SASS_CONTAINER}; fi
+	@if [[ "${is_running}" == "missing" ]]; then docker run --name ${SASS_CONTAINER} -v `pwd -P`:/app ubuntudesign/sass sass -E "UTF-8" --debug-info --watch /app/static/css; fi
 
 ##
-# Build SASS
+# Force a rebuild of the sass files
 ##
-sass:
-	sass --force --style compressed --update static/css/
+compile-sass:
+	docker run -v `pwd -P`:/app ubuntudesign/sass sass --debug-info --update /app/static/css --force -E "UTF-8"
 
 ##
-# Get virtualenv ready
+# Create or update our node_modules (Vanilla theme and framework)
 ##
-update-env:
-	${MAKE} create-env
-
-	${VEX} ${MAKE} install-requirements
-
-##
-# Make virtualenv directory if it doesn't exist and we're not in an env
-##
-create-env:
-	if [ ! -d ${ENVPATH} ]; then virtualenv ${ENVPATH}; fi
+node_modules:
+	docker run -it --rm -v `pwd -P`:/app -w /app library/node npm install
+	$(eval user_id := `id -u $(whoami)`)
+	docker run -it --rm -v `pwd -P`:/app -w /app library/node chown -R ${user_id} node_modules
 
 ##
-# Install pip requirements
-# Only if inside a virtualenv
+# If the watcher is running in the background, stop it
 ##
-install-requirements:
-	if [ "${VIRTUAL_ENV}" ]; then pip install -r requirements/dev.txt; fi
-
-##
-# Install required system dependencies
-##
-install-dependencies:
-	if [ $$(command -v apt-get) ]; then ${MAKE} apt-dependencies; fi
-	if [ $$(command -v brew) ]; then ${MAKE} brew-dependencies; fi
-
-	if [ ! $$(command -v virtualenv) ]; then sudo pip install virtualenv; fi
-	if [ ! $$(command -v vex) ]; then sudo pip install vex; fi
-
-## Install dependencies with apt
-apt-dependencies:
-	if [ ! $$(command -v pip) ]; then sudo apt-get install python-pip; fi
-	if [ ! $$(command -v sass) ]; then sudo apt-get install ruby-sass; fi
-
-## Install dependencies with brew
-brew-dependencies:
-	if [ ! $$(command -v pip) ]; then sudo easy_install pip; fi
-	if [ ! $$(command -v sass) ]; then sudo gem install sass; fi
+stop-sass-watcher:
+	docker stop ${SASS_CONTAINER}
 
 ##
-# Delete any generated files that effect the site
+# Re-create the app image (e.g. to update dependencies)
+##
+rebuild-app-image:
+	-docker rmi -f ${APP_IMAGE} 2> /dev/null
+	${MAKE} build-app-image
+
+##
+# Delete all created images and containers
 ##
 clean:
-	rm -rf env .sass-cache
-	find static/css -name '*.css*' -exec rm {} +  # Remove any .css files - should only be .sass files
+	@echo "Removing images and containers:"
+	$(eval destroy_db := $(shell bash -c 'read -p "Destroy node_modules? (y/n): " yn; echo $$yn'))
+	@if [[ "${destroy_db}" == "y" ]]; then echo "Deleting node_modules..."; rm -rf node_modules >/dev/null 2>&1 || rm -rf node_modules; fi
+	@docker rm -f ${SASS_CONTAINER} 2>/dev/null && echo "${SASS_CONTAINER} removed" || echo "Sass container not found: Nothing to do"
+	@docker rmi -f ${APP_IMAGE} 2>/dev/null && echo "${APP_IMAGE} removed" || echo "App image not found: Nothing to do"
+
 
 ##
-# Also delete pip-cache
+# "make it so" alias for "make run" (thanks @karlwilliams)
 ##
-clean-all: clean
-	rm -rf pip-cache
-
-##
-# Rebuild the pip requirements cache, for non-internet-visible builds
-##
-rebuild-dependencies-cache:
-	rm -rf pip-cache
-	bzr branch lp:~webteam-backend/ubuntu-website/dependencies pip-cache
-	pip install --exists-action=w --download pip-cache/ -r requirements/standard.txt
-	cd pip-cache && bzr add .
-	bzr commit pip-cache/ -m 'automatically updated ubuntu website requirements'
-	bzr push --directory pip-cache lp:~webteam-backend/canonical-website/dependencies
-	rm -rf pip-cache src
-
-##
-# For dokku - build sass and run gunicorn
-##
-dokku-start: sass run-gunicorn
-
-##
-# Run the gunicorn app
-##
-run-gunicorn:
-	gunicorn webapp.wsgi
-
-update-templates:
-	rm -rf templates static
-	bzr branch lp:canonical-website-content templates
-	rm -rf templates/.bzr*
-
-	mv ./templates/redirects.txt .  # Put redirects in the project root
-
-	mv ./templates/static .  # Put static folder in a nicer place
-
-	# Templates
-	# ==
-	# Remove silly files
-	rm "static/img/icons/ .desktop"
-	# Rename that bloody templates dir
-	mv templates/templates templates/_base
-	# Rename "shared" dirs to "_includes"
-	find templates -type d -name shared | rename 's/shared/_includes/'
-	# Remove references to scss module
-	find templates -type f -name '*.html' | xargs sed -i '/^ *[{][%] load scss [%][}] *$$/d'
-	# Point directly to CSS files
-	find templates -type f -name '*.html' | xargs sed -i 's/[{][%]\s*scss\s\+["]\([^"]\+\).scss["]\s*[%][}]/\1.css/g'
-	# Replace any reference to shared with _includes
-	find templates/* -type f -name '*.html' | xargs sed -i "s/[{][%]\s\+\(extends\|include\|with\)\s\+[\"']\([^\"']+[/]\)\?shared[/]/{% \1 \"\2_includes\//g"
-	# Replace any reference to templates with _base
-	find templates/* -type f -name '*.html' | xargs sed -i "s/[{][%]\s\+\(extends\|include\|with\)\s\+[\"']\([^\"']+[/]\)\?templates[/]/{% \1 \"\2_base\//g"
-
-	# Sass fixes
-	# ==
-	# Add "core-constants" to IE6 styles
-	echo -e "@import \"../core-constants\";\n" | cat - static/css/ie/ie6.scss > /tmp/out && mv /tmp/out static/css/ie/ie6.scss
-	# Remove any .css files - should only be .sass files
-	find static/css -name '*.css*' -exec rm {} +
-	# Rename .scss include files to have underscores
-	find static/css -name '*.scss' -not -regex '.*/\(styles.scss\|core-print.scss\|ie/.*\)' | rename 's/(.*\/)?([^\/]*)/$$1_$$2/'
-	# Remove double %s
-	find static/css -type f -name '*.scss' | xargs sed -i 's/[%][%]/%/g'
-	# Update local CSS files
-	$(MAKE) sass
-
-update-bzr-repo:
-	-bzr init-repo bzr-repo
-	git fast-export -M --all | (cd bzr-repo; bzr fast-import -)
-
-# The below targets
-# are just there to allow you to type "make it so"
-# as a replacement for "make develop"
-# - Thanks to https://directory.canonical.com/list/ircnick/deadlight/
-
 it:
-	$(MAKE) watch-sass &
+so: run
 
-so: dev-server
+# Phony targets (don't correspond to files or directories)
+all: help build run run-app-image watch-sass compile-sass stop-sass-watcher rebuild-app-image it so
+.PHONY: all
