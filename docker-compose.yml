@@ -1,0 +1,11 @@
+web:
+  build: .
+  volumes:
+    - .:/app
+  ports:
+    - "8001:5000"
+sass:
+  image: ubuntudesign/sass
+  command: sass --debug-info --watch /app/static/css -E "UTF-8"
+  volumes:
+    - .:/app
