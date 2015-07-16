@@ -106,7 +106,9 @@ watch-sass:
 ##
 # Force a rebuild of the sass files
 ##
+
 compile-sass:
+	${MAKE} node_modules
 	docker run -v `pwd`:/app ubuntudesign/sass sass --debug-info --update /app/static/css --force -E "UTF-8"
 
 ##
