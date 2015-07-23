@@ -1,11 +1,18 @@
 web:
-  build: .
+  image: ubuntudesign/canonicalwebsite_web:master
   volumes:
     - .:/app
   ports:
     - "8001:5000"
+
 sass:
   image: ubuntudesign/sass
-  command: sass --debug-info --watch /app/static/css -E "UTF-8"
+  command: bash -c 'sleep 3 && sass --debug-info --watch /app/static/css -E "UTF-8"'
   volumes:
     - .:/app
+
+npm:
+  image: library/node
+  volumes:
+    - .:/app
+  command: sh -c "cd /app && npm install"

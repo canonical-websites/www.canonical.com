@@ -57,6 +57,8 @@ help:
 # Use docker to run the sass watcher and the website
 ##
 run:
+	#${MAKE} watch-sass &
+	#trap "${MAKE} stop-db; exit" SIGINT; ${MAKE} run-site
 	${MAKE} run-site
 
 ##
@@ -71,9 +73,8 @@ build-app-image:
 run-site:
 	# Make sure IP is correct for mac etc.
 	$(eval docker_ip := `hash boot2docker 2> /dev/null && echo "\`boot2docker ip\`" || echo "127.0.0.1"`)
-	${MAKE} node_modules
-	${MAKE} compile-sass
 	@docker-compose up -d
+
 	@echo ""
 	@echo "======================================="
 	@echo "Running server on http://${docker_ip}:${PORT}"
@@ -81,18 +82,13 @@ run-site:
 	@echo "To get server logs, run 'make logs'"
 	@echo "======================================="
 	@echo ""
-	@docker-compose logs web
+	${MAKE} logs
 
 stop:
 	@docker-compose stop -t 2
 
 logs:
 	@docker-compose logs web
-
-node_modules:
-	docker run -it --rm -v `pwd -P`:/app -w /app library/node npm install
-	$(eval user_id := `id -u $(whoami)`)
-	docker run -it --rm -v `pwd -P`:/app -w /app library/node chown -R ${user_id} node_modules
 
 ##
 # Create or start the sass container, to rebuild sass files when there are changes
@@ -106,16 +102,8 @@ watch-sass:
 ##
 # Force a rebuild of the sass files
 ##
-
 compile-sass:
-	${MAKE} node_modules
-	docker run -v `pwd`:/app ubuntudesign/sass sass --debug-info --update /app/static/css --force -E "UTF-8"
-
-##
-# If the watcher is running in the background, stop it
-##
-stop-sass-watcher:
-	docker stop ${SASS_CONTAINER}
+	docker run -v `pwd`:/app ubuntudesign/sass sass --debug-info --update /app/static/css --force
 
 ##
 # Re-create the app image (e.g. to update dependencies)
@@ -141,11 +129,10 @@ hub-image:
 	@echo ""
 
 demo:
-	${MAKE} hub-image
-	ssh dokku@ubuntu.qa deploy-image ${image_location} ${app_name}
+	@docker-compose -f docker-compose-machine.yml up -d
 	@echo ""
 	@echo "==="
-	@echo "Demo built: http://${PROJECT_NAME}-${current_branch}.ubuntu.qa/"
+	@echo "Demo built: http://`docker-machine ip demos`:${PORT}"
 	@echo "==="
 	@echo ""
 
@@ -153,11 +140,9 @@ demo:
 # Delete created images and containers
 ##
 clean:
-	$(eval destroy_node := $(shell bash -c 'read -p "Destroy node_modules? (y/n): " yn; echo $$yn'))
-	@if [[ "${destroy_node}" == "y" ]]; then echo "Deleting node_modules..."; rm -rf node_modules >/dev/null 2>&1 || rm -rf node_modules; fi
-	@echo "Removing images and containers:"
+	$(eval destroy_images := $(shell bash -c 'read -p "Destroy images? (y/n): " yn; echo $$yn'))
 	@docker-compose kill
-	@docker-compose rm -f
+	@if [[ "${destroy_images}" == "y" ]]; then docker-compose rm -f && echo "${DB_CONTAINER} removed" || echo "Database not found: Nothing to do"; fi
 	@echo "Images and containers removed"
 
 ##
