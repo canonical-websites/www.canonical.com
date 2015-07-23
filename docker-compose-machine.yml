@@ -1,6 +1,6 @@
 web:
   build: .
-  dockerfile: web.Dockerfile
+  dockerfile: Dockerfile
   volumes:
     - /app
   ports:
