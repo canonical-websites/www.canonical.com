@@ -5,14 +5,14 @@ web:
   ports:
     - "8001:5000"
 
-sass:
-  image: ubuntudesign/sass
-  command: bash -c 'sleep 3 && sass --debug-info --watch /app/static/css -E "UTF-8"'
-  volumes:
-    - .:/app
-
 npm:
   image: library/node
-  volumes:
-    - .:/app
+  volumes_from:
+    - web
   command: sh -c "cd /app && npm install"
+
+sass:
+  image: ubuntudesign/sass
+  volumes_from:
+    - web
+  command: bash -c 'sass --debug-info --watch /app/static/css -E "UTF-8"'
