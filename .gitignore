@@ -8,3 +8,5 @@ templates/static/css/styles.css
 *.pid
 *.css.map
 bzr-repo/
+django-error.log
+node_modules/
