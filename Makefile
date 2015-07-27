@@ -82,13 +82,12 @@ run-site:
 	@echo "To get server logs, run 'make logs'"
 	@echo "======================================="
 	@echo ""
-	${MAKE} logs
 
 stop:
 	@docker-compose stop -t 2
 
 logs:
-	@docker-compose logs web
+	@docker-compose logs
 
 ##
 # Create or start the sass container, to rebuild sass files when there are changes
