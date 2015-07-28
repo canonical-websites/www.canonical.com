@@ -82,13 +82,12 @@ run-site:
 	@echo "To get server logs, run 'make logs'"
 	@echo "======================================="
 	@echo ""
-	${MAKE} logs
 
 stop:
 	@docker-compose stop -t 2
 
 logs:
-	@docker-compose logs web
+	@docker-compose logs
 
 ##
 # Create or start the sass container, to rebuild sass files when there are changes
@@ -140,10 +139,12 @@ demo:
 # Delete created images and containers
 ##
 clean:
+	@find static/css -name '*.css' -exec rm -fv {} \;
+	@echo "Compiled CSS removed"
+	@if [[ -d node_modules ]]; then docker-compose run npm rm -r /app/node_modules && echo "node_modules removed"; fi
 	$(eval destroy_images := $(shell bash -c 'read -p "Destroy images? (y/n): " yn; echo $$yn'))
 	@docker-compose kill
-	@if [[ "${destroy_images}" == "y" ]]; then docker-compose rm -f && echo "${DB_CONTAINER} removed" || echo "Database not found: Nothing to do"; fi
-	@echo "Images and containers removed"
+	@if [[ "${destroy_images}" == "y" ]]; then docker-compose rm -f && echo "Images and containers removed"; fi
 
 ##
 # "make it so" alias for "make run" (thanks @karlwilliams)
