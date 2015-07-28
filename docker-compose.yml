@@ -7,12 +7,13 @@ web:
 
 npm:
   image: library/node
+  working_dir: /app
   volumes_from:
     - web
-  command: sh -c "cd /app && npm install"
+  command: sh -c 'npm install'
 
 sass:
   image: ubuntudesign/sass
   volumes_from:
     - web
-  command: bash -c 'sass --debug-info --watch /app/static/css -E "UTF-8"'
+  command: bash -c 'inotifywait -q -e create /app && sass --debug-info --update /app/static/css --force -E "UTF-8" && sass --debug-info --watch /app/static/css -E "UTF-8"'
