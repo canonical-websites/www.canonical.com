@@ -57,8 +57,6 @@ help:
 # Use docker to run the sass watcher and the website
 ##
 run:
-	#${MAKE} watch-sass &
-	#trap "${MAKE} stop-db; exit" SIGINT; ${MAKE} run-site
 	${MAKE} run-site
 
 ##
@@ -102,7 +100,7 @@ watch-sass:
 # Force a rebuild of the sass files
 ##
 compile-sass:
-	docker run -v `pwd`:/app ubuntudesign/sass sass --debug-info --update /app/static/css --force
+	docker run -v `pwd`:/app ubuntudesign/sass sass --debug-info --update /app/static/css --force -E "UTF-8"
 
 ##
 # Re-create the app image (e.g. to update dependencies)
@@ -124,14 +122,6 @@ hub-image:
 	@echo ""
 	@echo "==="
 	@echo "Image pushed to: ${image_location} http://${PROJECT_NAME}-${current_branch}.ubuntu.qa/"
-	@echo "==="
-	@echo ""
-
-demo:
-	@docker-compose -f docker-compose-machine.yml up -d
-	@echo ""
-	@echo "==="
-	@echo "Demo built: http://`docker-machine ip demos`:${PORT}"
 	@echo "==="
 	@echo ""
 
