@@ -1,11 +1,20 @@
 web:
-  build: .
+  image: ubuntudesign/canonicalwebsite_web:master
   volumes:
     - .:/app
   ports:
-    - "8001:5000"
+    - "8002:5000"
+
+npm:
+  image: library/node
+  working_dir: /app
+  volumes_from:
+    - web
+  command: npm install
+
 sass:
   image: ubuntudesign/sass
-  command: sass --debug-info --watch /app/static/css -E "UTF-8"
-  volumes:
-    - .:/app
+  working_dir: /app
+  volumes_from:
+    - web
+  command: bash -c '[[ -d node_modules ]] || inotifywait -q -e create . && sass --debug-info --update static/css --force -E "UTF-8" && sass --debug-info --watch static/css -E "UTF-8"'
