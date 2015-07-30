@@ -66,7 +66,7 @@ run:
 	@echo ""
 	@echo "== Building SCSS =="
 	@echo ""
-	
+
 	@docker-compose up npm            # Build `node_modules`
 	@docker-compose up sass           # Build CSS into `static/css`
 	@echo ""
@@ -138,9 +138,9 @@ hub-image:
 ##
 clean:
 	@find static/css -name '*.css' -exec rm -fv {} \;
-	@if [[ -d .sass-cache ]]; then docker-compose run sass rm -r /srv/.sass-cache && echo "sass cache removed"; fi
+	@if [[ -d .sass-cache ]]; then docker-compose run base rm -r .sass-cache && echo "sass cache removed"; fi
 	@echo "Compiled CSS removed"
-	@if [[ -d node_modules ]]; then docker-compose run npm rm -r /srv/node_modules && echo "node_modules removed"; fi
+	@if [[ -d node_modules ]]; then docker-compose run base rm -r node_modules && echo "node_modules removed"; fi
 	$(eval destroy_images := $(shell bash -c 'read -p "Destroy images? (y/n): " yn; echo $$yn'))
 	@docker-compose kill
 	@if [[ "${destroy_images}" == "y" ]]; then docker-compose rm -f && echo "Images and containers removed"; fi
