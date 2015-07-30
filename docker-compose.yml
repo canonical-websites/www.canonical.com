@@ -1,5 +1,5 @@
 base:
-  image: ubuntu
+  image: ubuntu:14.04
   working_dir: /srv
   volumes:
     - .:/srv
@@ -16,7 +16,7 @@ sass:
 
 web:
   extends: {'service': 'base'}
-  image: ubuntudesign/canonicalwebsite_web:master
+  build: .
   ports:
     - "8002:5000"
 
