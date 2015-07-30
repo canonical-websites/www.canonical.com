@@ -57,21 +57,25 @@ help:
 # Use docker to run the sass watcher and the website
 ##
 run:
-	${MAKE} run-site
-
-##
-# Build the docker image
-##
-build-app-image:
-	docker-compose build
-
-##
-# Run the Django site using the docker image
-##
-run-site:
 	# Make sure IP is correct for mac etc.
 	$(eval docker_ip := `hash boot2docker 2> /dev/null && echo "\`boot2docker ip\`" || echo "127.0.0.1"`)
-	@docker-compose up -d
+	docker pull ubuntudesign/python-auth
+	@docker-compose up -d web         # Run Django
+	@echo ""
+	@echo "== Running server on http://${docker_ip}:${PORT} =="
+	@echo ""
+	@echo "== Building SCSS =="
+	@echo ""
+
+	@xdg-open http://${docker_ip}:${PORT}
+
+	@docker-compose up npm            # Build `node_modules`
+	@docker-compose up sass           # Build CSS into `static/css`
+	@echo ""
+	@echo "== Built SCSS =="
+	@echo ""
+
+	@docker-compose up -d sass-watch  # Watch SCSS files for changes
 
 	@echo ""
 	@echo "======================================="
@@ -80,6 +84,12 @@ run-site:
 	@echo "To get server logs, run 'make logs'"
 	@echo "======================================="
 	@echo ""
+
+##
+# Build the docker image
+##
+build-app-image:
+	docker-compose build
 
 stop:
 	@docker-compose stop -t 2
@@ -131,7 +141,7 @@ hub-image:
 clean:
 	@find static/css -name '*.css' -exec rm -fv {} \;
 	@echo "Compiled CSS removed"
-	@if [[ -d node_modules ]]; then docker-compose run npm rm -r /app/node_modules && echo "node_modules removed"; fi
+	@if [[ -d node_modules ]]; then docker-compose run base rm -r node_modules && echo "node_modules removed"; fi
 	$(eval destroy_images := $(shell bash -c 'read -p "Destroy images? (y/n): " yn; echo $$yn'))
 	@docker-compose kill
 	@if [[ "${destroy_images}" == "y" ]]; then docker-compose rm -f && echo "Images and containers removed"; fi
