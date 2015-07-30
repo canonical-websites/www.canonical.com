@@ -16,7 +16,7 @@ sass:
 
 web:
   extends: {'service': 'base'}
-  image: ubuntudesign/canonicalwebsite_web:master
+  build: .
   ports:
     - "8002:5000"
 
