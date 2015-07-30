@@ -1,5 +1,5 @@
 base:
-  image: ubuntu
+  image: ubuntu:14.04
   working_dir: /srv
   volumes:
     - .:/srv
