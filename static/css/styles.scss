@@ -82,7 +82,7 @@ core scss files are in /sites/core/static/css
 html, body { height: 100%; }
 
 html {
-	background: url(../img/backgrounds/image-background-paper.png) repeat-y fixed center top #f1f1f1;
+	background: url(../img/backgrounds/image-background-paper.png) repeat-y center top #f1f1f1;
 	-webkit-transition: background-position 100 ease;
 	-moz-transition: background-position 100 ease;
 	-o-transition: background-position 100 ease;
@@ -247,7 +247,7 @@ header.banner {
 		}
 	}
 
-	.nav-primary ul li a, 
+	.nav-primary ul li a,
 	.nav-primary ul li a:link,
 	.nav-primary ul li a:visited {
 		font-weight: 400;
@@ -353,7 +353,7 @@ footer.global .legal {
 	background-image: none;
 }
 
-footer.global .legal.has-cookie { 
+footer.global .legal.has-cookie {
 	/* if the cookie message is being displayed add padding so the legal links are still visible */
 	padding-bottom: 70px;
 }
@@ -443,16 +443,6 @@ html.no-svg footer #additional-info h2:before {
 html.no-svg footer #additional-info h2:before {
 
 }
-
-/* @section box-white 
-------------------------------------------------------------- */
-.box-white {
-	background: $white;
-	border-radius: 4px;
-	color: $cool-grey;
-	padding: 1.333em $gutter-width;
-}
-
 
 ol.connected-list {
 
@@ -653,8 +643,6 @@ html.yui3-js-enabled {
 		visibility: hidden;
 		position: absolute;
 	}
-
-
 
 	.tabbed-content {
 	    padding: 8px 8px 0;
@@ -1038,6 +1026,8 @@ html.no-svg {
 		display: block;
 
 		li a {
+      color: #666;
+			display: block;
 			margin-bottom: 20px;
 		}
 		 a.active {
@@ -1046,7 +1036,6 @@ html.no-svg {
 		}
 		li {
 			text-align: left;
-			display: inline;
 		}
 	}
 	.accordion-button {
@@ -1218,8 +1207,8 @@ html.no-svg {
 	blockquote.pull-quote p span {
 		top: 5px;
 	}
-	
-	footer.global .legal.has-cookie { 
+
+	footer.global .legal.has-cookie {
 		/* if the cookie message is being displayed add padding so the legal links are still visible */
 		padding-bottom: 50px;
 	}
@@ -1310,7 +1299,7 @@ html.no-svg {
 	}
 
 	body { position: relative; }
-	
+
 	header.banner {
 		width: 984px;
 	}
@@ -1318,7 +1307,7 @@ html.no-svg {
 	.nav-primary {
 		padding-left: 10px;
 	}
-	
+
 	#main-content {
 		//padding-top: 48px;
 	}
@@ -1406,7 +1395,7 @@ html.no-svg {
 	}
 	body #nav-global li:first-of-type a {
 		margin-left: 10px;
-	}	
+	}
 
 	header.banner .nav-primary li a {
 		padding-top: 13px !important;
@@ -1561,8 +1550,8 @@ html.no-svg {
 			-moz-transition-duration: 5s;
 		}
 	}
-	
-	footer.global .legal.has-cookie { 
+
+	footer.global .legal.has-cookie {
 		/* if the cookie message is being displayed add padding so the legal links are still visible */
 		padding-bottom: 30px;
 	}
