@@ -17,69 +17,6 @@ YUI().use('node', 'cookie', 'event-resize', 'transition', 'event', 'jsonp', 'jso
     Y.all('html').removeClass('no-js').addClass('yes-js');
   }
 
-  core.resizeListener = function() {
-    Y.on('windowresize', function(e) {
-      core.redrawGlobal();
-    });
-    core.globalInit();
-  };
-
-  core.globalInit= function() {
-    if (document.documentElement.clientWidth < 768) {
-      core.globalPrepend = 'div.legal';
-      core.setupGlobalNav();
-      core.setupAdditionalInfo();
-      Y.one('.nav-global-wrapper').insert('<h2>Ubuntu websites</h2>','before');
-    } else if (document.documentElement.clientWidth >= 768) {
-      core.globalPrepend = 'body';
-      core.setupGlobalNav();
-      Y.all('#additional-info h2').setStyle('cursor', 'default');
-    }
-  };
-
-  core.redrawGlobal = function() {
-    var globalNav = Y.one("#nav-global");
-    if (document.documentElement.clientWidth < 768 && core.globalPrepend != 'div.legal') {
-      core.globalPrepend = 'div.legal';
-      if (globalNav) {
-        globalNav.remove();
-        core.setupGlobalNav();
-        core.setupAdditionalInfo();
-        Y.one('.nav-global-wrapper').insert('<h2>Ubuntu websites</h2>','before');
-        Y.one('#nav-global h2').setStyle('cursor', 'pointer').append('<span></span>').on('click',function(e) {
-          this.toggleClass('active');
-          this.next('div').toggleClass('active');
-        });
-      }
-    } else if (document.documentElement.clientWidth >= 768 && core.globalPrepend != 'body') {
-      core.globalPrepend = 'body';
-      if (globalNav) {
-        globalNav.remove();
-        core.setupGlobalNav();
-      }
-    }
-  };
-
-  core.setupAccordion = function() {
-    Y.all('.row-project li').each(function(node) {
-      node.one('h3').append('<span></span>');
-      node.one('a').on('click',function(e) {
-        e.preventDefault();
-        this.toggleClass('active');
-        this.next('div').toggleClass('active');
-      });
-    });
-  };
-
-  core.setupGlobalNavAccordion = function() {
-    if(Y.one('#nav-global h2') !== null) {
-      Y.one('#nav-global h2').setStyle('cursor', 'pointer').append('<span></span>').on('click',function(e) {
-        this.toggleClass('active');
-        this.next('div').toggleClass('active');
-      });
-    }
-  };
-
   core.setupAdditionalInfo = function() {
     if(Y.one('#additional-info h2 span') === null) {
       Y.one('#additional-info h2').setStyle('cursor', 'pointer').append('<span></span>').on('click',function(e) {
@@ -163,15 +100,6 @@ YUI().use('node', 'cookie', 'event-resize', 'transition', 'event', 'jsonp', 'jso
     }
   };
 
-  core.homeAnimation = function() {
-    if(Y.one('body').hasClass('home')){
-      var anim = Y.one('.animation');
-      if(anim != null) {
-        anim.addClass('run');
-      }
-    }
-  };
-
   core.svgFallback = function() {
     if (!Modernizr.svg || !Modernizr.backgroundsize) {
       Y.all("img[src$='.svg']").each(function(node) {
@@ -230,17 +158,10 @@ YUI().use('node', 'cookie', 'event-resize', 'transition', 'event', 'jsonp', 'jso
     }
   };
 
-
-
-  core.setupAccordion();
-  //core.resizeListener();
-  //core.mobileNav();
   core.cookiePolicy();
-  //core.setupGlobalNavAccordion();
   core.setupHtmlClass();
   core.sectionTabs();
   core.tabbedContent();
-  //core.homeAnimation();
   core.svgFallback();
 
 });
