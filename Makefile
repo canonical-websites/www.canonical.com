@@ -59,8 +59,8 @@ help:
 run:
 	# Make sure IP is correct for mac etc.
 	$(eval docker_ip := `hash boot2docker 2> /dev/null && echo "\`boot2docker ip\`" || echo "127.0.0.1"`)
-	docker pull ubuntudesign/python-auth
-	@docker-compose up -d web         # Run Django
+	if [[ -z "`docker images -q ubuntudesign/python-auth`" ]]; then docker pull ubuntudesign/python-auth; fi
+	@cat docker-compose.yml | sed 's/8002/${PORT}/g' | docker-compose --file=- up -d web # Run Django
 	@echo ""
 	@echo "== Running server on http://${docker_ip}:${PORT} =="
 	@echo ""
@@ -137,13 +137,25 @@ hub-image:
 # Delete created images and containers
 ##
 clean:
-	@find static/css -name '*.css' -exec rm -fv {} \;
-	@if [[ -d .sass-cache ]]; then docker-compose run base rm -r .sass-cache && echo "sass cache removed"; fi
-	@echo "Compiled CSS removed"
-	@if [[ -d node_modules ]]; then docker-compose run base rm -r node_modules && echo "node_modules removed"; fi
 	$(eval destroy_images := $(shell bash -c 'read -p "Destroy images? (y/n): " yn; echo $$yn'))
-	@docker-compose kill
-	@if [[ "${destroy_images}" == "y" ]]; then docker-compose rm -f && echo "Images and containers removed"; fi
+	$(eval delete_css := $(shell bash -c 'read -p "Delete compiled CSS? (y/n): " yn; echo $$yn'))
+	$(eval delete_node_modules := $(shell bash -c 'read -p "Delete node_modules? (y/n): " yn; echo $$yn'))
+
+	@if [[ "${delete_css}" == "y" ]]; then \
+	  find static/css -name '*.css' | xargs rm -fv ;\
+	  rm -rfv .sass-cache ;\
+	  echo "Compiled CSS removed" ;\
+	fi
+
+	@if [[ "${delete_node_modules}" == "y" ]]; then \
+	  rm -rfv node_modules ;\
+	fi
+
+	@if [[ "${destroy_images}" == "y" ]]; then \
+	  docker-compose rm -f ;\
+	  echo "Images and containers removed" ;\
+	  docker-compose kill ;\
+	fi
 
 ##
 # "make it so" alias for "make run" (thanks @karlwilliams)
