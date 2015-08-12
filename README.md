@@ -2,10 +2,10 @@ Canonical.com website project
 ===
 
 ## Prerequisites
-Make sure docker and docker-compose are installed:
 
-https://robinwinslow.co.uk/2015/04/02/installing-docker-on-ubuntu/
-
+1. Install docker:
+   https://robinwinslow.co.uk/2015/04/02/installing-docker-on-ubuntu/
+2. Install docker-compose:
 ``` bash
 sudo pip install docker-compose
 ```
