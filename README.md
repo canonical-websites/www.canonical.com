@@ -3,25 +3,17 @@ Canonical.com website project
 
 To run the site locally:
 
+Make sure docker and docker-compose are installed:
+
+https://robinwinslow.co.uk/2015/04/02/installing-docker-on-ubuntu/
+
 ``` bash
-make setup    # Install dependencies - only needed the first time
-make develop  # Auto-compile sass files and run the dev server
+sudo pip install docker-compose
 ```
+
+``` bash
+make run# Auto-compile sass files and run the dev server
+```
+
 
 Now visit <http://127.0.0.1:8002>
-
-Fenchurch
----
-
-This site depends on [Fenchurch 3](https://launchpad.net/fenchurch/3.0.0) - which is currently a private repository. Make sure you have SSH access to the above repository before attempting to install dependencies.
-
-Updating templates from [canonical-website-content](https://launchpad.net/canonical-website-content)
----
-
-Until this project is released, new template work will be being added to the [canonical-website-content](https://launchpad.net/canonical-website-content) project.
-
-To update the templates directory with the template changes from this repository:
-
-``` bash
-make update-templates
-```
