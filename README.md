@@ -1,7 +1,7 @@
 Canonical.com website project
 ===
 
-# Prerequisites
+## Prerequisites
 Make sure docker and docker-compose are installed:
 
 https://robinwinslow.co.uk/2015/04/02/installing-docker-on-ubuntu/
@@ -10,7 +10,7 @@ https://robinwinslow.co.uk/2015/04/02/installing-docker-on-ubuntu/
 sudo pip install docker-compose
 ```
 
-# Run
+## Run
 
 ``` bash
 make run# Auto-compile sass files and run the dev server
