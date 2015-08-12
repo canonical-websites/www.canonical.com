@@ -5,10 +5,7 @@ Canonical.com website project
 
 1. Install docker:
    https://robinwinslow.co.uk/2015/04/02/installing-docker-on-ubuntu/
-2. Install docker-compose:
-``` bash
-sudo pip install docker-compose
-```
+2. Install docker-compose: `sudo pip install docker-compose`
 
 ## Run
 
