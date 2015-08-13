@@ -83,10 +83,6 @@ html, body { height: 100%; }
 
 html {
 	background: url(../img/backgrounds/image-background-paper.png) repeat-y center top #f1f1f1;
-	-webkit-transition: background-position 100 ease;
-	-moz-transition: background-position 100 ease;
-	-o-transition: background-position 100 ease;
-	transition: background-position 100 ease;
 }
 
 body {
@@ -650,7 +646,7 @@ html.yui3-js-enabled {
 
 	    &.hide {
 	    	display: block;
-	    	opacity: 1 !important;
+	    	opacity: 1;
 	    }
 
 	    .title {
@@ -697,14 +693,19 @@ html.yui3-js-enabled {
 	@media only screen and (min-width : 768px) {
 		.tabbed-menu {
 			display: block;
+      padding: 20px 0;
 		}
 		.tabbed-content {
-		    padding: 40px;
+				display: block;
 		    margin-bottom: 20px;
+				padding: 40px;
+				opacity: 1;
+				-webkit-animation: appear 0.5s ease-in;
+				animation: appear 0.5s ease-in;
 
 		    &.hide {
 		    	display: none;
-		    	opacity: 0 !important;
+		    	opacity: 0;
 		    }
 
 		    .title {
@@ -728,6 +729,34 @@ html.yui3-js-enabled {
 		background-color: transparent;
 	}
 
+}
+
+@keyframes appear {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes appear {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 html.yui3-js-enabled.opera-mini {

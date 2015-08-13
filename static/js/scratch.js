@@ -140,28 +140,66 @@ YUI().use('node', 'cookie', 'event-resize', 'transition', 'event', 'jsonp', 'jso
         s = p.get('href').split('#')[1],
         w = (p.get('clientWidth') / 2) - 7,
         x = (p.get('parentNode').getXY()[0] - p.get('parentNode').get('parentNode').getXY()[0]) + w;
-      Y.all('.tabbed-content').each(function () {
-        if (this.get('id') !== s) {
-          this.setStyle('opacity', '0');
-        }
-      });
       Y.all('.tabbed-menu a').on('click', function (e) {
         e.preventDefault();
         Y.all('.tabbed-menu a').removeClass('active');
         e.currentTarget.addClass('active');
-        Y.all('.tabbed-content').addClass('hide').setStyle('opacity', '0');
+        Y.all('.tabbed-content').addClass('hide');
         s = e.currentTarget.get('hash');
         Y.one(s).removeClass('hide');
-        new Y.Anim({ node: s, to: { opacity: 1 } }).run();
         x = (e.currentTarget.get('parentNode').getXY()[0] - e.currentTarget.get('parentNode').get('parentNode').getXY()[0]) + w;
       });
     }
   };
+
+  core.resizeListener = function() {
+    Y.on('windowresize', function(e) {
+      core.redrawGlobal();
+    });
+    core.globalInit();
+  };
+
+  core.globalInit= function() {
+          if (document.documentElement.clientWidth < 768) {
+                  core.globalPrepend = 'div.legal';
+                  core.setupGlobalNav();
+                  core.setupAdditionalInfo();
+                  Y.one('.nav-global-wrapper').insert('<h2>Ubuntu websites</h2>','before');
+          } else if (document.documentElement.clientWidth >= 768) {
+                  core.globalPrepend = 'body';
+                  core.setupGlobalNav();
+                  Y.all('#additional-info h2').setStyle('cursor', 'default');
+          }
+  };
+
+  core.redrawGlobal = function() {
+    var globalNav = Y.one("#nav-global");
+    if (document.documentElement.clientWidth < 768 && core.globalPrepend != 'div.legal') {
+      core.globalPrepend = 'div.legal';
+      if (globalNav) {
+        globalNav.remove();
+        core.setupGlobalNav();
+        core.setupAdditionalInfo();
+        Y.one('.nav-global-wrapper').insert('<h2>Ubuntu websites</h2>','before');
+        Y.one('#nav-global h2').setStyle('cursor', 'pointer').append('<span></span>').on('click',function(e) {
+          this.toggleClass('active');
+          this.next('div').toggleClass('active');
+        });
+      }
+    } else if (document.documentElement.clientWidth >= 768 && core.globalPrepend != 'body') {
+      core.globalPrepend = 'body';
+      if (globalNav) {
+        globalNav.remove();
+        core.setupGlobalNav();
+      }
+    }
+  };
+
 
   core.cookiePolicy();
   core.setupHtmlClass();
   core.sectionTabs();
   core.tabbedContent();
   core.svgFallback();
-
+  core.setupGlobalNav();
 });
