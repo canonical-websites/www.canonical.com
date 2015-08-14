@@ -11,10 +11,10 @@ String.prototype.format = function() {
   });
 };
 
-YUI().use('node', 'cookie', 'event-resize', 'transition', 'event', 'jsonp', 'json-parse', 'anim', function(Y) {
+YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', 'cookie', function(Y) {
 
   core.setupHtmlClass = function() {
-    Y.all('html').removeClass('no-js').addClass('yes-js');
+    Y.one('html').removeClass('no-js').addClass('yes-js');
   }
 
   core.setupAdditionalInfo = function() {
@@ -28,26 +28,20 @@ YUI().use('node', 'cookie', 'event-resize', 'transition', 'event', 'jsonp', 'jso
 
   core.cookiePolicy = function() {
     function open() {
-      YUI().use('node', function(Y) {
-        Y.one('body').prepend('<div class="cookie-policy"><div class="wrapper"><a href="?cp=close" class="link-cta">Close</a><p>We use cookies to improve your experience. By your continued use of this site you accept such use. To change your settings please <a href="/privacy-policy#cookies">see our policy</a>.</p></div></div>');
-        Y.one('footer.global .legal').addClass('has-cookie');
-        Y.one('.cookie-policy .link-cta').on('click',function(e){
-          e.preventDefault();
-          close();
-        });
+      Y.one('body').prepend('<div class="cookie-policy"><div class="wrapper"><a href="?cp=close" class="link-cta">Close</a><p>We use cookies to improve your experience. By your continued use of this site you accept such use. To change your settings please <a href="/privacy-policy#cookies">see our policy</a>.</p></div></div>');
+      Y.one('footer.global .legal').addClass('has-cookie');
+      Y.one('.cookie-policy .link-cta').on('click',function(e){
+        e.preventDefault();
+        close();
       });
     }
     function close() {
-      YUI().use('node', function(Y) {
-        Y.one('.cookie-policy').setStyle('display','none');
-        Y.one('footer.global .legal').removeClass('has-cookie');
-        setCookie();
-      });
+      Y.one('.cookie-policy').setStyle('display','none');
+      Y.one('footer.global .legal').removeClass('has-cookie');
+      setCookie();
     }
     function setCookie() {
-      YUI().use('cookie', function (Y) {
-        Y.Cookie.set("_cookies_accepted", "true", { expires: new Date("January 12, 2025") });
-      });
+      Y.Cookie.set("_cookies_accepted", "true", { expires: new Date("January 12, 2025") });
     }
     if(Y.Cookie.get("_cookies_accepted") != 'true'){
       open();
