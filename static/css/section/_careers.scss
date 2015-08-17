@@ -190,6 +190,10 @@
 
 		.vacancies {
 			margin-bottom: 10px;
+
+			li {
+				list-style: none;
+			}
 		}
 
 		.small-menu {
@@ -384,4 +388,3 @@ html.no-svg body.careers-home {
 		padding-left: 20px;
 	}
 }
-

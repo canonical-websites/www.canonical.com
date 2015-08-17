@@ -82,11 +82,7 @@ core scss files are in /sites/core/static/css
 html, body { height: 100%; }
 
 html {
-	background: url(../img/backgrounds/image-background-paper.png) repeat-y fixed center top #f1f1f1;
-	-webkit-transition: background-position 100 ease;
-	-moz-transition: background-position 100 ease;
-	-o-transition: background-position 100 ease;
-	transition: background-position 100 ease;
+	background: url(../img/backgrounds/image-background-paper.png) repeat-y center top #f1f1f1;
 }
 
 body {
@@ -247,7 +243,7 @@ header.banner {
 		}
 	}
 
-	.nav-primary ul li a, 
+	.nav-primary ul li a,
 	.nav-primary ul li a:link,
 	.nav-primary ul li a:visited {
 		font-weight: 400;
@@ -353,7 +349,7 @@ footer.global .legal {
 	background-image: none;
 }
 
-footer.global .legal.has-cookie { 
+footer.global .legal.has-cookie {
 	/* if the cookie message is being displayed add padding so the legal links are still visible */
 	padding-bottom: 70px;
 }
@@ -443,16 +439,6 @@ html.no-svg footer #additional-info h2:before {
 html.no-svg footer #additional-info h2:before {
 
 }
-
-/* @section box-white 
-------------------------------------------------------------- */
-.box-white {
-	background: $white;
-	border-radius: 4px;
-	color: $cool-grey;
-	padding: 1.333em $gutter-width;
-}
-
 
 ol.connected-list {
 
@@ -654,15 +640,13 @@ html.yui3-js-enabled {
 		position: absolute;
 	}
 
-
-
 	.tabbed-content {
 	    padding: 8px 8px 0;
 	    margin-bottom: 8px;
 
 	    &.hide {
 	    	display: block;
-	    	opacity: 1 !important;
+	    	opacity: 1;
 	    }
 
 	    .title {
@@ -709,14 +693,19 @@ html.yui3-js-enabled {
 	@media only screen and (min-width : 768px) {
 		.tabbed-menu {
 			display: block;
+      padding: 20px 0;
 		}
 		.tabbed-content {
-		    padding: 40px;
+				display: block;
 		    margin-bottom: 20px;
+				padding: 40px;
+				opacity: 1;
+				-webkit-animation: appear 0.5s ease-in;
+				animation: appear 0.5s ease-in;
 
 		    &.hide {
 		    	display: none;
-		    	opacity: 0 !important;
+		    	opacity: 0;
 		    }
 
 		    .title {
@@ -740,6 +729,34 @@ html.yui3-js-enabled {
 		background-color: transparent;
 	}
 
+}
+
+@keyframes appear {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes appear {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 html.yui3-js-enabled.opera-mini {
@@ -1038,6 +1055,8 @@ html.no-svg {
 		display: block;
 
 		li a {
+			color: #666;
+			display: block;
 			margin-bottom: 20px;
 		}
 		 a.active {
@@ -1046,7 +1065,6 @@ html.no-svg {
 		}
 		li {
 			text-align: left;
-			display: inline;
 		}
 	}
 	.accordion-button {
@@ -1218,8 +1236,8 @@ html.no-svg {
 	blockquote.pull-quote p span {
 		top: 5px;
 	}
-	
-	footer.global .legal.has-cookie { 
+
+	footer.global .legal.has-cookie {
 		/* if the cookie message is being displayed add padding so the legal links are still visible */
 		padding-bottom: 50px;
 	}
@@ -1310,7 +1328,7 @@ html.no-svg {
 	}
 
 	body { position: relative; }
-	
+
 	header.banner {
 		width: 984px;
 	}
@@ -1318,7 +1336,7 @@ html.no-svg {
 	.nav-primary {
 		padding-left: 10px;
 	}
-	
+
 	#main-content {
 		//padding-top: 48px;
 	}
@@ -1406,7 +1424,7 @@ html.no-svg {
 	}
 	body #nav-global li:first-of-type a {
 		margin-left: 10px;
-	}	
+	}
 
 	header.banner .nav-primary li a {
 		padding-top: 13px !important;
@@ -1561,8 +1579,8 @@ html.no-svg {
 			-moz-transition-duration: 5s;
 		}
 	}
-	
-	footer.global .legal.has-cookie { 
+
+	footer.global .legal.has-cookie {
 		/* if the cookie message is being displayed add padding so the legal links are still visible */
 		padding-bottom: 30px;
 	}
