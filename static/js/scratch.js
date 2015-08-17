@@ -11,7 +11,7 @@ String.prototype.format = function() {
   });
 };
 
-YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', 'cookie', function(Y) {
+YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', function(Y) {
 
   core.setupHtmlClass = function() {
     Y.one('html').removeClass('no-js').addClass('yes-js');
