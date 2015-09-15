@@ -15,5 +15,4 @@ Auto-compile sass files and run the dev server
 make run
 ```
 
-
 Now visit <http://127.0.0.1:8002>
