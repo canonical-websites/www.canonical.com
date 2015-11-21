@@ -157,6 +157,10 @@ clean:
 	  docker-compose kill ;\
 	fi
 
+# Clean without prompting
+clean-all:
+	yes | ${MAKE} clean
+
 ##
 # "make it so" alias for "make run" (thanks @karlwilliams)
 ##
