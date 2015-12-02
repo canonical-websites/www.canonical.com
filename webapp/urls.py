@@ -1,10 +1,9 @@
 from django.conf.urls import url
-from fenchurch import TemplateFinder
-from views import custom_404, custom_500
+from views import CanonicalTemplateFinder, custom_404, custom_500
 
 # Standard patterns
 urlpatterns = [
-    url(r'^(?P<template>.*)/?$', TemplateFinder.as_view()),  # Fenchurch
+    url(r'^(?P<template>.*)/?$', CanonicalTemplateFinder.as_view()),  # Fenchurch
 ]
 
 # Error handlers
