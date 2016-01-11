@@ -1,207 +1,196 @@
+// scss-lint:disable NestingDepth, SelectorDepth, QualifyingElement
 .partners {
-	.row-management.strip-light {
-		background: url("../img/partners/partners-hero-small.jpg") no-repeat center;
-		background-size: cover;
-		height: 200px;
+  .row-management.strip-light {
+    background: url('../img/partners/partners-hero-small.jpg') no-repeat center;
+    background-size: cover;
+    box-shadow: inset 0  4px 6px -4px rgba(0, 0, 0, .4), inset 0 -4px 6px -4px rgba(0, 0, 0, .4);
+    height: 200px;
+  }
 
-		-moz-box-shadow:    inset 0  4px 6px -4px rgba(0, 0, 0, 0.4),
-	                        inset 0 -4px 6px -4px rgba(0, 0, 0, 0.4);
-	    -webkit-box-shadow: inset 0  4px 6px -4px rgba(0, 0, 0, 0.4),
-	                        inset 0 -4px 6px -4px rgba(0, 0, 0, 0.4);
-	     box-shadow:        inset 0  4px 6px -4px rgba(0, 0, 0, 0.4),
-	                        inset 0 -4px 6px -4px rgba(0, 0, 0, 0.4);
-	}
+  .row-cloud {
+    p.no-margin-bottom {
+      margin-bottom: 10px;
+    }
 
-	.row-cloud {
-		p.no-margin-bottom {
-			margin-bottom: 10px;
-		}
-
-		div.no-margin-bottom {
-			margin-bottom: 20px;
-		}
-	}
+    div.no-margin-bottom {
+      margin-bottom: 20px;
+    }
+  }
 }
 
-/* Medium / Tablet viewport
--------------------------------------------------------------- */
+// Medium / Tablet viewport
 @media only screen and (min-width : 768px) {
-	.partners {
-		.row-management.strip-light {
-			background-image: url("../img/partners/partners-hero-medium.jpg");
-			height: 350px;
-		}
-		.row-cloud {
-			p.no-margin-bottom,
-			div.no-margin-bottom {
-				margin-bottom: 0;
-			}
-		}
-	}
-}
+  .partners {
+    .row-management.strip-light {
+      background-image: url('../img/partners/partners-hero-medium.jpg');
+      height: 350px;
+    }
 
-/* @section Large / Desktop viewport
--------------------------------------------------------------- */
+    .row-cloud {
+      p.no-margin-bottom,
+      div.no-margin-bottom {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+// scss-lint:enable QualifyingElement
+
+// Large / Desktop viewport
 @media only screen and (min-width : 984px) {
-	.partners {
-		.row-hero {
-			.inner-wrapper {
-				overflow: visible;
-			}
-		}
-		.row-management.strip-light {
-			background-image: url("../img/partners/partners-hero.jpg");
-			background-color: #000;
-			background-size: auto;
-			background-position: 50% 50%;
-			height: 550px;
-		}
-		.row-client img {
-			margin-top: -20px;
-		}
-	}
-	.row-cloud .inner-wrapper {
-		background: none;
+  .partners {
+    .row-hero {
+      .inner-wrapper {
+        overflow: visible;
+      }
+    }
 
-		img {
-			display: block;
-		}
-	}
-	.row-partners .inner-wrapper {
-		.connected-list {
-				background: none;
-				float: left;
-				display: block;
-				padding-bottom: 40px;
-				clear: both;
-				overflow: hidden;
-				padding-top: 50px;
+    .row-management.strip-light {
+      background-color: $black;
+      background-image: url('../img/partners/partners-hero.jpg');
+      background-position: 50% 50%;
+      background-size: auto;
+      height: 550px;
+    }
 
-			li:nth-child(1):before {
-				content: " ";
-				height: 4px;
-				width: 100px;
-				position: absolute;
-				top: 60px;
-				left: 99px;
-				background-image: url(../img/image-list-stroke.svg);
-				display: block;
-					-ms-transform: rotate(14deg);
-					-webkit-transform: rotate(14deg);
-				transform: rotate(14deg);
-			}
-			li:nth-child(1):before {
-				left: 389px;
-				top: 20px;
-					-ms-transform: rotate(166deg);
-					-webkit-transform: rotate(166deg);
-				transform: rotate(166deg);
-			}
+    .row-client img {
+      margin-top: -20px;
+    }
+  }
 
-			li:after,
-			li:nth-child(2):after {
-				top: 109px;
-				left: 295px;
-					-ms-transform: rotate(99deg);
-					-webkit-transform: rotate(99deg);
-				transform: rotate(99deg);
-				width: 112px;
-			}
+  .row-cloud .inner-wrapper {
+    background: none;
 
-			li:nth-child(2):after {
-				left: 0px;
-			}
+    img {
+      display: block;
+    }
+  }
 
-			li:nth-child(3):after,
-			li:nth-child(4):after {
-				left: 296px;
-					-ms-transform: rotate(78deg);
-					-webkit-transform: rotate(78deg);
-				transform: rotate(78deg);
-			}
+  .row-partners .inner-wrapper {
+    .connected-list {
+      background: none;
+      clear: both;
+      display: block;
+      float: left;
+      overflow: hidden;
+      padding-bottom: 40px;
+      padding-top: 50px;
 
-			li:nth-child(4):after	{
-				left: 0;
-				top: 109px;
-			}
+      li:nth-child(1):before {
+        background-image: url('../img/image-list-stroke.svg');
+        // scss-lint:disable StringQuotes
+        content: " ";
+        // scss-lint:enable StringQuotes
+        display: block;
+        height: 4px;
+        left: 389px;
+        position: absolute;
+        top: 20px;
+        transform: rotate(166deg);
+        width: 100px;
+      }
 
-			li:nth-child(5):after {
-				left: 391px;
-				top: 20px;
-					-ms-transform: rotate(166deg);
-					-webkit-transform: rotate(166deg);
-				transform: rotate(166deg);
-			}
+      li:after,
+      li:nth-child(2):after {
+        left: 295px;
+        top: 109px;
+        transform: rotate(99deg);
+        width: 112px;
+      }
 
-			li:nth-child(odd) .icon {
-				float: right;
-				margin: 0 0 0 20px;
-			}
-			li:nth-child(even) .icon {
-				float: left;
-				margin: 0 20px 0 0;
-			}
+      li:nth-child(2):after {
+        left: 0;
+      }
 
-			li:nth-child(1),
-			li:nth-child(3),
-			li:nth-child(5) {
-				padding-left: 100px;
-				padding-right: 40px;
-				float: left;
-				clear: left;
-		}
+      li:nth-child(3):after,
+      li:nth-child(4):after {
+        left: 296px;
+        transform: rotate(78deg);
+      }
 
-			li:nth-child(2),
-			li:nth-child(4),
-			li:nth-child(6)  {
-				float: right;
-				padding-left: 40px;
-				margin-top: -40px;
-			}
+      li:nth-child(4):after {
+        left: 0;
+        top: 109px;
+      }
 
-			li:nth-child(1) {
+      li:nth-child(5):after {
+        left: 391px;
+        top: 20px;
+        transform: rotate(166deg);
+      }
 
-			}
-			li:nth-child(2) {
-				padding-left: 30px;
-				padding-right: 10px;
-			}
-			li:nth-child(3) {
-				margin-top: 80px;
-				padding-left: 60px;
-				padding-right: 60px;
+      li:nth-child(odd) .icon {
+        float: right;
+        margin: 0 0 0 20px;
+      }
 
-				.icon {
-					margin-top: -10px;
-				}
-			}
-			li:nth-child(4) {
-				margin-top: 40px;
-				margin-bottom: 40px;
-				padding-left: 0;
-				padding-right: 100px;
+      li:nth-child(even) .icon {
+        float: left;
+        margin: 0 20px 0 0;
+      }
 
-				.icon {
-					margin-top: -10px;
-				}
-			}
-			li:nth-child(5) {
-				margin-top: 70px;
-				padding-left: 50px;
-			}
-			li:nth-child(6) {
-				margin-top: 30px;
-				padding-right: 30px;
-			}
+      li:nth-child(1),
+      li:nth-child(3),
+      li:nth-child(5) {
+        clear: left;
+        float: left;
+        padding-left: 100px;
+        padding-right: 40px;
+      }
 
-		} /* end connected-list */
-	} /* end row-partners */
+      li:nth-child(2),
+      li:nth-child(4),
+      li:nth-child(6) {
+        float: right;
+        margin-top: -40px;
+        padding-left: 40px;
+      }
 
-	.row-cloud .inner-wrapper {
-		background: url(../img/partners/image-openstack-icons.png) no-repeat scroll bottom right;
+      li:nth-child(2) {
+        padding-left: 30px;
+        padding-right: 10px;
+      }
 
-		img {
-			display: none;
-		}
-	}
+      li:nth-child(3) {
+        margin-top: 34px;
+        padding-left: 60px;
+        padding-right: 60px;
+
+        .icon {
+          margin-top: -10px;
+        }
+      }
+
+      li:nth-child(4) {
+        margin-bottom: 40px;
+        margin-top: -5px;
+        padding-left: 0;
+        padding-right: 100px;
+
+        .icon {
+          margin-top: -10px;
+        }
+      }
+
+      li:nth-child(5) {
+        margin-top: 70px;
+        padding-left: 50px;
+      }
+
+      li:nth-child(6) {
+        margin-top: 30px;
+        padding-right: 30px;
+      }
+
+    }
+  }
+
+  .row-cloud .inner-wrapper {
+    background: url('../img/partners/image-openstack-icons.png') no-repeat scroll bottom right;
+
+    img {
+      display: none;
+    }
+  }
 }
+// scss-lint:enable NestingDepth, SelectorDepth
