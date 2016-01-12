@@ -1,7 +1,7 @@
 // scss-lint:disable NestingDepth, SelectorDepth, QualifyingElement
 .partners {
   .row-management.strip-light {
-    background: url('../img/partners/partners-hero-small.jpg') no-repeat center;
+    background: url('https://assets.ubuntu.com/v1/0a6d514c-partners-hero-small.jpg') no-repeat center;
     background-size: cover;
     box-shadow: inset 0  4px 6px -4px rgba(0, 0, 0, .4), inset 0 -4px 6px -4px rgba(0, 0, 0, .4);
     height: 200px;
@@ -26,7 +26,7 @@
 @media only screen and (min-width : 768px) {
   .partners {
     .row-management.strip-light {
-      background-image: url('../img/partners/partners-hero-medium.jpg');
+      background-image: url('https://assets.ubuntu.com/v1/933baf0c-partners-hero-medium.jpg');
       height: 350px;
     }
 
@@ -51,7 +51,7 @@
 
     .row-management.strip-light {
       background-color: $black;
-      background-image: url('../img/partners/partners-hero.jpg');
+      background-image: url('https:"https://assets.ubuntu.com/v1/6dbc4814-partners-hero.jpg');
       background-position: 50% 50%;
       background-size: auto;
       height: 550px;
@@ -81,7 +81,7 @@
       padding-top: 50px;
 
       li:nth-child(1):before {
-        background-image: url('../img/image-list-stroke.svg');
+        background-image: url('https://assets.ubuntu.com/v1/f2a25267-image-list-stroke.svg');
         // scss-lint:disable StringQuotes
         content: " ";
         // scss-lint:enable StringQuotes

@@ -101,7 +101,7 @@
   }
 
   .ubuntu-row {
-    background: url('../img/home/tablet-home.png') no-repeat scroll 50% 97% rgba(255, 255, 255, 0.6);
+    background: url('https://assets.ubuntu.com/v1/57960a96-tablet-home.png') no-repeat scroll 50% 97% rgba(255, 255, 255, 0.6);
     background-size: 350px auto;
     padding-bottom: 230px;
 
@@ -110,8 +110,8 @@
     }
 
     .ubuntu-logo {
-      background-image: url('../img/logos/logo-ubuntu-120.png');
-      background-image: url('../img/logos/logo-ubuntu.svg'), none;
+      background-image: url('https://assets.ubuntu.com/v1/d212f35c-logo-ubuntu-120.png');
+      background-image: url('https://assets.ubuntu.com/v1/9f61b97f-logo-ubuntu.svg'), none;
       background-position: left bottom;
       background-repeat: no-repeat;
       background-size: auto 0.85em;
@@ -125,7 +125,7 @@
   .partner-row {
     -moz-box-shadow: inset 0  4px 6px -4px rgba(0, 0, 0, 0.4), inset 0 -4px 6px -4px rgba(0, 0, 0, 0.4);
     -webkit-box-shadow: inset 0  4px 6px -4px rgba(0, 0, 0, 0.4), inset 0 -4px 6px -4px rgba(0, 0, 0, 0.4);
-    background: url('../img/home/image-partners-small.jpg') 75% 40px no-repeat;
+    background: url('https://assets.ubuntu.com/v1/e01f406e-image-partners-small.jpg') 75% 40px no-repeat;
     box-shadow: inset 0  4px 6px -4px rgba(0, 0, 0, 0.4), inset 0 -4px 6px -4px rgba(0, 0, 0, 0.4);
     color: #fff;
     height: 250px;
@@ -153,8 +153,8 @@
   }
 
   .service-row {
-    background-image: url('../img/home/image-services.png');
-    background: url('../img/home/image-services.svg') no-repeat scroll bottom center;
+    background-image: url('https://assets.ubuntu.com/v1/1adbb034-image-services.png');
+    background: url('https://assets.ubuntu.com/v1/e39701e0-image-services.svg') no-repeat scroll bottom center;
     background-size: 302px auto;
     margin-bottom: 20px;
     padding-bottom: 200px;
@@ -165,7 +165,7 @@
   }
 
   .careers-row {
-    background: url('../img/home/image-careers.png') no-repeat scroll center bottom;
+    background: url('https://assets.ubuntu.com/v1/1e154e0e-image-careers.png') no-repeat scroll center bottom;
     background-size: 302px auto;
     margin-bottom: 20px;
     padding-bottom: 270px;
@@ -191,11 +191,11 @@ html.no-cssgradients body.home .partner-row {
 html.opera-mini body.home,
 html.no-svg body.home {
   .ubuntu-row .ubuntu-logo {
-    background-image: url('../img/logos/logo-ubuntu-120.png');
+    background-image: url('https://assets.ubuntu.com/v1/d212f35c-logo-ubuntu-120.png');
   }
 
   .service-row {
-    background-image: url('../img/home/image-services.png');
+    background-image: url('https://assets.ubuntu.com/v1/1adbb034-image-services.png');
   }
 }
 
@@ -236,7 +236,7 @@ html.no-svg body.home {
       }
 
       .inner-wrapper:after {
-        background: url('../img/home/image-technology-for-innovators.png') no-repeat;
+        background: url('https://assets.ubuntu.com/v1/15b74eb1-image-technology-for-innovators.png') no-repeat;
         content: " ";
         height: 100%;
         left: 53%;
@@ -259,7 +259,7 @@ html.no-svg body.home {
       }
 
       .inner-wrapper:after {
-        background: url('../img/home/tablet-home.png') no-repeat;
+        background: url('https://assets.ubuntu.com/v1/57960a96-tablet-home.png') no-repeat;
         content: " ";
         height: 569px;
         left: 45%;
@@ -277,8 +277,8 @@ html.no-svg body.home {
       padding-top: 40px;
 
       .image {
-        background-image: url('../img/home/image-services.png');
-        background: url('../img/home/image-services.svg') no-repeat scroll center;
+        background-image: url('https://assets.ubuntu.com/v1/1adbb034-image-services.png');
+        background: url('https://assets.ubuntu.com/v1/e39701e0-image-services.svg') no-repeat scroll center;
         background-size: 302px auto;
         display: block;
         height: 220px;
@@ -288,7 +288,7 @@ html.no-svg body.home {
 
     .partner-row {
       background-color: #32001d;
-      background-image: url('../img/home/image-partners.jpg');
+      background-image: url('https://assets.ubuntu.com/v1/f7fc5efe-image-partners.jpg');
       background-position: 50% center;
       height: auto;
 
@@ -466,7 +466,7 @@ html.no-svg body.home {
         -moz-transition: all 1s 1.4s ease;
         -webkit-transition: all 1s 1.4s ease;
         background-size: 80%;
-        background: url('../img/home/light-beams.png') no-repeat scroll center center;
+        background: url('https://assets.ubuntu.com/v1/1580f686-light-beams.png') no-repeat scroll center center;
         display: block;
         height: 456px;
         opacity: 0;
@@ -487,7 +487,7 @@ html.no-svg body.home {
       .dot-2,
       .dot-1 {
         background-size: 0px;
-        background: url('../img/home/light-dot.png') no-repeat scroll center center;
+        background: url('https://assets.ubuntu.com/v1/97e7b280-light-dot.png') no-repeat scroll center center;
         height: 13px;
         left: $bulb-left + 98px;
         top: 130px + $bulb-top;
