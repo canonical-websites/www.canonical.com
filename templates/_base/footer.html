@@ -1,52 +1,93 @@
 {% block footer %}
-<div class="footer-wrapper strip-light">
-<footer class="global clearfix">
-<nav role="navigation">
-	<div class="row">
-		<div id="canonlist" class="canonlist four-col">
-			<h2>Canonical</h2>
-			<ul>
-				{% if level_1 %}<li><a href="/">Home</a></li>{% endif %}
-				{% if level_1 != 'products' %}<li><a href="/products">Products</a></li>{% endif %}
-				{% if level_1 != 'projects' %}<li><a href="/projects">Projects</a></li>{% endif %}
-				{% if level_1 != 'services' %}<li><a href="/services">Services</a></li>{% endif %}
-				{% if level_1 != 'partners' %}<li><a href="/partners">Partners</a></li>{% endif %}
-				{% if level_1 != 'about' %}<li><a href="/about">About</a></li>{% endif %}
-				{% if level_1 != 'careers' %}<li><a href="/careers">Careers</a></li>{% endif %}
-			</ul>
-		</div>
-		<div class="five-col">
-			<h2>Follow us</h2>
-			<ul class="list-social">
-				<li><a id="item-twitter" href="https://twitter.com/Canonical">@canonical on Twitter</a></li>
-				<li><a id="item-google" href="https://plus.google.com/116469902245452284818/posts">Canonical on Google+</a></li>
-				<li><a id="item-facebook" href="https://www.facebook.com/pages/Canonical/125818784107695?fref=ts">Canonical on Facebook</a></li>
-				<li><a id="item-canonical" href="http://blog.canonical.com">Canonical blog</a></li>
-			</ul>
-		</div>
-		<div id="additional-info" class="three-col last-col">
-			<h2>Find out more</h2>
-			<div>
-			<ul>
-				<li><a href="http://www.ubuntu.com">Ubuntu</a></li>
-				<li><a href="http://www.ubuntu.com/management/ubuntu-advantage">Ubuntu Advantage</a></li>
-				<li><a href="http://www.ubuntu.com/partners">Partnerships</a></li>
-				<li><a href="http://insights.ubuntu.com">Press and resources</a></li>
-			</ul>
-			</div>
-		</div>
-	</div>
-</nav>
-<div class="legal clearfix">
-	<div class="legal-inner">
-		<p class="twelve-col">&copy; {% now "Y" %} Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.</p>
-		<ul class="inline clear">
-			<li><a href="http://www.ubuntu.com/legal">Legal information</a></li>
-			<li><a href="https://bugs.launchpad.net/canonical-website-content/+filebug">Report a bug on this site</a></li>
-		</ul>
-		<span class="accessibility-aid"><a href="#">Got to the top of the page</a></span>
-	</div>
-</div><!-- /.legal -->
+<footer class="row strip footer no-padding-bottom">
+    <div class="inner-wrapper">
+        <nav role="navigation">
+            <div class="canonlist four-col">
+                <h2 class="footer__heading">Canonical</h2>
+                <ul class="compact-nav">
+                    {% if level_1 %}
+                    <li class="compact-nav__list-item">
+                        <a href="/" class="compact-nav__link">Home</a>
+                    </li>
+                    {% endif %}
+                    {% if level_1 != 'products' %}
+                    <li class="compact-nav__list-item">
+                        <a href="/products" class="compact-nav__link">Products</a>
+                    </li>
+                    {% endif %}
+                    {% if level_1 != 'projects' %}
+                    <li class="compact-nav__list-item">
+                        <a href="/projects" class="compact-nav__link">Projects</a>
+                    </li>
+                    {% endif %}
+                    {% if level_1 != 'services' %}
+                    <li class="compact-nav__list-item">
+                        <a href="/services" class="compact-nav__link">Services</a>
+                    </li>
+                    {% endif %}
+                    {% if level_1 != 'partners' %}
+                    <li class="compact-nav__list-item">
+                        <a href="/partners" class="compact-nav__link">Partners</a>
+                    </li>
+                    {% endif %}
+                    {% if level_1 != 'about' %}
+                    <li class="compact-nav__list-item">
+                        <a href="/about" class="compact-nav__link">About</a>
+                    </li>
+                    {% endif %}
+                    {% if level_1 != 'careers' %}
+                    <li class="compact-nav__list-item">
+                        <a href="/careers" class="compact-nav__link">Careers</a>
+                    </li>
+                    {% endif %}
+            </div>
+            <div class="five-col">
+                <h2 class="footer__heading">Follow us</h2>
+                <ul class="social-links">
+                    <li class="social-links__item">
+                        <a class="social-links__link--twitter"  href="https://twitter.com/Canonical">@canonical on Twitter</a>
+                    </li>
+                    <li class="social-links__item">
+                        <a class="social-links__link--google"  href="https://plus.google.com/116469902245452284818/posts">Canonical on Google+</a>
+                    </li>
+                    <li class="social-links__item">
+                        <a class="social-links__link--facebook" href="https://www.facebook.com/pages/Canonical/125818784107695?fref=ts">Canonical on Facebook</a>
+                    </li>
+                    <li class="social-links__item">
+                        <a class="social-links__link--canonical"  href="http://blog.canonical.com">Canonical blog</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="three-col last-col">
+                <h2 class="footer__heading--external">Find out more</h2>
+                <ul class="external-link-list">
+                    <li class="external-link-list__list-item">
+                        <a class="external-link-list__link" href="http://www.ubuntu.com">Ubuntu</a>
+                    </li>
+                    <li class="external-link-list__list-item">
+                        <a class="external-link-list__link" href="http://www.ubuntu.com/management/ubuntu-advantage">Ubuntu Advantage</a>
+                    </li>
+                    <li class="external-link-list__list-item">
+                        <a class="external-link-list__link" href="http://www.ubuntu.com/partners">Partnerships</a>
+                    </li>
+                    <li class="external-link-list__list-item">
+                        <a class="external-link-list__link" href="http://insights.ubuntu.com">Press and resources</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="legal twelve-col">
+            <p class="legal__text">&copy; {% now "Y" %} Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.</p>
+            <ul class="legal__list">
+                <li class="legal__list-item">
+                    <a class="legal__link" href="http://www.ubuntu.com/legal">Legal information</a>
+                </li>
+                <li class="legal__list-item">
+                    <a class="legal__link" href="https://bugs.launchpad.net/canonical-website-content/+filebug">Report a bug on this site</a>
+                </li>
+            </ul>
+            <span class="accessibility-aid"><a href="#">Go to the top of the page</a></span>
+        </div>
+    </div>
 </footer>
-</div>
 {% endblock footer %}
