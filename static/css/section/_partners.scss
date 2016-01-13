@@ -7,6 +7,10 @@
     height: 200px;
   }
 
+  .connected-list {
+    list-style-type: none;
+  }
+
   .row-cloud {
     p.no-margin-bottom {
       margin-bottom: 10px;
@@ -152,7 +156,7 @@
       }
 
       li:nth-child(3) {
-        margin-top: 34px;
+        margin-top: 74px;
         padding-left: 60px;
         padding-right: 60px;
 
@@ -163,7 +167,7 @@
 
       li:nth-child(4) {
         margin-bottom: 40px;
-        margin-top: -5px;
+        margin-top: 33px;
         padding-left: 0;
         padding-right: 100px;
 
@@ -186,7 +190,10 @@
   }
 
   .row-cloud .inner-wrapper {
-    background: url('../img/partners/image-openstack-icons.png') no-repeat scroll bottom right;
+    background-repeat: no-repeat;
+    background-position: right 50px;
+    background-size: auto 200px;
+    background-image: url("https://assets.ubuntu.com/v1/845e046c-partner-openstack.png");
 
     img {
       display: none;
