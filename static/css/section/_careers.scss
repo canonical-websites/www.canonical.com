@@ -123,7 +123,7 @@
   }
 
   .profile {
-    border-top: 1px dotted #aea79f;
+    border-top: 1px dotted $warm_grey;
     margin-top: 0;
     padding-top: 20px;
   }
@@ -153,7 +153,7 @@
 }
 
 @media only screen and (min-width : 768px) {
-  .careers-home #main-content .row-hero .inner-wrapper{
+  .careers-home .row-hero .inner-wrapper {
     background-image: url('../img/careers/hero-careers-medium.png');
     background-position: 100% -40px;
     background-repeat: no-repeat;
@@ -174,7 +174,7 @@
       margin-bottom: 20px;
 
       h2 {
-        margin-bottom: 0.5em;
+        margin-bottom: .5em;
       }
     }
 
@@ -307,7 +307,7 @@
   }
 
   form fieldset {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: $white;
   }
 }
 
