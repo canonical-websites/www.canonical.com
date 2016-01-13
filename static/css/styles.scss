@@ -481,7 +481,9 @@ ol.connected-list {
 .opera-mini .external,
 .no-svg .external { background-image: url(../img/external-link-orange.png); }
 
-.row-companies { /* GB: Need to rename this it's pants */
+.row-companies {
+  background-color: $white;
+
 	ul {
 		float: none;
 		margin-left: 0;
