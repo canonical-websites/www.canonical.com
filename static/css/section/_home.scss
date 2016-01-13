@@ -101,8 +101,8 @@
   }
 
   .ubuntu-row {
-    background-size: 350px auto;
     background: url('../img/home/tablet-home.png') no-repeat scroll 50% 97% rgba(255, 255, 255, 0.6);
+    background-size: 350px auto;
     padding-bottom: 230px;
 
     h2 {
@@ -165,10 +165,10 @@
   }
 
   .careers-row {
-    background-size: 302px auto;
     background: url('../img/home/image-careers.png') no-repeat scroll center bottom;
+    background-size: 302px auto;
     margin-bottom: 20px;
-    padding-bottom: 250px;
+    padding-bottom: 270px;
 
     .row {
       padding-bottom: 300px;
@@ -206,9 +206,11 @@ html.no-svg body.home {
     h1 {
       font-size: 3em;
     }
+
     .row .inner-wrapper {
       padding: 60px 0;
     }
+
     .row-hero {
       margin-top: 0;
       padding-top: 60px;
@@ -563,10 +565,6 @@ html.no-svg body.home {
     }
 
     #main-content .ubuntu-row {
-      background-image: url('../img/home/tablet-home.png');
-      background-position: 100460px 80px;
-      background-repeat: no-repeat;
-
       .row {
         padding-bottom: 170px;
         padding-top: 140px;
@@ -589,10 +587,6 @@ html.no-svg body.home {
     }
 
     .partners-row {
-      background-image: url('../img/home/phone-partners.png');
-      background-position: 100460px 80px;
-      background-repeat: no-repeat;
-
       .row {
         padding-bottom: 250px;
         padding-top: 150px;
@@ -600,9 +594,6 @@ html.no-svg body.home {
     }
 
     .careers-row {
-      background-image: url('../img/home/careers.png');
-      background-position: 100150px 80px;
-      background-repeat: no-repeat;
       padding-bottom: 20px;
 
       .row {
