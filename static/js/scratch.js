@@ -189,11 +189,21 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
     }
   };
 
+  core.homeAnimation = function() {
+    if(Y.one('body').hasClass('home')){
+      var anim = Y.one('.animation');
+      if(anim != null) {
+        anim.addClass('run');
+      }
+    }
+  };
+
 
   core.cookiePolicy();
   core.setupHtmlClass();
   core.sectionTabs();
   core.tabbedContent();
+  core.homeAnimation();
   core.svgFallback();
   core.setupGlobalNav();
 });
