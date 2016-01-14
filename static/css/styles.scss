@@ -102,8 +102,7 @@ table th { background: white; }
   This query will take effect for any screen smaller than 760px
   and also iPads specifically.
   */
-  @media
-  only screen and (max-width: 760px),
+@media only screen and (max-width: 760px),
   (min-device-width: 768px) and (max-device-width: 1024px)  {
 
     /* Force table to not be like tables anymore */
@@ -474,31 +473,23 @@ html.no-js #spinner {
   display: none;
 }
 
-/* @section Footer
+/* @section contextual footer
 -------------------------------------------------------------- */
-footer h2 {
-  text-transform: uppercase;
-  font-size: 0.8em;
-}
-
-footer a:link {
-  color: $cool_grey;
-}
-
 .row-contextual-footer {
-  .vertical-divider div {
+  .vertical-divider > div {
     border-bottom: 1px dotted $warm_grey;
     margin-bottom: 10px;
+    padding-bottom: 10px;
   }
+
   .vertical-divider .last-col {
     border-bottom: 0;
-    margin-bottom: 20px;
   }
 }
 
 
 
-/* @section Tabbed menu in accordion mode (TODO: WIP)
+/* @section Tabbed menu in accordion mode
 -------------------------------------------------------------- */
 html.yui3-js-enabled {
 
@@ -1227,12 +1218,6 @@ html.no-svg {
     text-indent: 0;
     display: block;
   }
-
-  /*header.banner {
-    .logo-ubuntu {
-      background-position: 0 15px;
-    }
-  }*/
 
   /* Fix column sizing - TODO: fix in guidelines */
   .three-col,
