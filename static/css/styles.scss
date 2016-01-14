@@ -769,19 +769,18 @@ html.no-svg .cookie-policy .link-cta {
   margin: 0 auto 48px;
 }
 
-.strip-dark .connected-list li, .strip-light .connected-list li {
-  margin-bottom: 20px;
-  min-height: 52px;
-}
+.strip-dark,
+.strip-light {
+  .connected-list li {
+    list-style-type: none;
+    margin-bottom: 20px;
+    min-height: 52px;
 
-.strip-dark .connected-list li p, .strip-light .connected-list li p,
-.strip-dark .connected-list li h3, .strip-light .connected-list li h3 {
-  padding-left: 50px;
-}
-
-.strip-dark ol.connected-list li p
-.strip-dark ol.connected-list li h3, {
-  padding-left: 50px;
+    p,
+    h3 {
+      padding-left: 50px;
+    }
+  }
 }
 
 .strip-dark ol.connected-list li span {
