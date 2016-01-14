@@ -229,6 +229,7 @@ blockquote.pull-quote p {
 -------------------------------------------------------------- */
 header.banner {
   border-bottom: none;
+  overflow: hidden;
 
   .nav-primary.nav-right .logo a {
     @include background_size(130px 19px);
