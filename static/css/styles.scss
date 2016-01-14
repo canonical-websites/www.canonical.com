@@ -1155,6 +1155,11 @@ html.no-svg {
   }
 }
 
+@media only screen and (max-width: 983px) {
+  .vertical-divider > div::before {
+    border: none;
+  }
+}
 
 /* @section Large / Desktop viewport
 -------------------------------------------------------------- */
