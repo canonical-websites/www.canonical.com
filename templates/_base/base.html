@@ -27,7 +27,7 @@
 
 <!-- google fonts -->
 <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono' rel='stylesheet' type='text/css' />
-<link rel="stylesheet" type="text/css" media="screen" href="//assets.ubuntu.com/sites/ubuntu/latest/u/css/beta/global-responsive.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ ASSET_SERVER_URL }}5ff660b1-global-responsive.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/styles.css" />
 <link rel="stylesheet" type="text/css" media="print" href="{{ STATIC_URL }}css/core-print.css" />
 
@@ -94,14 +94,14 @@
 	}
 </script>
 
-<script src="//assets.ubuntu.com/sites/ubuntu/latest/u/js/plugins/yui-min.js"></script>
+<script src="{{ ASSET_SERVER_URL }}6124a084-yui-min.js"></script>
 <script>
 	if(!core){ var core = {}; }
 	core.globalPrepend = 'body';
 </script>
 
 <script src="{{ STATIC_URL }}js/scratch.js"></script>
-<script src="//assets.ubuntu.com/sites/ubuntu/latest/u/js/global.js"></script>
+<script src="{{ ASSET_SERVER_URL }}bdd03093-global.js"></script>
 
 {% block footer_extra %}{% endblock %}
 
