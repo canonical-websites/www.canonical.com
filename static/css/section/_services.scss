@@ -1,6 +1,6 @@
 .services {
   .row-management.strip-light {
-    background: url('../img/services/services-hero-small.jpg') no-repeat center right;
+    background: url('https://assets.ubuntu.com/v1/33e29b2d-services-hero-small.jpg') no-repeat center right;
     background-size: cover;
     box-shadow: inset 0  4px 6px -4px rgba(0, 0, 0, .4), inset 0 -4px 6px -4px rgba(0, 0, 0, .4);
     height: 200px;
@@ -11,7 +11,7 @@
 @media only screen and (min-width : 768px) {
   .services {
     .row-management.strip-light {
-      background-image: url('../img/services/services-hero-medium.jpg');
+      background-image: url('https://assets.ubuntu.com/v1/2026cb62-services-hero-medium.jpg');
       height: 350px;
     }
   }
@@ -21,7 +21,7 @@
 @media only screen and (min-width : 984px) {
   .services {
     .row-management.strip-light {
-      background: $black url('../img/services/services-hero.jpg') 50% 50% no-repeat;
+      background: $black url('https://assets.ubuntu.com/v1/62cd626e-services-hero.jpg') 50% 50% no-repeat;
       height: 550px;
     }
 

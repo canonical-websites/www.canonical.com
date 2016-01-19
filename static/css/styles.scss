@@ -82,7 +82,7 @@ core scss files are in /sites/core/static/css
 html, body { height: 100%; }
 
 html {
-  background: url(../img/backgrounds/image-background-paper.png) repeat-y center top #f1f1f1;
+  background: url(https://assets.ubuntu.com/v1/06a0285e-image-background-paper.png) repeat-y center top #f1f1f1;
 }
 
 body {
@@ -232,7 +232,7 @@ header.banner {
 
   .nav-primary.nav-right .logo a {
     @include background_size(130px 19px);
-    background-image: url(../img/logos/logo.svg);
+    background-image: url(https://assets.ubuntu.com/v1/2eec3fd9-logo.svg);
     background-position: 0 15px;
     background-repeat: no-repeat;
     min-width: 127px;
@@ -252,7 +252,7 @@ header.banner {
 
 .opera-mini header.banner .logo a,
 .no-svg header.banner .logo a {
-  background-image: url(../img/logos/logo.png);
+  background-image: url(https://assets.ubuntu.com/v1/7425169d-logo.png);
 }
 
 /* @section heros
@@ -342,12 +342,12 @@ ol.connected-list {
 .external {
   @include background_size(.7em .7em);
   padding-right: .9em;
-  background-image: url(../img/external-link-orange.svg), none;
+  background-image: url(https://assets.ubuntu.com/v1/71a7de8f-external-link-orange.svg), none;
   background-position: right 1px;
   background-repeat: no-repeat;
 }
 .opera-mini .external,
-.no-svg .external { background-image: url(../img/external-link-orange.png); }
+.no-svg .external { background-image: url(https://assets.ubuntu.com/v1/1dc31c47-external-link-orange.png); }
 
 .row-companies {
   background-color: $white;
@@ -492,7 +492,6 @@ html.no-js #spinner {
 /* @section Tabbed menu in accordion mode
 -------------------------------------------------------------- */
 html.yui3-js-enabled {
-
   .tabbed-menu {
     display: none;
   }
@@ -527,12 +526,12 @@ html.yui3-js-enabled {
       font-size: 16px;
         color: $cool_grey;
         padding-top: 2px;
-        background: url(../img/icons/icon-arrow-down.svg) no-repeat scroll right 3px $light_grey;
+        background: url(https://assets.ubuntu.com/v1/f6fa8249-icon-arrow-down.svg) no-repeat scroll right 3px $light_grey;
     }
 
       &.open {
         .accordion-button {
-          background-image: url(../img/icons/icon-arrow-up.svg);
+          background-image: url(https://assets.ubuntu.com/v1/c65b8106-icon-arrow-up.svg);
           margin-bottom: 10px;
         }
         div {
@@ -544,11 +543,11 @@ html.yui3-js-enabled {
   html.yui3-js-enabled.opera-mini .tabbed-content,
   html.yui3-js-enabled.no-svg .tabbed-content {
     .accordion-button {
-      background-image: url(../img/icons/icon-arrow-right.png)
+      background-image: url(https://assets.ubuntu.com/v1/f1cbbaa2-icon-arrow-right.svg)
     }
     &.open {
       .accordion-button {
-        background-image: url(../img/icons/icon-arrow-up.png);
+        background-image: url(https://assets.ubuntu.com/v1/c65b8106-icon-arrow-up.svg);
       }
     }
   }
@@ -637,10 +636,10 @@ html.yui3-js-enabled.opera-mini {
 html.opera-mini,
 html.no-svg {
   .tabbed-content .accordion-button {
-    background-image: url(../img/arrow_down_9fa097.png);
+    background-image: url(https://assets.ubuntu.com/v1/7a7e0d52-arrow_down_9fa097.png);
   }
   .tabbed-content.open .accordion-button {
-    background-image: url(../img/arrow_up_9fa097.png);
+    background-image: url(https://assets.ubuntu.com/v1/43e2b367-arrow_up_9fa097.png);
   }
 }
 
@@ -684,7 +683,7 @@ html.no-svg {
     text-indent: -9999px;
     margin-top: 12px;
     padding: 0;
-    background: url("../img/icons/close.svg") no-repeat;
+    background: url("https://assets.ubuntu.com/v1/66542f40-close.svg") no-repeat;
     @include background_size(16px 15px);
     width: 16px;
     height: 15px;
@@ -698,7 +697,7 @@ html.no-svg {
 
 html.opera-mini .cookie-policy .link-cta,
 html.no-svg .cookie-policy .link-cta {
-  background-image: url("../img/icons/close.png");
+  background-image: url("https://assets.ubuntu.com/v1/3efa1942-close.png");
 }
 
 
@@ -712,7 +711,7 @@ html.no-svg .cookie-policy .link-cta {
 
 .strip-dark {
   background-color: $dark_aubergine;
-  background-image: url(../img/backgrounds/background-grid.png);
+  background-image: url(https://assets.ubuntu.com/v1/62d597f6-background-grid.png);
   background-repeat: repeat;
   color: #fff;
 }
@@ -730,7 +729,7 @@ html.no-svg .cookie-policy .link-cta {
 
 .strip-dark .icon,
 .strip-dark ol span {
-  background-image: url(../img/icons/list-icon-background.png);
+  background-image: url(https://assets.ubuntu.com/v1/70e67fad-list-icon-background.png);
   background-repeat: no-repeat;
   display: block;
   margin: 0 20px 20px 0;
@@ -764,7 +763,7 @@ html.no-svg .cookie-policy .link-cta {
 
 .strip-light .icon {
   display: block;
-  background-image: url(../img/icons/list-icon-background.png);
+  background-image: url(https://assets.ubuntu.com/v1/70e67fad-list-icon-background.png);
   padding: 24px;
   margin: 0 auto 48px;
 }
@@ -830,22 +829,21 @@ html.no-svg {
   footer #nav-global {
 
     h2 span {
-      background-image: url("../img/arrow_down_9fa097.png");
+      background-image: url("https://assets.ubuntu.com/v1/7a7e0d52-arrow_down_9fa097.png");
     }
     h2.active span {
-      background-image: url("../img/arrow_up_9fa097.png");
+      background-image: url("https://assets.ubuntu.com/v1/43e2b367-arrow_up_9fa097.png");
     }
     h2:before {
-      background-image: url('../img/external-link.png');
+      background-image: url('https://assets.ubuntu.com/v1/48002a8b-external-link.png');
     }
   }
   #additional-info h2.active span {
-    background-image: url("../img/arrow_up_9fa097.png");
+    background-image: url("https://assets.ubuntu.com/v1/43e2b367-arrow_up_9fa097.png");
   }
   #additional-info h2 span {
-    background-image: url("../img/arrow_down_9fa097.png");
+    background-image: url("https://assets.ubuntu.com/v1/7a7e0d52-arrow_down_9fa097.png");
   }
-
 }
 
 /* Medium / Tablet viewport
@@ -991,7 +989,7 @@ html.no-svg {
   .row-contextual-footer {
     .featured {
       p {
-        background: url(../img/pictograms/image-footer-ubuntu.svg);
+        background: url(https://assets.ubuntu.com/v1/83d13882-image-footer-ubuntu.svg);
         background-position: 100% 5px;
         background-repeat: no-repeat;
         font-size: 1.219em; /*1.25em;*/
@@ -1008,54 +1006,54 @@ html.no-svg {
 
 
   .about .row-contextual-footer .featured p {
-    background-image: url(../img/pictograms/image-footer-discussion.svg);
+    background-image: url(https://assets.ubuntu.com/v1/e3f98dd8-image-footer-discussion.svg);
     background-position: 97% 5px;
   }
   .products .row-contextual-footer .featured p {
-    background-image: url(../img/pictograms/image-footer-ubuntu.svg);
+    background-image: url(https://assets.ubuntu.com/v1/83d13882-image-footer-ubuntu.svg);
     background-position: 96% 5px;
   }
   .services .row-contextual-footer .featured p {
-    background-image: url(../img/pictograms/image-footer-forum.svg);
+    background-image: url(https://assets.ubuntu.com/v1/59b3606e-image-footer-forum.svg);
   }
   .partners .row-contextual-footer .featured p {
-    background-image: url(../img/pictograms/image-footer-certification.svg);
+    background-image: url(https://assets.ubuntu.com/v1/fe022948-image-footer-certification.svg);
     background-position: 96% 5px;
     padding-right: 140px;
   }
   .careers .row-contextual-footer .featured p {
-    background-image: url(../img/pictograms/image-footer-search.svg);
+    background-image: url(https://assets.ubuntu.com/v1/5099cfac-image-footer-search.svg);
     background-position: 96% 5px;
     padding-right: 140px;
     min-height: 115px;
   }
   .projects .row-contextual-footer .featured p {
-    background-image: url(../img/pictograms/image-footer-bookmark.svg);
+    background-image: url(https://assets.ubuntu.com/v1/879bebfa-image-footer-bookmark.svg);
     background-position: 95% 5px;
   }
 
   html.opera-mini,
   html.no-svg {
     .row-contextual-footer .featured p {
-      background: url(../img/pictograms/footer-ubuntu.png);
+      background: url(https://assets.ubuntu.com/v1/f28798f3-footer-ubuntu.png);
     }
     .about .row-contextual-footer .featured p {
-      background-image: url(../img/pictograms/image-footer-discussion.png);
+      background-image: url(https://assets.ubuntu.com/v1/fdde0eeb-image-footer-discussion.png);
     }
     .products .row-contextual-footer .featured p {
-      background-image: url(../img/pictograms/image-footer-ubuntu.png);
+      background-image: url(https://assets.ubuntu.com/v1/c4720871-image-footer-ubuntu.png);
     }
     .services .row-contextual-footer .featured p {
-      background-image: url(../img/pictograms/image-footer-forum.png);
+      background-image: url(https://assets.ubuntu.com/v1/9ec1b0e5-image-footer-forum.png);
     }
     .partners .row-contextual-footer .featured p {
-      background-image: url(../img/pictograms/image-footer-certification.png);
+      background-image: url(https://assets.ubuntu.com/v1/bc815bc3-image-footer-certification.png);
     }
     .careers .row-contextual-footer .featured p {
-      background-image: url(../img/pictograms/image-footer-search.png);
+      background-image: url(https://assets.ubuntu.com/v1/a51634af-image-footer-search.png);
     }
     .projects .row-contextual-footer .featured p {
-      background-image: url(../img/pictograms/image-footer-bookmark.png);
+      background-image: url(https://assets.ubuntu.com/v1/e2250eb5-image-footer-bookmark.png);
     }
   }
 
@@ -1121,16 +1119,16 @@ html.no-svg {
          float: none;
     }
     .name {
-      background-image: url(../img/icons/image-careers-icon-name.svg);
+      background-image: url(https://assets.ubuntu.com/v1/ac9e9631-image-careers-icon-name.svg);
       font-weight: normal;
     }
     .role {
-      background-image: url(../img/icons/image-careers-icon-role.svg);
+      background-image: url(https://assets.ubuntu.com/v1/c7a229ce-image-careers-icon-role.svg);
       font-weight: normal;
     }
 
     .location {
-      background-image: url(../img/icons/image-careers-icon-location.svg);
+      background-image: url(https://assets.ubuntu.com/v1/dcff80a2-image-careers-icon-location.svg);
       font-weight: normal;
     }
 
@@ -1146,11 +1144,11 @@ html.no-svg {
 
     .location {
       margin-top: 10px;
-      background-image: url(../img/careers/gophercon/icon-location.svg);
+      background-image: url(https://assets.ubuntu.com/v1/4f60c113-icon-location.svg);
     }
 
     .event {
-      background-image: url(../img/careers/gophercon/icon-event.svg);
+      background-image: url(https://assets.ubuntu.com/v1/ad8a63c5-icon-event.svg);
     }
   }
 }
@@ -1255,7 +1253,7 @@ html.no-svg {
       position: absolute;
       top: 60px;
       left: 99px;
-      background-image: url(../img/image-list-stroke.svg);
+      background-image: url(https://assets.ubuntu.com/v1/f2a25267-image-list-stroke.svg);
       display: block;
         -ms-transform: rotate(14deg);
         -webkit-transform: rotate(14deg);
