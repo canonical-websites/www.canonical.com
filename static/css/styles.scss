@@ -79,6 +79,9 @@ core scss files are in /sites/core/static/css
 @import "section/projects";
 @import "section/taleo";
 
+@import 'global-nav';
+@include canonical-global-nav;
+
 html, body { height: 100%; }
 
 html {
@@ -851,10 +854,6 @@ html.no-svg {
 /* Medium / Tablet viewport
 -------------------------------------------------------------- */
 @media only screen and (min-width : 768px) {
-  body #nav-global li:first-of-type a {
-     margin-left: 10px;
-  }
-
   body { font-size: 15px; }
 
   .row {
@@ -877,26 +876,6 @@ html.no-svg {
   .caps-centered, .muted-heading {
     margin-bottom: 60px;
     font-size: .875em;
-  }
-
-  #nav-global {
-    display: block;
-  }
-
-  footer #nav-global {
-    display: none;
-  }
-
-  footer #nav-global div {
-    display: none;
-  }
-
-  footer #nav-global .nav-global-wrapper ul {
-    margin-left: 10px;
-  }
-
-  footer #nav-global .nav-global-wrapper ul ul {
-    margin-left: 0;
   }
 
   .med-six-col {
