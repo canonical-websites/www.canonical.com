@@ -27,7 +27,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
   core.cookiePolicy = function() {
     function open() {
       Y.one('body').prepend('<div class="cookie-policy"><div class="wrapper"><a href="?cp=close" class="link-cta">Close</a><p>We use cookies to improve your experience. By your continued use of this site you accept such use. To change your settings please <a href="/privacy-policy#cookies">see our policy</a>.</p></div></div>');
-      Y.one('footer.global .legal').addClass('has-cookie');
       Y.one('.cookie-policy .link-cta').on('click',function(e){
         e.preventDefault();
         close();
@@ -35,7 +34,6 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
     }
     function close() {
       Y.one('.cookie-policy').setStyle('display','none');
-      Y.one('footer.global .legal').removeClass('has-cookie');
       setCookie();
     }
     function setCookie() {

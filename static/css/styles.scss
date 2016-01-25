@@ -1083,11 +1083,6 @@ html.no-svg {
     top: 5px;
   }
 
-  footer.global .legal.has-cookie {
-    /* if the cookie message is being displayed add padding so the legal links are still visible */
-    padding-bottom: 50px;
-  }
-
   .profile,
   .event-info{
     .portrait {
@@ -1400,11 +1395,6 @@ html.no-svg {
       transition-duration: 5s;
       -moz-transition-duration: 5s;
     }
-  }
-
-  footer.global .legal.has-cookie {
-    /* if the cookie message is being displayed add padding so the legal links are still visible */
-    padding-bottom: 30px;
   }
 }
 
