@@ -82,6 +82,9 @@ core scss files are in /sites/core/static/css
 @import 'global-nav';
 @include canonical-global-nav;
 
+@import 'toggle-menu';
+@include canonical-toggle-menu;
+
 html, body { height: 100%; }
 
 html {
@@ -309,6 +312,10 @@ body.contributor-license-agreement {
 .footer {
   background: none;
   box-shadow: inset 0  4px 6px -4px rgba(0, 0, 0, .4);
+}
+
+footer #nav-global {
+  margin-top: -1px;
 }
 
 ol.connected-list {
@@ -1200,20 +1207,6 @@ html.no-svg {
   #nav-global li.more a {
     text-indent: 0;
     display: block;
-  }
-
-  /* Fix column sizing - TODO: fix in guidelines */
-  .three-col,
-  .med-six-col .three-col {
-    width: 23.30%;
-  }
-  .med-six-col {
-    .three-col:nth-of-type(2n) {
-        margin-right: 20px;
-    }
-    .three-col.last-col {
-      margin-right: 0;
-    }
   }
 
   .connected-list {

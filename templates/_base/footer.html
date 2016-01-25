@@ -2,7 +2,7 @@
 <footer class="row strip footer no-padding-bottom">
     <div class="inner-wrapper">
         <nav role="navigation">
-            <div class="canonlist four-col">
+            <div class="canonlist four-col footer__container--guttered clearfix">
                 <h2 class="footer__heading">Canonical</h2>
                 <ul class="compact-nav">
                     {% if level_1 %}
@@ -41,7 +41,7 @@
                     </li>
                     {% endif %}
             </div>
-            <div class="five-col">
+            <div class="five-col footer__container--guttered">
                 <h2 class="footer__heading">Follow us</h2>
                 <ul class="social-links">
                     <li class="social-links__item">
@@ -58,25 +58,26 @@
                     </li>
                 </ul>
             </div>
-            <div class="three-col last-col">
-                <h2 class="footer__heading--external footer__heading--toggle">Find out more</h2>
-                <ul class="external-link-list">
-                    <li class="external-link-list__list-item">
+            <div class="three-col last-col toggle-menu">
+                <h2 class="footer__heading--external find-out-more toggle-menu__button">Find out more</h2>
+                <ul class="external-link-list toggle-menu__content">
+                    <li class="external-link-list__list-item toggle-menu__list-item">
                         <a class="external-link-list__link" href="http://www.ubuntu.com">Ubuntu</a>
                     </li>
-                    <li class="external-link-list__list-item">
+                    <li class="external-link-list__list-item toggle-menu__list-item">
                         <a class="external-link-list__link" href="http://www.ubuntu.com/management/ubuntu-advantage">Ubuntu Advantage</a>
                     </li>
-                    <li class="external-link-list__list-item">
+                    <li class="external-link-list__list-item toggle-menu__list-item">
                         <a class="external-link-list__link" href="http://www.ubuntu.com/partners">Partnerships</a>
                     </li>
-                    <li class="external-link-list__list-item">
+                    <li class="external-link-list__list-item toggle-menu__list-item">
                         <a class="external-link-list__link" href="http://insights.ubuntu.com">Press and resources</a>
                     </li>
                 </ul>
             </div>
+            <div class="global-footer-wrapper"></div>
         </nav>
-        <div class="legal twelve-col">
+        <div class="legal twelve-col footer__container--guttered">
             <p class="legal__text">&copy; {% now "Y" %} Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.</p>
             <ul class="legal__list">
                 <li class="legal__list-item">

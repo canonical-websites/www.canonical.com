@@ -3,6 +3,25 @@
 ////
 
 /// Canonical global navigations styling
+body #nav-global li:first-of-type a {
+  margin-left: 0;
+}
+
+footer #nav-global {
+  margin: 0 0 20px;
+
+  h2 {
+    padding: 8px 0;
+  }
+
+  li,
+  li.more,
+  li.more li {
+    margin-top: -1px;
+    border-top: 1px solid #d4d7d4;
+    border-bottom: none;
+  }
+}
 
 @mixin canonical-global-nav {
   @media only screen and (min-width : 768px) {
@@ -13,30 +32,20 @@
 
     #nav-global {
       position: absolute;
-    }
-
-    #nav-global li:first-of-type a {
-       margin-left: 10px;
-    }
-
-    #nav-global {
       display: block;
+
+      li:first-of-type a {
+        margin-left: 10px;
+      }
     }
 
     footer #nav-global {
       display: none;
-    }
+      margin: 0 -10px;
 
-    footer #nav-global div {
-      display: none;
-    }
-
-    footer #nav-global .nav-global-wrapper ul {
-      margin-left: 10px;
-    }
-
-    footer #nav-global .nav-global-wrapper ul ul {
-      margin-left: 0;
+      div {
+        display: none;
+      }
     }
   }
 }
