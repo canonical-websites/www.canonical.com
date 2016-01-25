@@ -21,11 +21,18 @@
         padding-top: 8px;
 
         &::after {
-
+          content: '';
+          display: inline-block;
+          background-image: url('https://assets.ubuntu.com/v1/0bb13297-arrow_down_9fa097.svg');
+          background-repeat: no-repeat;
+          background-size: 15px 15px;
+          margin-left: 5px;
+          height: 11px;
+          width: 15px;
         }
 
         &.active::after {
-          
+          background-image: url('https://assets.ubuntu.com/v1/a41d8313-arrow_up_9fa097.svg');
         }
       }
 
