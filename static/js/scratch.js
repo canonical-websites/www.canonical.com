@@ -1,6 +1,6 @@
 
 
-//Provides basic templating for strings: TODO: Find a home for this
+//Provides basic templating for strings
 String.prototype.format = function() {
   var args = arguments;
   return this.replace(/{(\d+)}/g, function(match, number) {
@@ -18,12 +18,10 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
   }
 
   core.setupAdditionalInfo = function() {
-    if(Y.one('#additional-info h2 span') === null) {
-      Y.one('#additional-info h2').setStyle('cursor', 'pointer').append('<span></span>').on('click',function(e) {
+    Y.one('.find-out-more').setStyle('cursor', 'pointer').on('click',function(e) {
         this.toggleClass('active');
-        this.next('div').toggleClass('active');
-      });
-    }
+        Y.one('.external-link-list').toggleClass('active');
+    });
   };
 
   core.cookiePolicy = function() {
@@ -153,38 +151,46 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
     core.globalInit();
   };
 
+  core.createToggle = function(button) {
+    if (bottonElement = Y.one(button)) {
+      Y.one(bottonElement).setStyle('cursor', 'pointer').on('click',function(e) {
+        this.toggleClass('active');
+        this.next('div').toggleClass('active');
+      });
+    }
+  };
+
   core.globalInit= function() {
-          if (document.documentElement.clientWidth < 768) {
-                  core.globalPrepend = 'div.legal';
-                  core.setupGlobalNav();
-                  core.setupAdditionalInfo();
-                  Y.one('.nav-global-wrapper').insert('<h2>Ubuntu websites</h2>','before');
-          } else if (document.documentElement.clientWidth >= 768) {
-                  core.globalPrepend = 'body';
-                  core.setupGlobalNav();
-                  Y.all('#additional-info h2').setStyle('cursor', 'default');
-          }
+    if (document.documentElement.clientWidth < 768) {
+      core.globalPrepend = '.global-footer-wrapper';
+      core.extendGlobalNav();
+      core.setupAdditionalInfo();
+      Y.one('.nav-global-wrapper').insert('<h2 class="toggle-menu__button">Ubuntu websites</h2>','before');
+      core.createToggle('#nav-global h2');
+    } else if (document.documentElement.clientWidth >= 768) {
+      core.globalPrepend = 'body';
+      core.extendGlobalNav();
+      Y.all('#additional-info h2').setStyle('cursor', 'default');
+    }
   };
 
   core.redrawGlobal = function() {
     var globalNav = Y.one("#nav-global");
-    if (document.documentElement.clientWidth < 768 && core.globalPrepend != 'div.legal') {
-      core.globalPrepend = 'div.legal';
+    if (document.documentElement.clientWidth < 768 && core.globalPrepend != '.footer') {
+      core.globalPrepend = '.global-footer-wrapper';
       if (globalNav) {
         globalNav.remove();
-        core.setupGlobalNav();
+        core.extendGlobalNav();
         core.setupAdditionalInfo();
-        Y.one('.nav-global-wrapper').insert('<h2>Ubuntu websites</h2>','before');
-        Y.one('#nav-global h2').setStyle('cursor', 'pointer').append('<span></span>').on('click',function(e) {
-          this.toggleClass('active');
-          this.next('div').toggleClass('active');
-        });
+        Y.one('.nav-global-wrapper').insert('<h2 class="toggle-menu__button">Ubuntu websites</h2>','before');
+        core.createToggle('#nav-global h2');
       }
     } else if (document.documentElement.clientWidth >= 768 && core.globalPrepend != 'body') {
       core.globalPrepend = 'body';
       if (globalNav) {
         globalNav.remove();
-        core.setupGlobalNav();
+        core.extendGlobalNav();
+        Y.all('#additional-info h2').setStyle('cursor', 'default');
       }
     }
   };
@@ -198,6 +204,16 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
     }
   };
 
+  core.extendGlobalNav = function() {
+    core.setupGlobalNav();
+    if (navGlobal = Y.one('#nav-global')) {
+      navGlobal.addClass('toggle-menu');
+    }
+
+    if (navWrapper = Y.one('#nav-global .nav-global-wrapper')) {
+      navWrapper.addClass('toggle-menu__content');
+    }
+  }
 
   core.cookiePolicy();
   core.setupHtmlClass();
@@ -205,5 +221,5 @@ YUI().use('node', 'cookie', 'event-resize', 'event', 'jsonp', 'json-parse', func
   core.tabbedContent();
   core.homeAnimation();
   core.svgFallback();
-  core.setupGlobalNav();
+  core.resizeListener();
 });
