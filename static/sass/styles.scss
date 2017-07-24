@@ -4,7 +4,7 @@ $color-brand: #e95420;
 $color-accent: #2c001e;
 $color-link: $color-brand;
 
-// vendor - global nav
+// vendor
 @import 'vendor/global-nav/main';
 @import 'vendor/cookie-policy/main';
 
@@ -12,5 +12,5 @@ $color-link: $color-brand;
 @import '../../node_modules/vanilla-brochure-theme/scss/theme';
 @include vanilla-brochure-theme
 
-// snowflakes
-@import 'old/section/home';
+// custom code
+@import 'custom/lightbulb-animation';
