@@ -1,5 +1,16 @@
 @charset "UTF-8";
 
+$color-brand: #e95420;
+$color-accent: #2c001e;
+$color-link: $color-brand;
+
+// vendor - global nav
+@import 'vendor/global-nav/main';
+@import 'vendor/cookie-policy/main';
+
 // import vanilla-brochure-theme
 @import '../../node_modules/vanilla-brochure-theme/scss/theme';
-@include vanilla-brochure-theme;
+@include vanilla-brochure-theme
+
+// snowflakes
+@import 'old/section/home';
