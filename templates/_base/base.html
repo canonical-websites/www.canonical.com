@@ -1,118 +1,112 @@
 {% load versioned_static %}
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
-<head>
+  <head>
+  <title>{% block title %}{% endblock %}</title>
+  <meta charset="UTF-8" />
+  <meta name="description" content="{% block meta_description %}Canonical provides engineering, online and professional services to Ubuntu partners and customers worldwide. As the company behind the Ubuntu project, Canonical is committed to the production and support of Ubuntu – an ever-popular and fast-growing open-source operating system. It aims to ensure Ubuntu is available to every organisation and individual on servers, desktops, laptops and netbooks.{% endblock %}" />
+  <meta name="author" content="Canonical" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>{% block title %}{% endblock %}</title>
+  <link rel="shortcut icon" href="{{ ASSET_SERVER_URL }}0843d517-favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ ASSET_SERVER_URL }}9864667f-apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ ASSET_SERVER_URL }}f2ddbdc6-apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ ASSET_SERVER_URL }}f193fb82-apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="{{ ASSET_SERVER_URL }}205d458b-apple-touch-icon-precomposed.png">
 
-<meta charset="UTF-8" />
-<meta name="description" content="{% block meta_description %}Canonical provides engineering, online and professional services to Ubuntu partners and customers worldwide. As the company behind the Ubuntu project, Canonical is committed to the production and support of Ubuntu – an ever-popular and fast-growing open-source operating system. It aims to ensure Ubuntu is available to every organisation and individual on servers, desktops, laptops and netbooks.{% endblock %}" />
-<meta name="author" content="Canonical" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link type="text/plain" rel="author" href="{% versioned_static 'files/humans.txt' %}" />
 
-<link rel="shortcut icon" href="{{ ASSET_SERVER_URL }}0843d517-favicon.ico" type="image/x-icon" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ ASSET_SERVER_URL }}9864667f-apple-touch-icon-144x144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ ASSET_SERVER_URL }}f2ddbdc6-apple-touch-icon-114x114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ ASSET_SERVER_URL }}f193fb82-apple-touch-icon-72x72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="{{ ASSET_SERVER_URL }}205d458b-apple-touch-icon-precomposed.png">
+  <!-- google fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono' rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ ASSET_SERVER_URL }}a722db6e-global.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/styles.css' %}" />
 
-<link type="text/plain" rel="author" href="{% versioned_static 'files/humans.txt' %}" />
+  <!-- modernizr -->
+  <script src="{{ STATIC_URL }}js/vendor/modernizr.2.7.1.js"></script>
 
-<!-- google fonts -->
-<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono' rel='stylesheet' type='text/css' />
-<link rel="stylesheet" type="text/css" media="screen" href="{{ ASSET_SERVER_URL }}a722db6e-global.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="{% versioned_static 'css/styles.css' %}" />
+  <!-- cookie policy -->
+  <script src="{{ STATIC_URL }}js/vendor/cookie-policy.js"></script>
 
-<!-- modernizr -->
-<script src="{{ STATIC_URL }}js/plugins/modernizr.2.7.1.js"></script>
+  <!-- global nav -->
+  <script src="{{ STATIC_URL }}js/vendor/global.js"></script>
 
-{% block head_extra %}{% endblock %}
+  </head>
 
-</head>
+  <body class="home" itemscope itemtype="http://schema.org/Product">
 
-<body class="{% if level_1 != "" %}{% if level_1 == '2012' %}body-{% endif %}{{ level_1 }}{% endif %}{% if level_2 %} {% if level_1 == '2012' %}body-{% endif %}{{ level_1 }}-{{ level_2 }}{% endif %}{% if level_3 %} {% if level_1 == '2012' %}body-{% endif %}{{ level_1 }}-{{ level_2 }}-{{ level_3 }} {% endif %} {% include "_base/body-class.html" %}{% if extra_body_class != "" %} {% block extra_body_class %}{% endblock %}{% endif %}" itemscope itemtype="http://schema.org/Product">
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K92JCQ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K92JCQ');</script>
+  <!-- End Google Tag Manager -->
 
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K92JCQ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K92JCQ');</script>
-<!-- End Google Tag Manager -->
-
-<header class="banner global" role="banner">
-{% block header_banner %}
-    <nav role="navigation" class="nav-primary nav-right" id="nav">
-        <span id="main-navigation-link"><a href="#main-navigation">Jump to site nav</a></span>
-        <div class="logo">
-            <a href="/">
-                <img width="139" height="19" src="{{ ASSET_SERVER_URL }}28af8f85-footer_logo.png" alt="Canonical logo for print" />
-            </a>
+  <header id="navigation" class="p-navigation--light" role="banner">
+    {% block header_banner %}
+      <div class="row">
+      <div class="p-navigation__banner">
+        <div class="p-navigation__logo">
+          <a class="p-navigation__link" href="#">
+            <img style="max-width: 100px;" src="https://assets.ubuntu.com/v1/5d6da5c4-logo-canonical-aubergine.svg" alt="Canonical logo" />
+          </a>
         </div>
-        <ul>
-            <li class="accessibility-aid"><a accesskey="s" href="#main-content">Jump to content</a></li>
-            <li><a class="first{% if level_1 == 'products' %} active{% endif %}" href="/products">Products</a></li>
-            <li><a{% if level_1 == 'services' %} class="active"{% endif %} href="/services">Services</a></li>
-            <li><a{% if level_1 == 'partners' %} class="active"{% endif %} href="/partners">Partners</a></li>
-            <li><a{% if level_1 == 'about' %} class="active"{% endif %} href="/about">About</a></li>
-            <li><a{% if level_1 == 'careers' %} class="active"{% endif %} href="/careers">Careers</a></li>
+        <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
+        <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+      </div>
+      <nav class="p-navigation__nav">
+        <span class="u-off-screen">
+          <a href="#main-content">Jump to main content</a>
+        </span>
+        <ul class="p-navigation__links">
+          <li class="p-navigation__link"><a href="/products">Products</a></li>
+          <li class="p-navigation__link"><a href="/services">Services</a></li>
+          <li class="p-navigation__link"><a href="/partners">Partners</a></li>
+          <li class="p-navigation__link"><a href="/about">About</a></li>
+          <li class="p-navigation__link"><a href="/careers">Careers</a></li>
         </ul>
-    </nav>
-    <div class="nav-toggle">
-        <a href="#nav" class="nav-toggle__link open"></a>
-        <a href="#" class="nav-toggle__link close"></a>
+      </nav>
     </div>
-{% endblock header_banner %}
-</header>
-<div class="wrapper">
-<div id="main-content">
-{% if level_1 %}
-{% block second_level_nav %}
-{% endblock second_level_nav %}
-{% endif %}
+    {% endblock header_banner %}
+  </header>
 
-{% block header %}{% endblock %}
-{% block content_container %}
-{% block outer_content %}
-{% endblock outer_content %}
-{% endblock content_container %}
-</div>
+  {% if level_1 %}
+    {% block second_level_nav %}
+    {% endblock second_level_nav %}
+  {% endif %}
 
-</div>
+  {% block header %}{% endblock %}
 
-{% include "_base/footer.html" %}
+  {% block content_container %}
+    {% block outer_content %}
+    {% endblock outer_content %}
+  {% endblock content_container %}
 
-<script>
-  var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
-  if(isOperaMini) {
-    var root = document.documentElement;
-    root.className += " opera-mini";
-  }
-</script>
+  {% include "_base/footer.html" %}
 
-<script src="{{ ASSET_SERVER_URL }}3df515d1-global.js"></script>
-<script src="{{ STATIC_URL }}js/polyfills.js"></script>
-<script src="{{ STATIC_URL }}js/utilities.js"></script>
-<script src="{{ STATIC_URL }}js/core.js"></script>
+  <script>
+    var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
+    if(isOperaMini) {
+      var root = document.documentElement;
+      root.className += " opera-mini";
+    }
+  </script>
 
-<script>
-  // Setup global nav
-  var globalNav = ubuntu.globalNav.setup();
-  core.setupGlobalNav(globalNav);
-  core.positionGlobalNav(globalNav);
-  window.addEventListener('resize', function() {core.positionGlobalNav(globalNav);});
+  <script src="{{ STATIC_URL }}js/core.js"></script>
 
-  // Setup toggle menus
-  document.querySelectorAll('.toggle-menu__button').forEach(core.toggleSibling);
+  <script>
 
-  // Every page should show the cookie policy until accepted
-  core.cookiePolicy();
-</script>
+    // Every page should show the cookie policy until accepted
+    var cookie_options = {
+      'content': 'We use cookies to improve your experience of ubuntu.com. By continuing to explore without changing your settings, you are agreeing to accept them. To learn how to change these settings, please see our <a href="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy#cookies">privacy policy</a>.'
+    }
+    ubuntu.cookiePolicy.setup(cookie_options);
+    ubuntu.globalNav.setup();
+  </script>
 
-
-{% block footer_extra %}{% endblock %}
-</body>
+  {% block footer_extra %}{% endblock %}
+  </body>
 </html>
 
