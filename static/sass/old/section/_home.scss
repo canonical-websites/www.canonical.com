@@ -25,7 +25,7 @@
 
 .home {
   h1 {
-    color: $white;
+    color: $color-x-light;
     font-size: 2em;
   }
 
@@ -122,11 +122,11 @@ html.no-cssgradients body.home .partner-row {
   color: #333;
 
   .fade {
-    background-color: $white;
+    background-color: $color-x-light;
   }
 
   .fade:after {
-    background-color: $white;
+    background-color: $color-x-light;
   }
 }
 
