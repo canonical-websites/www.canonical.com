@@ -2,24 +2,23 @@
 
 {% block title %}Canonical | Careers | All Marketing and Business Development vacancies{% endblock %}
 {% block meta_description %}If you’re interested in open source software, the cloud or devices, Canonical is an incredible place to work. Whether you’re a technologist, a designer or a business professional, opportunities exist to work from home or at one of our key offices around the world.{% endblock %}
-{% block meta_keywords %}Canonical, Ubuntu, Linux, open source, free, software, design, designer, development, developer, programmer, engineer, UX, user, experience, interface, technology, IT, job, career, work, vacancy, vacancies, London, Taipei, Montreal, Boston, Shanghai, work from home, working from home, cloud, phone, smartphone, mobile{% endblock %}
 
 {% block content %}
 <div class="strip row">
-	<div class="inner-wrapper">
-		<div class="eight-col">
-			<h1>All Marketing and Business Development vacancies</h1>
-		</div>
-		<div class="eight-col">
-			<p class="intro">If you are interested in a role in a specific department or location, you can <a href="https://ldd.tbe.taleo.net/ldd03/ats/careers/jobSearch.jsp?org=CANONICAL&cws=1&rid=86">search jobs</a>.</p>
-		</div>
-		<div class="eight-col">
-			<ul class="vacancies list with-total" id="job-feed">
-				{% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_755=11588,6158,616" as vacancies %}
-				{% include "_includes/vacancies.html" with vacancies=vacancies %}
-			</ul>
-		</div>
-	</div>
+  <div class="inner-wrapper">
+    <div class="eight-col">
+      <h1>All Marketing and Business Development vacancies</h1>
+    </div>
+    <div class="eight-col">
+      <p class="intro">If you are interested in a role in a specific department or location, you can <a href="https://ldd.tbe.taleo.net/ldd03/ats/careers/jobSearch.jsp?org=CANONICAL&cws=1&rid=86">search jobs</a>.</p>
+    </div>
+    <div class="eight-col">
+      <ul class="vacancies list with-total" id="job-feed">
+        {% get_rss_feed "http://ldd.tbe.taleo.net/ldd03/ats/servlet/Rss?org=CANONICAL&cws=1&_rss_version=2&CUSTOM_755=11588,6158,616" as vacancies %}
+        {% include "_includes/vacancies.html" with vacancies=vacancies %}
+      </ul>
+    </div>
+  </div>
 </div>
 
 {% include "careers/vacancies_contextual_footer.html" %}
