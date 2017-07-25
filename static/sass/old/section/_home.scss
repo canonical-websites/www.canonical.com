@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+.static {
+  display: block;
+}
+
+.animation {
+  display: none;
+}
+
+.ubuntu-logo {
+  background-image: url('https://assets.ubuntu.com/v1/d212f35c-logo-ubuntu-120.png');
+  background-image: url('https://assets.ubuntu.com/v1/9f61b97f-logo-ubuntu.svg'), none;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: auto 0.85em;
+  display: inline-block;
+  height: 1em;
+  margin-left: 0.1em;
+  margin-top: -.25rem;
+  text-indent: -99999px;
+  width: 150px;
+  position: relative;
+  top: -.15rem;
+}
+
+/* Animation
+------------------------------------------------------------------*/
+@keyframes flicker {
+  25% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes dot-pop {
+  0% {
+    background-size: 0;
+  }
+
+  90% {
+    background-size: 15px;
+  }
+
+  100% {
+    background-size: 13px;
+  }
+}
+
+@media only screen and (min-width : $breakpoint-medium) {
+  .static {
+    display: none;
+  }
+
+  .animation {
+    $bulb-left: 170px;
+    $bulb-top: 90px;
+    display: block;
+    height: 456px;
+    margin-left: 19px;
+    margin-top: -20px;
+    width: 538px;
+
+    .background {
+      background-size: 80%;
+      background: url('https://assets.ubuntu.com/v1/1580f686-light-beams.png') no-repeat scroll center center;
+      display: block;
+      height: 456px;
+      opacity: 0;
+      transition: all 1s 1.4s ease;
+      width: 538px;
+    }
+
+    div,
+    img {
+      position: absolute;
+    }
+
+    .bulb {
+      left: $bulb-left;
+      top: $bulb-top;
+    }
+
+    .dot-1,
+    .dot-2 {
+      background-size: 0;
+      background: url('https://assets.ubuntu.com/v1/97e7b280-light-dot.png') no-repeat scroll center center;
+      height: 13px;
+      left: $bulb-left + 98px;
+      top: 130px + $bulb-top;
+      width: 13px;
+      z-index: 10;
+    }
+
+    .dot-2 {
+      left: $bulb-left + 165px;
+    }
+
+    .light {
+      left: $bulb-left + 5px;
+      opacity: 0;
+      top: $bulb-top + 5px;
+    }
+
+    .text {
+      left: $bulb-left - 20px;
+      opacity: 0;
+      top: $bulb-top - 20px;
+      transition: opacity 0.3s 1.5s;
+    }
+  }
+
+  .animation.run {
+    .background {
+      background-size: 100%;
+      opacity: 1;
+    }
+
+    .dot-1 {
+      animation: dot-pop 0.3s 1 0.5s forwards;
+    }
+
+    .dot-2 {
+      animation: dot-pop 0.3s 1 0.8s forwards;
+    }
+
+    .light {
+      animation: flicker 0.3s 1 1.5s forwards;
+      opacity: 0;
+    }
+
+    .text {
+      opacity: 1;
+    }
+  }
+}
