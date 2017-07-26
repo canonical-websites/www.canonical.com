@@ -1,0 +1,79 @@
+/*fadeIn*/
+@keyframes fadeIn {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+/*scaleIn*/
+@keyframes scaleIn {
+  0% {
+    background-size: 0%;
+  }
+
+  100% {
+    background-size: 100%;
+  }
+}
+
+/*scaleInPop*/
+@keyframes scaleInPop {
+  0% {
+    background-size: 0%;
+  }
+
+  60% {
+    background-size: 100%;
+  }
+
+  100% {
+    background-size: 90%;
+  }
+}
+
+/*rotateIn*/
+@keyframes rotateIn {
+  0% {
+    transform: rotate(-45deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/*flicker*/
+@keyframes flicker {
+  25% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*dot-pop*/
+@keyframes dot-pop {
+  0% {
+    background-size: 0;
+  }
+
+  90% {
+    background-size: 15px;
+  }
+
+  100% {
+    background-size: 13px;
+  }
+}

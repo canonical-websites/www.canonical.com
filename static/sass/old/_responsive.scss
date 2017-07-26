@@ -21,7 +21,7 @@
   .wrapper { max-width: 65.333em; } /* 980px / 15px (baseline font); 980px + (60px x 2) = 1100px */  
   .inner-wrapper { max-width: 100%; } /* 940px / 15px */
   
-  .wrapper, .inner-wrapper, .row, .one-col, .two-col, .three-col, .four-col, .five-col, .six-col, .seven-col, .eight-col, .nine-col, .twelve-col {
+  .wrapper, .inner-wrapper, .row, .one-col, .two-col, .col-3, .four-col, .col-5, .col-6, .col-7, .col-8, .nine-col, .col-12 {
     clear: both;
     display: block;
     float: none;

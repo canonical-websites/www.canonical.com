@@ -2,28 +2,27 @@
 
 {% block title %}Canonical | Projects and technologies{% endblock %}
 {% block meta_description %}Canonical guides and contributes to the development of many open source projects in addition to Ubuntu. They include MIR, a next-generation display server, and Juju, a leading service orchestration tool.{% endblock %}
-{% block meta_keywords %}Canonical, Ubuntu, operating system, OS, open source, free, FOSS, technology, technologies, software, projects, user, interface, MIR, graphics, stack, Juju, service, orchestration, cloud, MAAS, metal as a service, server, provisioning, hyperscale,  Launchpad, collaboration, online, code, developer, tool, init, daemon{% endblock %}
 
 {% block extra_body_class %}projects-home{% endblock %}
 
 {% block content %}
 <div class="row row-hero">
-    <div class="inner-wrapper">
-        <div class="eight-col">
+    <div class="row">
+        <div class="col-8">
             <h1>Open source is what we do</h1>
-            <p class="intro six-col">We believe in the power of open source software. As well as driving our own projects, we contribute staff, code and funding to many more.</p>
+            <p class="intro col-6">We believe in the power of open source software. As well as driving our own projects, we contribute staff, code and funding to many more.</p>
         </div>
-        <div class="four-col last-col text-centered">
+        <div class="four-col text-centered">
             <img src="{{ ASSET_SERVER_URL }}f2d19717-pictogram-heart-grey.svg" alt="" width="195" height="196" />
         </div>
     </div>
 </div>
 
 <div class="row row-project">
-    <div class="inner-wrapper">
-        <h2 class="twelve-col muted-heading">Some projects we care about</h2>
+    <div class="row">
+        <h2 class="col-12 muted-heading">Some projects we care about</h2>
 
-        <ul class="no-bullets three-col">
+        <ul class="no-bullets col-3">
             <li>
                 <a href="">
                     <img src="{{ ASSET_SERVER_URL }}0fcb234f-image-project-ubuntu.png" alt="" class="large" />
@@ -32,7 +31,7 @@
                 </a>
                 <div>
                     <p>Ubuntu is one of the world’s biggest and most influential open source projects. With new features continually being developed, there is plenty of opportunity to get involved.</p>
-                    <p><a href="http://community.ubuntu.com/contribute" class="external">Contribute</a></p>
+                    <p><a href="http://community.ubuntu.com/contribute" class="p-link--external">Contribute</a></p>
                 </div>
             </li>
 
@@ -44,7 +43,7 @@
                 </a>
                 <div>
                     <p>A cross-platform client interface needs a cross-platform graphics stack. Mir is the next generation display server used by Ubuntu for its mobile and desktop form factors.</p>
-                    <p><a href="https://wiki.ubuntu.com/Mir" class="external">Learn more<span class="accessibility-aid"> about Mir</span></a></p>
+                    <p><a href="https://wiki.ubuntu.com/Mir" class="p-link--external">Learn more<span class="accessibility-aid"> about Mir</span></a></p>
                 </div>
             </li>
 
@@ -56,13 +55,13 @@
                 </a>
                 <div>
                     <p>Installing and deploying cloud computing at datacentre scale is often complicated and time consuming. Metal as a Service (MAAS) lets you treat physical servers like virtual machines in the cloud, turning  your bare metal into an elastic, cloud-like resource.</p>
-                    <p><a href="http://maas.ubuntu.com" class="external">Learn more<span class="accessibility-aid"> about MAAS</span></a></p>
+                    <p><a href="http://maas.ubuntu.com" class="p-link--external">Learn more<span class="accessibility-aid"> about MAAS</span></a></p>
                 </div>
             </li>
 
         </ul>
 
-        <ul class="no-bullets three-col">
+        <ul class="no-bullets col-3">
             <li>
                 <a href="">
                     <img src="{{ ASSET_SERVER_URL }}802a1974-image-project-juju.png" alt="" class="large" />
@@ -71,7 +70,7 @@
                 </a>
                 <div>
                     <p>Deploying services into cloud and hyperscale environments used to be complex, error-prone and time-consuming - until now. Juju is the Ubuntu project’s service orchestration tool, which simplifies the installation and management of cloud applications.</p>
-                    <p><a href="https://jujucharms.com/about" class="external">Learn more<span class="accessibility-aid"> about Juju</span></a></p>
+                    <p><a href="https://jujucharms.com/about" class="p-link--external">Learn more<span class="accessibility-aid"> about Juju</span></a></p>
                 </div>
             </li>
 
@@ -83,7 +82,7 @@
                 </a>
                 <div>
                     <p>The Open Input Framework (OIF) is a software stack that provides platform-agnostic multi-touch and gestural input for applications. Developers can use OIF directly or through a GUI toolkit.</p>
-                    <p><a href="https://launchpad.net/canonical-multitouch" class="external">Learn more<span class="accessibility-aid"> about OIF</span></a></p>
+                    <p><a href="https://launchpad.net/canonical-multitouch" class="p-link--external">Learn more<span class="accessibility-aid"> about OIF</span></a></p>
                 </div>
             </li>
 
@@ -95,12 +94,12 @@
                 </a>
                 <div>
                     <p>Collaborative software development can be complicated, especially when it comes to version control. Bazaar is a user-friendly, cross-platform Distributed Version Control System (DVCS) that runs on Windows, Mac OS X and  Linux.</p>
-                    <p><a href="http://bazaar.canonical.com" class="external">Learn more<span class="accessibility-aid"> about Bazaar</span></a></p>
+                    <p><a href="http://bazaar.canonical.com" class="p-link--external">Learn more<span class="accessibility-aid"> about Bazaar</span></a></p>
                 </div>
             </li>
         </ul>
 
-        <ul class="no-bullets three-col">
+        <ul class="no-bullets col-3">
             <li>
                 <a href="">
                     <img src="{{ ASSET_SERVER_URL }}95abe343-image-project-openstack.png" alt="" class="large" />
@@ -109,7 +108,7 @@
                 </a>
                 <div>
                     <p>Cloud computing needed an open source, enterprise-scale infrastructure platform. Thanks to the work of Canonical and many other contributors, we have OpenStack.</p>
-                    <p><a href="https://www.ubuntu.com/cloud" class="external">Learn more<span class="accessibility-aid"> about OpenStack</span></a></p>
+                    <p><a href="https://www.ubuntu.com/cloud" class="p-link--external">Learn more<span class="accessibility-aid"> about OpenStack</span></a></p>
                 </div>
             </li>
 
@@ -121,12 +120,12 @@
                 </a>
                 <div>
                     <p>Launchpad enables developers to track and manage open source projects. Its features include code hosting, bug tracking and translation. Ubuntu is one of many projects that use Launchpad.</p>
-                    <p><a href="http://www.launchpad.net" class="external">Learn more<span class="accessibility-aid"> about Launchpad</span></a></p>
+                    <p><a href="http://www.launchpad.net" class="p-link--external">Learn more<span class="accessibility-aid"> about Launchpad</span></a></p>
                 </div>
             </li>
         </ul>
 
-        <ul class="no-bullets three-col last-col">
+        <ul class="no-bullets col-3">
             <li>
                 <a href="">
                     <img src="{{ ASSET_SERVER_URL }}3800f898-image-project-debian.png" alt="" class="large" />
@@ -135,7 +134,7 @@
                 </a>
                 <div>
                     <p>Debian is one of the world’s largest free software communities, famed for its philosophy of collaborative development.  A firmly established Linux distribution, it shares much of its underlying architecture with Ubuntu.</p>
-                    <p><a href="https://www.ubuntu.com/about/about-ubuntu/ubuntu-and-debian" class="external">Learn more<span class="accessibility-aid"> about Debian</span></a></p>
+                    <p><a href="https://www.ubuntu.com/about/about-ubuntu/ubuntu-and-debian" class="p-link--external">Learn more<span class="accessibility-aid"> about Debian</span></a></p>
                 </div>
             </li>
 
@@ -147,7 +146,7 @@
                 </a>
                 <div>
                     <p>In cloud environments, image-sprawl can quickly become a problem. Cloud-init is a system initialisation program that imports data from the provider (e.g. Amazon EC2 or Microsoft Azure) which can be used to configure new images with greater control.</p>
-                    <p><a href="http://cloudinit.readthedocs.org/en/latest/" class="external">Learn more<span class="accessibility-aid"> about Cloud-init</span></a></p>
+                    <p><a href="http://cloudinit.readthedocs.org/en/latest/" class="p-link--external">Learn more<span class="accessibility-aid"> about Cloud-init</span></a></p>
                 </div>
             </li>
         </ul>
@@ -156,15 +155,15 @@
 
 <div class="row row-contextual-footer">
     <div class="inner-wrapper vertical-divider">
-        <div class="six-col featured">
+        <div class="col-6 featured">
             <h3><a href="/projects/directory">View Canonical project directory &rsaquo;</a></h3>
             <p>See an overview of open source projects set up by Canonical, with contact information for each project.</p>
         </div>
-        <div class="three-col">
-            <h3><a class="external" href="https://www.ubuntu.com">Explore ubuntu.com</a></h3>
+        <div class="col-3">
+            <h3><a class="p-link--external" href="https://www.ubuntu.com">Explore ubuntu.com</a></h3>
             <p>On ubuntu.com, you&rsquo;ll find out more about the platform, our management services and our partner programs.  </p>
         </div>
-        <div class="three-col last-col">
+        <div class="col-3">
             <h3><a href="/services/contact-us">Contact us today &rsaquo;</a></h3>
             <p>Interested in Ubuntu Advantage? Talk to us today for more information.</p>
         </div>

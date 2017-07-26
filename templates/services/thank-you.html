@@ -3,19 +3,21 @@
 {% block title %}Contact Canonical | Thank you{% endblock %}
 
 {% block content %}
-<div class="row">
-	<div class="inner-wrapper">
-		<h1>Thank you</h1>
-		<div class="seven-col">
 
-			<h2>We&rsquo;re really excited about your interest in Ubuntu enterprise services.</h2>
-			<p>A member of our team will contact you within two working days.</p>
-			<p>In the mean time, you can find more information about management with <a href="https://www.ubuntu.com/management/working-with-landscape" class="external">Landscape</a> and <a href="https://www.ubuntu.com/management/ubuntu-advantage" class="external">Ubuntu Advantage</a> on ubuntu.com.
-	</p>
-		</div>
-		<div class="five-col last-col text-center">
-            <img src="{{ ASSET_SERVER_URL }}582326b1-pictogram-smile-purple.png" width="164" height="162" alt="Smile pictogram" />
-		</div>
-	</div>
-</div><!-- /.row -->
+<section class="p-strip is-deep">
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-8 suffix-1">
+        <h1>Thank you</h1>
+        <p>We&rsquo;re really excited about your interest in Ubuntu enterprise services.</p>
+        <p>A member of our team will contact you within two working days.</p>
+        <p>In the mean time, you can find more information about management with <a href="https://www.ubuntu.com/management/working-with-landscape" class="p-link--external">Landscape</a> and <a href="https://www.ubuntu.com/management/ubuntu-advantage" class="p-link--external">Ubuntu Advantage</a>				on ubuntu.com.</p>
+      </div>
+      <div class="col-4 u-vertically-center">
+        <img src="{{ ASSET_SERVER_URL }}582326b1-pictogram-smile-purple.png" width="164" height="162" alt="Smile pictogram" />
+      </div>
+    </div>
+  </div>
+</section>
+
 {% endblock content %}

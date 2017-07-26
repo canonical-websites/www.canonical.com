@@ -1,0 +1,192 @@
+.juju-connected {
+  position: relative;
+
+  .connection {
+    display: none;
+    position: absolute;
+    background-color: #38B14A;
+    height: 2px;
+    width: 100%;
+    top: 40%;
+    margin-top: -11px;
+  }
+
+  img {
+    position: relative;
+    z-index: 2;
+    margin-left: 0;
+  }
+}
+
+// Medium / Tablet viewport
+@media only screen and (min-width : $breakpoint-medium) {
+
+  .juju-connected {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    overflow: hidden;
+
+    .connection {
+      display: block;
+    }
+  }
+
+  .row-hero img {
+    display: none;
+  }
+
+  .products-hero-container {
+    background: url('https://assets.ubuntu.com/v1/79729d72-products-hero-background.png') no-repeat center center;
+    height: 600px;
+    left: 50%;
+    margin: -61px 0 0 -427px;
+    position: absolute;
+    top: -80px;
+    width: 600px;
+    z-index: -999;
+
+    @media (max-width: $breakpoint-medium) {
+      display: none;
+    }
+  }
+
+  .products-hero-ubuntu {
+    animation-delay: 1s;
+    animation: scaleIn .3s forwards, fadeIn .6s linear forwards, rotateIn 3.0s ease-out forwards;
+    background-size: 0%;
+    background: url('https://assets.ubuntu.com/v1/fd772e47-products-hero-ubuntu.png') 50% 50% no-repeat;
+    background: url('https://assets.ubuntu.com/v1/c4f35e06-products-hero-ubuntu.svg') 50% 50% no-repeat, none;
+    height: 140px;
+    left: 330px;
+    opacity: 0;
+    position: absolute;
+    top: 208px;
+    width: 140px;
+  }
+
+  .products-hero-desktop,
+  .products-hero-phone,
+  .products-hero-tablet,
+  .products-hero-server,
+  .products-hero-cloud {
+    animation: scaleInPop 0.2s forwards, fadeIn 0.2s linear forwards;
+    height: 66px;
+    opacity: 0;
+    position: absolute;
+    width: 66px;
+  }
+
+  .products-hero-desktop {
+    animation-delay: 1.6s;
+    background-size: 0%;
+    background: url('https://assets.ubuntu.com/v1/b55df6c8-products-hero-desktop.png') 50% 50% no-repeat;
+    background: url('https://assets.ubuntu.com/v1/cd876488-products-hero-desktop.svg') 50% 50% no-repeat, none;
+    left: 367px;
+    top: 65px;
+  }
+
+  .products-hero-phone {
+    animation-delay: 1.85s;
+    background-size: 0%;
+    background: url('https://assets.ubuntu.com/v1/1cf1149f-products-hero-phone.png') 50% 50% no-repeat;
+    background: url('https://assets.ubuntu.com/v1/73006c5b-products-hero-phone.svg') 50% 50% no-repeat, none;
+    left: 494px;
+    top: 118px;
+  }
+
+  .products-hero-tablet {
+    animation-delay: 2s;
+    background-size: 0%;
+    background: url('https://assets.ubuntu.com/v1/71a758fa-products-hero-tablet.png') 50% 50% no-repeat;
+    background: url('https://assets.ubuntu.com/v1/5d1f39cc-products-hero-tablet.svg') 50% 50% no-repeat, none;
+    left: 547px;
+    top: 245px;
+  }
+
+  .products-hero-server {
+    animation-delay: 2.15s;
+    background-size: 0%;
+    background: url('https://assets.ubuntu.com/v1/774f8f41-products-hero-server.png') 50% 50% no-repeat;
+    background: url('https://assets.ubuntu.com/v1/9f43c3da-products-hero-server.svg') 50% 50% no-repeat, none;
+    left: 367px;
+    top: 425px;
+  }
+
+  .products-hero-cloud {
+    animation-delay: 2.3s;
+    background-size: 0%;
+    background: url('https://assets.ubuntu.com/v1/a6d13e59-products-hero-cloud.png') 50% 50% no-repeat;
+    background: url('https://assets.ubuntu.com/v1/b7f288a3-products-hero-cloud.svg') 50% 50% no-repeat, none;
+    left: 240px;
+    top: 372px;
+  }
+
+  .products-hero-line-1,
+  .products-hero-line-2,
+  .products-hero-line-3,
+  .products-hero-line-4,
+  .products-hero-line-5 {
+    animation: fadeIn .3s linear forwards;
+    opacity: 0;
+    position: absolute;
+  }
+
+  .products-hero-line-1 {
+    animation-delay: 1.85s;
+    background: url('https://assets.ubuntu.com/v1/ec446611-products-hero-line-vertical.png');
+    height: 52px;
+    left: 399px;
+    top: 147px;
+    width: 2px;
+  }
+
+  .products-hero-line-2 {
+    animation-delay: 2s;
+    background: url('https://assets.ubuntu.com/v1/4fc1680b-products-hero-line-diagonal.png');
+    height: 38px;
+    left: 455px;
+    top: 185px;
+    width: 38px;
+  }
+
+  .products-hero-line-3 {
+    animation-delay: 2.15s;
+    background: url('https://assets.ubuntu.com/v1/d505cff1-products-hero-line-horizontal.png');
+    height: 2px;
+    left: 479px;
+    top: 277px;
+    width: 52px;
+  }
+
+  .products-hero-line-4 {
+    animation-delay: 2.3s;
+    background: url('https://assets.ubuntu.com/v1/ec446611-products-hero-line-vertical.png');
+    height: 52px;
+    left: 399px;
+    top: 357px;
+    width: 2px;
+  }
+
+  .products-hero-line-5 {
+    animation-delay: 2.45s;
+    background: url('https://assets.ubuntu.com/v1/4fc1680b-products-hero-line-diagonal.png');
+    height: 38px;
+    left: 307px;
+    top: 333px;
+    width: 38px;
+  }
+
+}
+
+// Large / Desktop viewport
+@media only screen and (min-width : $breakpoint-large) {
+
+  .juju-connected {
+    margin-bottom: 0;
+    margin-top: 0;
+
+    img {
+      margin-left: -10px;
+    }
+  }
+}

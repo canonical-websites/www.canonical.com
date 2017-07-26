@@ -2,19 +2,18 @@
 
 {% block title %}Contact Canonical | Partners{% endblock %}
 {% block meta_description %}{% endblock %}
-{% block meta_keywords %}{% endblock %}
 
 {% block extra_body_class %}services{% endblock %}
 
 {% block content %}
 <div class="row">
-  <div class="inner-wrapper">
-    <div class="eight-col">
+  <div class="row">
+    <div class="col-8">
       <h1>Contact Canonical</h1>
       <p>Interested in partnering with Canonical? Just fill in the form below and a member of our team will be in touch.</p>
       <p>All fields are required.</p>
     </div>
-    <div class="eight-col">
+    <div class="col-8">
 
       <!-- MARKETO FORM -->
       <script src="{{ ASSET_SERVER_URL }}37b1db88-jquery.min.js"></script>
@@ -23,7 +22,7 @@
 
       <form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" id="mktoForm_1260">
         <fieldset>
-          <ul class="no-bullets">
+          <ul class="p-list">
 
             <li  class="mktFormReq mktField">
               <label for="FirstName" class="mktoLabel " >First name:</label>

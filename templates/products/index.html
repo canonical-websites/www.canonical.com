@@ -2,18 +2,17 @@
 
 {% block title %}Canonical | Products{% endblock %}
 {% block meta_description %}Canonical provides commercial services for Ubuntu’s users, while working with hardware manufacturers, software vendors and cloud partners to certify Ubuntu. {% endblock %}
-{% block meta_keywords %}Canonical, Ubuntu, open source, free, software, FOSS, Linux, operating system, OS, cloud, phone, desktop, PC, server, service, commercial, support{% endblock %}
-
-{% block extra_body_class %}products-home{% endblock %}
 
 {% block content %}
-<div class="row row-hero">
-  <div class="inner-wrapper">
-    <div class="seven-col">
+
+<section class="p-strip is-deep" style="overflow: hidden">
+  <div class="row">
+    <div class="col-7">
       <h1>Ubuntu&#58; creating the world&rsquo;s best open source software platform</h1>
+      <p>Ubuntu is a platform that spans from the PC and IoT devices to the server and the cloud. It includes a comprehensive suite of enterprise-grade tools for development, configuration, management and service&nbsp;orchestration. </p>
+      <p><a href="https://www.ubuntu.com" class="p-link--external">Learn more on ubuntu.com</a></p>
     </div>
-    <div class="five-col last-col text-center">
-      <img src="{{ ASSET_SERVER_URL }}94be7baa-products-hero-small.png" alt="" />
+    <div class="col-5">
       <div class= "products-hero-container">
         <div class= "products-hero-ubuntu"></div>
 
@@ -33,102 +32,99 @@
         <div class= "products-hero-line-5"></div>
       </div>
     </div>
-    <div class="six-col">
-      <p class="intro">Ubuntu is a platform that spans from the PC and IoT devices to the server and the cloud. It includes a comprehensive suite of enterprise-grade tools for development, configuration, management and service&nbsp;orchestration. </p>
-      <p class="intro"><a href="https://www.ubuntu.com" class="external">Learn more on ubuntu.com</a></p>
-    </div>
   </div>
-</div>
+</section>
 
-<div class="row strip-dark">
-  <div class="inner-wrapper">
+<section class="p-strip--accent">
+  <div class="row">
     <h2>Canonical and Ubuntu</h2>
-    <ul class="connected-list">
-      <li class="three-col">
+    <ul class="p-list connected-list">
+      <li class="col-3">
         <img src="{{ ASSET_SERVER_URL }}6daed065-icon-canonical.svg" class="icon" alt="">
         <p>Canonical defines Ubuntu&rsquo;s strategy and drives innovation with a team of over 400 dedicated designers, developers and project&nbsp;managers.</p>
       </li>
-      <li class="three-col">
+      <li class="col-3">
         <img src="{{ ASSET_SERVER_URL }}b4a08b93-icon-calendar.svg" class="icon" alt="">
         <p>Since 2004, we have ensured that Ubuntu is released on time, twice every&nbsp;year.</p>
       </li>
-      <li class="three-col">
+      <li class="col-3">
         <img src="{{ ASSET_SERVER_URL }}0948d424-icon-ubuntu.svg" class="icon" alt="">
         <p>Ubuntu is the leading OS in the cloud &mdash; OpenStack is built into Ubuntu Server and Ubuntu is the reference operating system for&nbsp;OpenStack.</p>
       </li>
-      <li class="three-col last-col">
+      <li class="col-3">
         <img src="{{ ASSET_SERVER_URL }}a535811f-icon-cloud.svg" class="icon" alt="">
         <p>With our partner network, we make Ubuntu available globally through retail channels and on most major public&nbsp;clouds.</p>
       </li>
     </ul>
   </div>
-</div>
+</section>
 
-<div class="row">
-  <div class="inner-wrapper">
-    <div class="twelve-col">
+<section class="p-strip p-strip--grey">
+  <div class="row">
+    <div class="col-8">
       <h2>In the cloud&#58; driving enterprise agility</h2>
-    </div>
-    <div class="eight-col">
       <p>Ubuntu is at the forefront of large cloud infrastructure deployments, thanks to Canonical&rsquo;s experience in building clouds for our customers and our involvement in the OpenStack project as a founding member. Ubuntu is also optimised and certified for the most popular public clouds &mdash; so wherever you choose to run your applications and services, you can always use&nbsp;Ubuntu.</p>
     </div>
   </div>
-</div>
 
-<div class="juju-connected">
-  <div class="row">
-    <div class="inner-wrapper">
-      <img src="{{ ASSET_SERVER_URL }}b4b91175-juju-squid-apache-ceph-bundle.svg" alt="Juju charms connected" width="818" height="190">
+  <div class="p-strip">
+    <div class="row">
+    <div class="col-12">
+      <img src="{{ ASSET_SERVER_URL }}b4b91175-juju-squid-apache-ceph-bundle.svg" alt="Juju charms connected" width="818" height="190" style="width: 100%">
     </div>
   </div>
-</div>
-
-<div class="row">
-  <div class="inner-wrapper">
-    <div class="six-col">
-      <p>Canonical has also created several important tools to help customers build, manage and scale their clouds. For telcos and enterprises, <a href="https://www.ubuntu.com/management/landscape-features" class="external">Landscape</a> helps administrators deploy and manage Ubuntu clouds cost-effectively. And whether you are using your own cloud or someone else&rsquo;s, <a href="https://jujucharms.com" class="external">Juju</a> and <a href="http://maas.ubuntu.com/" class="external">MAAS</a> drastically reduce the time, cost and complexity of deploying and scaling in any cloud environment.</p>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <p>Canonical has also created several important tools to help customers build, manage and scale their clouds. For telcos and enterprises, <a href="https://www.ubuntu.com/management/landscape-features" class="p-link--external">Landscape</a> helps administrators deploy and manage Ubuntu clouds cost-effectively. And whether you are using your own cloud or someone else&rsquo;s, <a href="https://jujucharms.com" class="p-link--external">Juju</a> and <a href="http://maas.ubuntu.com/" class="p-link--external">MAAS</a> drastically reduce the time, cost and complexity of deploying and scaling in any cloud environment.</p>
     </div>
-    <div class="prepend-two three-col last-col">
-      <blockquote class="pull-quote">
-        <p><span>&ldquo;</span>Ubuntu remains the most popular operating system for&nbsp;OpenStack deployments&nbsp;<span>&rdquo;</span></p>
-        <p><cite>OpenStack User Survey, November 2013</cite></p>
+    <div class="col-6">
+      <blockquote class="p-pull-quote">
+      <p>Ubuntu remains the most popular operating system for&nbsp;OpenStack deployments&nbsp;<span>&rdquo;</span></p>
+      <p><cite>OpenStack User Survey, November 2013</cite></p>
+      <cite class="p-pull-quote__citation">OpenStack User Survey, November 2013</cite>
       </blockquote>
     </div>
   </div>
-</div>
+</section>
 
-<div class="row strip-light">
-  <div class="inner-wrapper">
-    <div class="twelve-col">
+<section class="p-strip is-deep">
+  <div class="row">
+    <div class="col-12">
       <img src="{{ ASSET_SERVER_URL }}0a9abf66-desktop-enterprise-hero-trans.png" width="904" height="517" alt="Family of devices" />
     </div>
-    <div class="six-col">
+  </div>
+  <div class="row">
+    <div class="col-6">
       <h2>On the client: devops for IoT</h2>
-      <p>Ubuntu is the preferred development environment for embedded engineers. It is widely used in <a href="https://www.ubuntu.com/internet-of-things">IoT devices</a> across verticals: automotive, industrial, robotics, networking and digital signage. Canonical works with semiconductors to make certified Ubuntu images that brings the best performance out of their hardware.</p>
-      <p>With snaps, the universal Linux packaging system, and <a href="https://snapcraft.io">snapcraft.io</a> developers can easily build and distribute their software across multiple devices and environments. And Ubuntu Core is the all snap version of Ubuntu, built for security.</p>
+      <p>Ubuntu is the preferred development environment for embedded engineers. It is widely used in <a class="p-link--external" href="https://www.ubuntu.com/internet-of-things">IoT devices</a> across verticals: automotive, industrial, robotics, networking and digital signage. Canonical works with semiconductors to make certified Ubuntu images that brings the best performance out of their hardware.</p>
+      <p>With snaps, the universal Linux packaging system, and <a class="p-link--external" href="https://snapcraft.io">snapcraft.io</a> developers can easily build and distribute their software across multiple devices and environments. And Ubuntu Core is the all snap version of Ubuntu, built for security.</p>
     </div>
-    <div class="six-col last-col">
+    <div class="col-6">
       <h2>On PCs: supported desktop</h2>
-      <p>The Ubuntu desktop is not only the environment of choice for millions of developers but also enterprises, government, educational institutions and anyone looking for a reliable, ease to use, versatile and secure operating system. Canonical offers support for enterprise desktop users with <a href="https://www.ubuntu.com/support">Ubuntu Advantage</a>.</p>
-      <p>Canonical works with most of the world&#39;s PC makers, to <a href="https://certification.ubuntu.com/">certify</a> Ubuntu for use on a huge range of devices. As a result, Ubuntu is now available on computers for sale in retailers and online across the globe.</p>
+      <p>The Ubuntu desktop is not only the environment of choice for millions of developers but also enterprises, government, educational institutions and anyone looking for a reliable, ease to use, versatile and secure operating system. Canonical offers support for enterprise desktop users with <a href="https://www.ubuntu.com/support" class="p-link--external">Ubuntu Advantage</a>.</p>
+      <p>Canonical works with most of the world&#39;s PC makers, to <a class="p-link--external" href="https://certification.ubuntu.com/">certify</a> Ubuntu for use on a huge range of devices. As a result, Ubuntu is now available on computers for sale in retailers and online across the globe.</p>
     </div>
   </div>
-</div>
+</section>
 
-<div class="row row-contextual-footer">
-  <div class="inner-wrapper vertical-divider">
-    <div class="featured six-col">
-      <h3><a href="https://www.ubuntu.com" class="external">Explore ubuntu.com</a></h3>
+<div class="p-strip--grey is-bordered is-deep">
+  <div class="row p-divider">
+    <div class="col-6 p-divider__block">
+      <h3><a href="https://www.ubuntu.com" class="p-link--external">Explore ubuntu.com</a></h3>
       <p>On ubuntu.com you&rsquo;ll find more information about the platform, our services, our management tools and our partner&nbsp;programs.</p>
     </div>
-    <div class="three-col">
+    <div class="col-3 p-divider__block">
       <h3><a href="/services">Learn more about services&nbsp;&rsaquo;</a></h3>
       <p>Leading organisations all over the world turn to us for our management services and consultancy.</p>
     </div>
-    <div class="three-col last-col">
+    <div class="col-3 p-divider__block">
       <h3><a href="/partners">Learn more about partners&nbsp;&rsaquo;</a></h3>
       <p>We help the biggest names in hardware, software and cloud to optimise, extend and deliver Ubuntu at scale.</p>
     </div>
   </div>
 </div>
+
+{% include "_includes/extended-footer.html" %}
+
 {% endblock content %}

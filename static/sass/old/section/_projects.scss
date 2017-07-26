@@ -131,12 +131,12 @@ body.projects-home {
       margin-right: 18%;
       margin-left: 18%;
 
-      .three-col {
+      .col-3 {
         width: 44%;
         margin-right: 40px;
       }
 
-      .three-col:nth-of-type(2n){
+      .col-3:nth-of-type(2n){
         margin-right: 0;
         float: right;
       }
@@ -187,16 +187,16 @@ body.projects-home {
       margin-right: 0;
       margin-left: 0;
 
-      .three-col {
+      .col-3 {
         width: 21.5%;
       }
 
-      .three-col:nth-of-type(2n){
+      .col-3:nth-of-type(2n){
         margin-right: 40px;
         float: left;
       }
 
-      .three-col.last-col {
+      .col-3.last-col {
         margin-right: 0;
       }
 
