@@ -1,14 +1,20 @@
-{% for item in items %}
+{% if items is False %}
   <li>
-    <a href="{{ item.link }}">{{ item.title }}</a>
-    <p class="note">
-      {% if item.type == "resource" %}
-        {{ item.category }}
-      {% else %}
-        <time pubdate datetime="{{ item.updated_datetime | date:'c' }}">
-          {{ item.updated_datetime | date:"j F Y" }}
-        </time>
-      {% endif %}
-    </p>
+    <p>Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/www.canonical.com/issues/new">file an issue</a>.</p>
   </li>
-{% endfor %}
+{% else %}
+  {% for item in items %}
+    <li>
+      <a href="{{ item.link }}">{{ item.title }}</a>
+      <p class="note">
+        {% if item.type == "resource" %}
+          {{ item.category }}
+        {% else %}
+          <time pubdate datetime="{{ item.updated_datetime | date:'c' }}">
+            {{ item.updated_datetime | date:"j F Y" }}
+          </time>
+        {% endif %}
+      </p>
+    </li>
+  {% endfor %}
+{% endif %}

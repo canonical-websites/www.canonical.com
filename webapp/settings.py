@@ -50,7 +50,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'builtins': [
-                'webapp.templatetags.feeds',
+                'canonicalwebteam.get_feeds.templatetags',
             ],
             'context_processors': [
                 'django.template.context_processors.static',
