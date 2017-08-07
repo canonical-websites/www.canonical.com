@@ -1,17 +1,23 @@
-<li class="total">
-  {% if vacancies %}
-    We currently have {{ vacancies | length }} {{ job_type }} vacancies
-  {% else %}
-    Sorry, we currently have no {{ job_type }} vacancies
-  {% endif %}
-</li>
-
-{% if limit %}
-  {% for job in vacancies|slice:limit %}
-    <li><a href="{{ job.link }}">{{ job.title }}&nbsp;&rsaquo;</a></li>
-  {% endfor %}
+{% if vacancies is False %}
+  <li>
+    <p>Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/www.canonical.com/issues/new">file an issue</a>.</p>
+  </li>
 {% else %}
-  {% for job in vacancies %}
-    <li><a href="{{ job.link }}">{{ job.title }}&nbsp;&rsaquo;</a></li>
-  {% endfor %}
+  <li class="total">
+    {% if vacancies %}
+      We currently have {{ vacancies | length }} {{ job_type }} vacancies
+    {% else %}
+      Sorry, we currently have no {{ job_type }} vacancies
+    {% endif %}
+  </li>
+
+  {% if limit %}
+    {% for job in vacancies|slice:limit %}
+      <li><a href="{{ job.link }}">{{ job.title }}&nbsp;&rsaquo;</a></li>
+    {% endfor %}
+  {% else %}
+    {% for job in vacancies %}
+      <li><a href="{{ job.link }}">{{ job.title }}&nbsp;&rsaquo;</a></li>
+    {% endfor %}
+  {% endif %}
 {% endif %}
