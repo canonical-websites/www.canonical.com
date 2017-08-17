@@ -1,5 +1,6 @@
 {% for item in items %}
   <li class="p-list__item">
+    <a href="{{ item.link }}">{{ item.title }}</a><br />
     <small>
       {% if item.type == "resource" %}
       {{ item.category }}
@@ -9,6 +10,5 @@
       </time>
       {% endif %}
     </small><br />
-    <a href="{{ item.link }}">{{ item.title }}</a>
   </li>
 {% endfor %}

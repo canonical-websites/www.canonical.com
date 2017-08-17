@@ -62,7 +62,7 @@
     <div class="col-3">
       <div class="tabbed-menu">
         <ul class="p-list">
-          <li><a href="#design-and-user-experience">Design and User Experience</a></li>
+          <li><a class="is-active" href="#design-and-user-experience">Design and User Experience</a></li>
           <li><a href="#technical-and-engineering">Technical and Engineering</a></li>
           <li><a href="#marketing-and-business-development">Marketing and Business Development</a></li>
           <li><a href="#operations">Operations</a></li>
@@ -308,8 +308,8 @@
               document.querySelector(itemId).classList.remove('u-hide');
 
               // Deactivate other items and activate this one
-              menuAnchors.forEach(function(anchor) {anchor.classList.remove('active');});
-              anchor.classList.add('active');
+              menuAnchors.forEach(function(anchor) {anchor.classList.remove('is-active');});
+              anchor.classList.add('is-active');
             };
           }(menuAnchors, tabItems)
         );

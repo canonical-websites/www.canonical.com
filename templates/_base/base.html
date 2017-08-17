@@ -57,11 +57,11 @@
           <a href="#main-content">Jump to main content</a>
         </span>
         <ul class="p-navigation__links">
-          <li class="p-navigation__link"><a href="/products">Products</a></li>
-          <li class="p-navigation__link"><a href="/services">Services</a></li>
-          <li class="p-navigation__link"><a href="/partners">Partners</a></li>
-          <li class="p-navigation__link"><a href="/about">About</a></li>
-          <li class="p-navigation__link"><a href="/careers">Careers</a></li>
+          <li class="p-navigation__link {% if level_1 == 'products' %}is-selected{% endif %}"><a href="/products">Products</a></li>
+          <li class="p-navigation__link {% if level_1 == 'services' %}is-selected{% endif %}"><a href="/services">Services</a></li>
+          <li class="p-navigation__link {% if level_1 == 'partners' %}is-selected{% endif %}"><a href="/partners">Partners</a></li>
+          <li class="p-navigation__link {% if level_1 == 'about' %}is-selected{% endif %}"><a href="/about">About</a></li>
+          <li class="p-navigation__link {% if level_1 == 'careers' %}is-selected{% endif %}"><a href="/careers">Careers</a></li>
         </ul>
       </nav>
     </div>
