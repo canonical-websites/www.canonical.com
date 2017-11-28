@@ -9,12 +9,19 @@
   <div class="row">
     <div class="col-8">
       <h1>All current vacancies</h1>
-      {% get_raw_json_feed "https://api.greenhouse.io/v1/boards/Canonical/jobs" as jobs %}
-      {% include "_includes/vacancies.html" with jobs=jobs %}
+      {% get_raw_json_feed "https://api.greenhouse.io/v1/boards/Canonical/jobs/"|add:job_id  as listing %}
+
+{% if listing is False %}
+<p>got nothing</p>
+{% else %}
+{% autoescape off %}
+{{ listing.content |decode }}
+{% endautoescape %}
+{% endif %}
+
     </div>
   </div>
 </section>
 
-{% include "careers/vacancies_contextual_footer.html" %}
 
 {% endblock content %}

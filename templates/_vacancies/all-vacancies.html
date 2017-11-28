@@ -1,0 +1,26 @@
+{% extends "careers/base_careers.html" %}
+
+{% block title %}Canonical | Careers{% endblock %}
+{% block meta_description %}For anyone interested in open source software and Ubuntu in particular, Canonical is an incredible place to work. Whether you’re a technologist, a designer or a business professional, opportunities exist to work from home or at one of our five key offices around the world. {% endblock %}
+{% block head_extra %}
+  <script src="{{ ASSET_SERVER_URL }}5d7e5bbf-jquery-2.2.0.min.js"></script>
+  <script src="{{ ASSET_SERVER_URL }}c954db4a-jfeed_prm.js"></script>
+{% endblock %}
+
+{% block content %}
+
+
+  <ul>
+      {% for department, department_jobs in jobs.items %}
+        <li>{{ department }}</li>
+        {% for job in department_jobs %}
+          <li class="p-list__item"><a href="{{ job.url }}">{{ job.title }} &nbsp;&rsaquo;</a></li>
+        {% endfor %}
+      {% endfor %}
+
+  </ul>
+
+{% endblock content %}
+
+{% block footer_extra %}
+{% endblock footer_extra %}

@@ -1,22 +1,24 @@
-{% if vacancies is False %}
+{% if jobs is False %}
   <p class="u-no-margin--bottom">Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/www.canonical.com/issues/new">file an issue</a>.</p>
 {% else %}
   <p>
-    {% if vacancies %}
-      We currently have {{ vacancies | length }} {{ job_type }} vacancies:
+    {% if jobs.meta %}
+      We currently have {{ jobs.meta.total }} {{ job_type }} vacancies:
     {% else %}
       Sorry, we currently have no {{ job_type }} vacancies.
     {% endif %}
   </p>
 
   <ul class="p-list--divided">
-    {% if limit %}
-      {% for job in vacancies|slice:limit %}
-        <li class="p-list__item"><a href="{{ job.link }}">{{ job.title }}&nbsp;&rsaquo;</a></li>
+    {% if limit %}{% for job in jobs.jobs %}
+      <li class="p-list__item"><a href="{{ job.absolute_url }}">{{ job.title }}</a></li>
+    {% endfor %}
+      {% for job in jobs.jobs|slice:limit %}
+        <li class="p-list__item"><a href="{{ job.absolute_url }}">{{ job.title }}&nbsp;&rsaquo;</a></li>
       {% endfor %}
     {% else %}
-      {% for job in vacancies %}
-        <li class="p-list__item"><a href="{{ job.link }}">{{ job.title }}&nbsp;&rsaquo;</a></li>
+      {% for job in jobs.jobs %}
+        <li class="p-list__item"><a href="{{ job.absolute_url }}">{{ job.title }} - {{ job.metadata.0.value }} &nbsp;&rsaquo;</a></li>
       {% endfor %}
     {% endif %}
   </ul>

@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     'canonicalwebteam',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'webapp',
 ]
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'no_secret')
@@ -51,6 +52,8 @@ TEMPLATES = [
         'OPTIONS': {
             'builtins': [
                 'canonicalwebteam.get_feeds.templatetags',
+                'webapp.templatetags.raw_feeds',
+                'webapp.templatetags.decode',
             ],
             'context_processors': [
                 'django.template.context_processors.static',
