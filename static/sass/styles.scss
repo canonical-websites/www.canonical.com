@@ -8,7 +8,7 @@ $color-accent: #2c001e;
 @import '../components/canonical-cookie-policy/build/css/cookie-policy';
 
 // import vanilla-brochure-theme
-@import 'node_modules/vanilla-framework/scss/build';
+@import 'vanilla-framework/scss/build';
 
 // custom animations lib
 @import 'custom/animations';
@@ -18,29 +18,6 @@ $color-accent: #2c001e;
 @import 'custom/inline-ubuntu-logo';
 @import 'custom/ubuntu-eco-system-animation';
 @import 'custom/map';
-
-// Fix .p-link--external color
-// https://github.com/vanilla-framework/vanilla-framework/issues/1274
-.p-strip .p-link--external {
-  color: $color-link;
-}
-
-// Highlighting navigation for selected page
-// https://github.com/vanilla-framework/vanilla-framework/issues/1269
-.p-navigation__link {
-
-  &:hover {
-    background: $color-x-light;
-  }
-
-  &.is-selected {
-    background: $color-mid-light;
-  }
-}
-
-.p-navigation__logo .p-navigation__link:hover {
-  background: none;
-}
 
 // Add font-weight bold to `is-active` state
 .is-active {
@@ -82,14 +59,6 @@ time {
   }
 }
 
-// Temp fix for .p-heading-icon bug
-// https://github.com/vanilla-framework/vanilla-framework/issues/1272
-.p-strip--accent {
-
-  .p-heading-icon {
-    color: inherit;
-  }
-}
 
 // increase height of /products hero on medium screens
 .products-hero {
@@ -130,8 +99,17 @@ time {
   overflow-y: hidden;
 }
 
-// p-card--footer needs margin-top
-// https://github.com/vanilla-framework/vanilla-framework/issues/1277
-.p-card .p-card__footer {
-  margin-top: $sp-medium;
+// XXX Ant: 04.12.17 This can be removed when this is fixed
+// https://github.com/vanilla-framework/vanilla-framework/issues/1478
+.u-align--center {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    max-width: none;
+  }
 }
+
