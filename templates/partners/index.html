@@ -35,9 +35,9 @@
   </div>
 </section>
 
-<section class="p-strip is-deep is-bordered u-align--center">
+<section class="p-strip is-deep is-bordered">
   <div class="row">
-      <h2 class="p-muted-heading">A selection of our cloud partners</h2>
+      <h2 class="p-muted-heading u-align-text--center">A selection of our cloud partners</h2>
       {% get_json_feed "http://partners.ubuntu.com/partners.json?technology__name=Cloud/server&featured=true" limit=10 as cloud_partners %}
       {% if cloud_partners is False %}
         <p>Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/www.canonical.com/issues/new">file an issue</a>.</p>
@@ -50,7 +50,7 @@
         {% endfor %}
       </ul>
       {% endif %}
-      <p><a href="http://partners.ubuntu.com/find-a-partner?technology=cloud/server" class="p-link--external">Browse all cloud partners</a></p>
+      <p class="u-align-text--center"><a href="http://partners.ubuntu.com/find-a-partner?technology=cloud/server" class="p-link--external">Browse all cloud partners</a></p>
   </div>
 </section>
 
@@ -84,10 +84,10 @@
 </section>
 
 
-<section class="p-strip u-align--center">
+<section class="p-strip">
   <div class="row">
     <div class="panel panel--alt col-12">
-      <h2 class="p-muted-heading">A selection of our IoT device and PC partners</h2>
+      <h2 class="p-muted-heading u-align-text--center">A selection of our IoT device and PC partners</h2>
       {% get_json_feed "http://partners.ubuntu.com/partners.json?programme__name=Technical Partner Programme" limit=10 as client_partners %}
       {% if client_partners is False %}
         <p>Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/www.canonical.com/issues/new">file an issue</a>.</p>
@@ -100,7 +100,7 @@
         {% endfor %}
       </ul>
       {% endif %}
-      <p><a href="http://partners.ubuntu.com/find-a-partner?technology=personal-computing/devices" class="p-link--external">Browse all IoT device and PC partners</a></p>
+      <p class="u-align-text--center"><a href="http://partners.ubuntu.com/find-a-partner?technology=personal-computing/devices" class="p-link--external">Browse all IoT device and PC partners</a></p>
     </div>
   </div>
 </section>
