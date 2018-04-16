@@ -59,3 +59,8 @@ time {
 .u-no-max-width {
   max-width: 100%;
 }
+
+// Custom split list over 2 columns
+.p-list-step.is-split {
+  column-gap: 5rem;
+}
