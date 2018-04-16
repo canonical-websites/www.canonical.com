@@ -48,71 +48,11 @@ time {
   }
 }
 
-// Util for clearing
-.u-clear {
-  clear: both;
-}
-
-// Custom margin-top spacing
-.further-info {
-
-  .p-list--divided {
-    margin-top: $sp-medium;
-  }
-}
-
-
-// increase height of /products hero on medium screens
-.products-hero {
-
-  @media (min-width: $breakpoint-medium + 1) {
-    min-height: 450px;
-
-    .content-wrap {
-      margin-top: 3rem;
-    }
-  }
-
-  @media (min-width: $breakpoint-large) {
-    min-height: 500px;
-
-    .content-wrap {
-      margin-top: 2rem;
-    }
-  }
-}
-
-// Add extra margin-bottom to 'Join us' list grid
-.join-us {
-
-  @media (min-width: $sp-medium) {
-
-    .p-list li:nth-child(odd) {
-      margin-bottom: $sp-x-large;
-    }
-  }
-}
-
-
 // Add a table wrapper to allow x-scrolling
 .table__wrapper {
   margin: 2.5rem 0;
   overflow-x: auto;
   overflow-y: hidden;
-}
-
-// XXX Ant: 04.12.17 This can be removed when this is fixed
-// https://github.com/vanilla-framework/vanilla-framework/issues/1478
-.u-align--center {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    max-width: none;
-  }
 }
 
 // Override max-width on `p` tags
