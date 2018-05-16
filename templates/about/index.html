@@ -333,17 +333,17 @@
     </div>
     <div class="row">
       <div class="col-4">
-        <h3><a href="https://insights.ubuntu.com/press-centre/">News &rsaquo;</a></h3>
+        <h3><a href="https://blog.ubuntu.com/press-centre/">News &rsaquo;</a></h3>
         <ul class="p-list--divided">
-          {% get_json_feed "https://admin.insights.ubuntu.com/wp-json/wp/v2/posts?categories=1189" limit=4 as news_items %}
+          {% get_json_feed "https://admin.blog.ubuntu.com/wp-json/wp/v2/posts?categories=1189" limit=4 as news_items %}
           {% include "_includes/article-items.html" with items=news_items %}
         </ul>
     </div>
       <div class="col-4">
-        <h3><a href="https://insights.ubuntu.com/">Resources &rsaquo;</a></h3>
+        <h3><a href="https://blog.ubuntu.com/">Resources &rsaquo;</a></h3>
         <ul class="p-list--divided">
-          {% get_json_feed "https://admin.insights.ubuntu.com/wp-json/wp/v2/posts?categories=1485" limit=2 as white_paper_items %}
-          {% get_json_feed "https://admin.insights.ubuntu.com/wp-json/wp/v2/posts?categories=1172" limit=2 as case_study_items %}
+          {% get_json_feed "https://admin.blog.ubuntu.com/wp-json/wp/v2/posts?categories=1485" limit=2 as white_paper_items %}
+          {% get_json_feed "https://admin.blog.ubuntu.com/wp-json/wp/v2/posts?categories=1172" limit=2 as case_study_items %}
           {% include "_includes/article-items.html" with items=white_paper_items %}
           {% include "_includes/article-items.html" with items=case_study_items %}
         </ul>
