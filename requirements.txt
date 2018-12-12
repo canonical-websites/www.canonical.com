@@ -9,7 +9,6 @@ django-json-redirects==0.3
 django-static-root-finder==0.1
 django-asset-server-url==0.1
 feedparser==5.2.1
-requests==2.20.0
 requests-cache==0.4.12
 python-dateutil==2.7.0
 statsd<3.3.0
