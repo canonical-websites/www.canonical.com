@@ -1,20 +1,10 @@
 {
-  "name": "canonical-website",
-  "version": "0.0.1",
-  "description": "Django website for canonical.com",
-  "keywords": [
-    "canonical",
-    "website"
-  ],
-  "license": "LGPL v3",
-  "author": "Canonical webteam",
-  "main": "index.js",
   "scripts": {
     "build": "yarn run copy-3rd-party && node-sass --include-path node_modules static/sass --output static/css && postcss --use autoprefixer --replace 'static/css/**/*.css' && postcss --use cssnano --dir static/minified 'static/css/**/*.css'",
     "clean": "rm -rf node_modules yarn-error.log css static/css static/sass/modules static/js/modules *.log *.sqlite _site/ build/ .jekyll-metadata .bundle",
     "copy-3rd-party": "yarn run copy-3rd-party-js && yarn run copy-3rd-party-css",
-    "copy-3rd-party-css": "mkdir -p static/sass/modules && cp node_modules/cookie-policy/build/css/cookie-policy.css static/sass/modules/ && cp node_modules/global-nav/build/css/main.css static/sass/modules/",
-    "copy-3rd-party-js": "mkdir -p static/js/modules && cp node_modules/cookie-policy/build/js/cookie-policy.js static/js/modules/ && cp node_modules/global-nav/build/js/global.js static/js/modules/",
+    "copy-3rd-party-css": "mkdir -p static/sass/modules && cp node_modules/cookie-policy/build/css/cookie-policy.css static/sass/modules/",
+    "copy-3rd-party-js": "mkdir -p static/js/modules/global-nav && cp node_modules/cookie-policy/build/js/cookie-policy.js static/js/modules/ && cp node_modules/global-nav/dist/index.js static/js/modules/global-nav",
     "lint-py": "flake8 --exclude '*env*,node_modules'",
     "lint-scss": "sass-lint static/**/*.scss --verbose --no-exit",
     "serve": "./entrypoint 0.0.0.0:${PORT}",
@@ -23,18 +13,17 @@
     "watch": "watch -p 'static/sass/**/*.scss' -c 'yarn run build'"
   },
   "dependencies": {
-    "autoprefixer": "^9.4.7",
-    "cookie-policy": "^1.0.2",
-    "cssnano": "^3.10.0",
-    "global-nav": "^0.2.3",
-    "node-sass": "^4.9.0",
-    "postcss": "6.0.22",
-    "postcss-cli": "^4.1.0",
-    "sass-lint": "^1.10.2",
-    "vanilla-framework": "1.8.0",
-    "watch-cli": "^0.2.2"
+    "autoprefixer": "9.4.7",
+    "cookie-policy": "1.1.0",
+    "cssnano": "4.1.9",
+    "global-nav": "2.0.1",
+    "node-sass": "4.11.0",
+    "postcss": "7.0.14",
+    "postcss-cli": "6.1.1",
+    "vanilla-framework": "1.8.1"
   },
   "devDependencies": {
-    "sass-lint": "1.12.1"
+    "sass-lint": "1.12.1",
+    "watch-cli": "0.2.3"
   }
 }
