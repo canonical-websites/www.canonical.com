@@ -27,7 +27,7 @@
     "cssnano": "4.1.9",
     "node-sass": "4.11.0",
     "postcss": "7.0.14",
-    "postcss-cli": "4.1.1",
+    "postcss-cli": "6.1.1",
     "sass-lint": "1.12.1",
     "vanilla-framework": "1.8.1"
   },
@@ -36,7 +36,7 @@
     "cookie-policy": "^1.0.2",
     "watch-cli": "^0.2.2",
     "sass-lint": "^1.10.2",
-    "postcss-cli": "^4.1.0",
+    "postcss-cli": "^6.0.0",
     "node-sass": "^4.5.3",
     "cssnano": "^4.0.0",
     "autoprefixer": "^9.0.0"
