@@ -2,7 +2,7 @@ cachecontrol==0.12.5
 canonicalwebteam.versioned-static==1.0.2
 canonicalwebteam.get-feeds==0.2.4
 lockfile==0.12.2
-Django==1.11.20
+Django==2.1.7
 whitenoise==4.1.2
 django-template-finder-view==0.3
 django-json-redirects==0.3
