@@ -62,3 +62,4 @@ env[23]/
 static/js/modules/*.js
 static/sass/modules/*.css
 static/sass/modules/*.scss
+/static/js/modules/global-nav/index.js
