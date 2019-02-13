@@ -4,10 +4,9 @@ $color-brand: #e95420;
 $color-accent: #2c001e;
 
 // global components
-@import 'modules/main';
 @import 'modules/cookie-policy';
 
-// import vanilla-brochure-theme
+// import vanilla
 @import 'vanilla-framework/scss/build';
 
 // custom animations lib

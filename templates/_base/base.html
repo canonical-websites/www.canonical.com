@@ -23,11 +23,7 @@
   <!-- cookie policy -->
   <script src="{{ STATIC_URL }}js/modules/cookie-policy.js"></script>
 
-  <!-- global nav -->
-  <script src="{{ STATIC_URL }}js/modules/global.js"></script>
-
   </head>
-
   <body itemscope itemtype="http://schema.org/Product">
 
   <!-- Google Tag Manager -->
@@ -92,14 +88,18 @@
 
   <script src="{{ STATIC_URL }}js/core.js"></script>
 
+  <!-- global nav -->
+  <script src="{{ STATIC_URL }}js/modules/global-nav/index.js"></script>
   <script>
-
+    canonicalGlobalNav.createNav();
+  </script>
+  <!-- cookie policy -->
+  <script>
     // Every page should show the cookie policy until accepted
-    var cookie_options = {
-      'content': 'We use cookies to improve your experience of canonical.com. By continuing to explore without changing your settings, you are agreeing to accept them. To learn how to change these settings, please see our <a href="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy#cookies">privacy policy</a>.'
+    var options = {
+      content: 'We use cookies to improve your experience of canonical.com. By continuing to explore without changing your settings, you are agreeing to accept them. To learn how to change these settings, please see our <a href="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy#cookies">privacy policy</a>.'
     }
-    ubuntu.cookiePolicy.setup(cookie_options);
-    ubuntu.globalNav.setup();
+    cpNs.cookiePolicy.setup(options);
   </script>
 
   {% block footer_extra %}{% endblock %}

@@ -15,13 +15,14 @@
   <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}minified/styles.css" />
 </head>
   <body itemscope itemtype="http://schema.org/Product">
-  <header id="navigation" class="p-navigation--light" role="banner">
+  <header id="navigation" class="p-navigation" role="banner">
     {% block header_banner %}
-      <div class="row">
+    <div class="row">
       <div class="p-navigation__banner">
         <div class="p-navigation__logo">
-          <a class="p-navigation__link" href="#">
-            <img style="max-width: 100px;" src="{{ ASSET_SERVER_URL }}5d6da5c4-logo-canonical-aubergine.svg" alt="Canonical logo" />
+          <a class="p-navigation__link" href="/">
+            <img class="p-navigation__image" src="{{ ASSET_SERVER_URL }}5d6da5c4-logo-canonical-aubergine.svg"
+              alt="Canonical logo" width="100" />
           </a>
         </div>
         <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
@@ -32,11 +33,15 @@
           <a href="#main-content">Jump to main content</a>
         </span>
         <ul class="p-navigation__links">
-          <li class="p-navigation__link"><a href="/products">Products</a></li>
-          <li class="p-navigation__link"><a href="/services">Services</a></li>
-          <li class="p-navigation__link"><a href="/partners">Partners</a></li>
-          <li class="p-navigation__link"><a href="/about">About</a></li>
-          <li class="p-navigation__link"><a href="/careers">Careers</a></li>
+          <li class="p-navigation__link {% if level_1 == 'products' %}is-selected{% endif %}"><a
+              href="/products">Products</a></li>
+          <li class="p-navigation__link {% if level_1 == 'services' %}is-selected{% endif %}"><a
+              href="/services">Services</a></li>
+          <li class="p-navigation__link {% if level_1 == 'partners' %}is-selected{% endif %}"><a
+              href="/partners">Partners</a></li>
+          <li class="p-navigation__link {% if level_1 == 'about' %}is-selected{% endif %}"><a href="/about">About</a></li>
+          <li class="p-navigation__link {% if level_1 == 'careers' %}is-selected{% endif %}"><a
+              href="/careers">Careers</a></li>
         </ul>
       </nav>
     </div>
@@ -74,18 +79,19 @@
       </nav>
     </div>
   </footer>
-   <!-- cookie policy -->
-  <script src="{{ STATIC_URL }}js/modules/cookie-policy.js"></script>
 
   <!-- global nav -->
-  <script src="{{ STATIC_URL }}js/modules/global.js"></script>
+  <script src="{{ STATIC_URL }}js/modules/global-nav/index.js"></script>
+  <script>
+    canonicalGlobalNav.createNav();
+  </script>
+  <!-- cookie policy -->
   <script>
     // Every page should show the cookie policy until accepted
-    var cookie_options = {
-      'content': 'We use cookies to improve your experience of canonical.com. By continuing to explore without changing your settings, you are agreeing to accept them. To learn how to change these settings, please see our <a href="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy#cookies">privacy policy</a>.'
+    var options = {
+      content: 'We use cookies to improve your experience of canonical.com. By continuing to explore without changing your settings, you are agreeing to accept them. To learn how to change these settings, please see our <a href="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy#cookies">privacy policy</a>.'
     }
-    ubuntu.cookiePolicy.setup(cookie_options);
-    ubuntu.globalNav.setup();
+    cpNs.cookiePolicy.setup(options);
   </script>
 
   <script type="text/javascript">
