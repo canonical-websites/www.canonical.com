@@ -36,38 +36,40 @@
   })(window,document,'script','dataLayer','GTM-K92JCQ');</script>
   <!-- End Google Tag Manager -->
 
-  <header id="navigation" class="p-navigation" role="banner">
-    {% block header_banner %}
-      <div class="row">
-      <div class="p-navigation__banner">
-        <div class="p-navigation__logo">
-          <a class="p-navigation__link" href="/">
-            <img class="p-navigation__image" src="{{ ASSET_SERVER_URL }}5d6da5c4-logo-canonical-aubergine.svg" alt="Canonical logo" width="100" />
-          </a>
-        </div>
-        <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
-        <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
-      </div>
-      <nav class="p-navigation__nav">
-        <span class="u-off-screen">
-          <a href="#main-content">Jump to main content</a>
-        </span>
-        <ul class="p-navigation__links">
-          <li class="p-navigation__link {% if level_1 == 'products' %}is-selected{% endif %}"><a href="/products">Products</a></li>
-          <li class="p-navigation__link {% if level_1 == 'services' %}is-selected{% endif %}"><a href="/services">Services</a></li>
-          <li class="p-navigation__link {% if level_1 == 'partners' %}is-selected{% endif %}"><a href="/partners">Partners</a></li>
-          <li class="p-navigation__link {% if level_1 == 'about' %}is-selected{% endif %}"><a href="/about">About</a></li>
-          <li class="p-navigation__link {% if level_1 == 'careers' %}is-selected{% endif %}"><a href="/careers">Careers</a></li>
-        </ul>
-      </nav>
-    </div>
-    {% endblock header_banner %}
-  </header>
 
-  {% if level_1 %}
-    {% block second_level_nav %}
-    {% endblock second_level_nav %}
-  {% endif %}
+  <header class="global-nav">
+    <div class="global-nav__primary-row-container">
+      <div class="global-nav__primary-row">
+        <div class="global-nav__primary-links-container">
+          <a href="/" class="global-nav__logo"><img src="https://assets.ubuntu.com/v1/3c7954dd-logo-canonical-white.svg"></a>
+          <a id="products-link" href="/products" class="global-nav__primary-link {% if level_1 == 'products' %}is-open{% endif %}">Products</a>
+          <a id="partners-link" href="/partners" class="global-nav__primary-link {% if level_1 == 'partners' %}is-open{% endif %}">Partners</a>
+          <a id="careers-link" href="/careers" class="global-nav__primary-link {% if level_1 == 'careers' %}is-open{% endif %}">Careers</a>
+        </div>
+        <a class="global-nav__primary-link">Login</a>
+      </div>
+    </div>
+    <div class="global-nav__secondary-row-container">
+      <div id="products-secondary-row" class="global-nav__secondary-row {% if level_1 == 'products' %}is-active{% endif %}">
+        <a class="global-nav__secondary-link">Ubuntu</a>
+        <a class="global-nav__secondary-link">MAAS</a>
+        <a class="global-nav__secondary-link">Snaps</a>
+      </div>
+      <div id="partners-secondary-row" class="global-nav__secondary-row {% if level_1 == 'partners' %}is-active{% endif %}">
+        <a class="global-nav__secondary-link">Public cloud</a>
+        <a class="global-nav__secondary-link">OpenStack</a>
+        <a class="global-nav__secondary-link">Charm</a>
+        <a class="global-nav__secondary-link">Software</a>
+        <a class="global-nav__secondary-link">Hardware</a>
+        <a class="global-nav__secondary-link">Retail</a>
+        <a class="global-nav__secondary-link">Channel</a>
+        <a class="global-nav__secondary-link">IoT</a>
+      </div>
+      <div id="careers-secondary-row" class="global-nav__secondary-row {% if level_1 == 'careers' %}is-active{% endif %}">
+        <a class="global-nav__secondary-link">All vacancies</a>
+      </div>
+    </div>
+  </header>
 
   {% block header %}{% endblock %}
 
@@ -88,11 +90,6 @@
 
   <script src="{{ STATIC_URL }}js/core.js"></script>
 
-  <!-- global nav -->
-  <script src="{{ STATIC_URL }}js/modules/global-nav/index.js"></script>
-  <script>
-    canonicalGlobalNav.createNav({ maxWidth: '1040px' });
-  </script>
   <!-- cookie policy -->
   <script>
     // Every page should show the cookie policy until accepted

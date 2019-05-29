@@ -30,7 +30,7 @@
   </div>
 </div>
 
-<div class="p-strip is-bordered">
+<div id="products" class="p-strip is-bordered">
   <div class="row">
     <div class="u-equal-height">
       <div class="col-6">
@@ -61,7 +61,7 @@
   </div>
 </div>
 
-<section class="p-strip--accent is-deep" style="background-image:url('{{ ASSET_SERVER_URL }}f7fc5efe-image-partners.jpg')">
+<section id="partners" class="p-strip--accent is-deep" style="background-image:url('{{ ASSET_SERVER_URL }}f7fc5efe-image-partners.jpg')">
   <div class="row">
     <div class="col-5">
       <div class="p-card--overlay u-no-margin--bottom">
@@ -73,7 +73,7 @@
   </div>
 </section>
 
-<section class="p-strip is-bordered">
+<section id="careers" class="p-strip is-bordered">
   <div class="row">
     <div class="u-equal-height u-no-margin--bottom">
       <div class="col-6 u-align--center">
@@ -91,5 +91,43 @@
 </section>
 
 {% include "_includes/extended-footer.html" %}
+
+<script>
+const globalNav = document.querySelector('.global-nav');
+const primaryLinks = globalNav.querySelectorAll('.global-nav__primary-link');
+let didScroll = true;
+
+const isLinkActive = (primaryLink) => {
+  const hrefArray = primaryLink.href.split("/");
+  const sectionId = hrefArray[hrefArray.length - 1];
+  if (sectionId) {
+    const section = document.getElementById(sectionId);
+    const rect = section.getBoundingClientRect();
+    return (rect.top < globalNav.clientHeight);
+  }
+  return false;
+};
+
+const render = () => {
+  primaryLinks.forEach(link => {
+    if (isLinkActive(link)) {
+      primaryLinks.forEach(link => link.classList.remove('is-active'));
+      link.classList.add('is-active');
+    } else {
+      link.classList.remove('is-active');
+    }
+  })
+};
+
+setInterval(() => {
+  if (didScroll) {
+    render();
+    didScroll = false;
+  }
+}, 250);
+
+window.addEventListener('scroll', () => { didScroll = true });
+</script>
+
 
 {% endblock %}
