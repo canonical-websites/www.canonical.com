@@ -92,42 +92,4 @@
 
 {% include "_includes/extended-footer.html" %}
 
-<script>
-const globalNav = document.querySelector('.global-nav');
-const primaryLinks = globalNav.querySelectorAll('.global-nav__primary-link');
-let didScroll = true;
-
-const isLinkActive = (primaryLink) => {
-  const hrefArray = primaryLink.href.split("/");
-  const sectionId = hrefArray[hrefArray.length - 1];
-  if (sectionId) {
-    const section = document.getElementById(sectionId);
-    const rect = section.getBoundingClientRect();
-    return (rect.top < globalNav.clientHeight);
-  }
-  return false;
-};
-
-const render = () => {
-  primaryLinks.forEach(link => {
-    if (isLinkActive(link)) {
-      primaryLinks.forEach(link => link.classList.remove('is-active'));
-      link.classList.add('is-active');
-    } else {
-      link.classList.remove('is-active');
-    }
-  })
-};
-
-setInterval(() => {
-  if (didScroll) {
-    render();
-    didScroll = false;
-  }
-}, 250);
-
-window.addEventListener('scroll', () => { didScroll = true });
-</script>
-
-
 {% endblock %}
