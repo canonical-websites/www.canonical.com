@@ -1,13 +1,5 @@
-canonicalwebteam.versioned-static==1.0.2
-canonicalwebteam.get-feeds==0.2.4
-Django==1.11.20
-whitenoise==4.1.2
-django-template-finder-view==0.3
-django-json-redirects==0.3
-django-static-root-finder==0.3.1
-django-asset-server-url==0.1
+talisker[gunicorn]==0.14.3
+canonicalwebteam.http==1.0.1
+canonicalwebteam.yaml-responses[flask]==1.1.1
+flask==1.0.2
 feedparser==5.2.1
-requests-cache==0.4.13
-python-dateutil==2.8.0
-talisker==0.14.2
-gunicorn[gevent]

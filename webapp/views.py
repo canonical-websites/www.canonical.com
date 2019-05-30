@@ -1,76 +1,68 @@
-"""
-Django views for www.canonical.com.
-"""
-from django.conf import settings
-from django.views.generic.base import TemplateView
-from django_template_finder_view import TemplateFinder
-from webapp.templatetags.raw_feeds import get_raw_json_feed
-from django.views.static import serve
+import os
 
+from flask import abort, current_app, render_template, request
+from flask.views import View
+from jinja2.exceptions import TemplateNotFound
 
-def cert_view(request):
-    return serve(
-        request,
-        path='files/secure-boot-master-ca.crl',
-        document_root=settings.STATIC_ROOT
-    )
-
-
-class GreenhouseVacancies(TemplateView):
-    template_name = "careers/all-vacancies.html"
-
-    def get_vacancies(self):
-        feed = get_raw_json_feed(
-            'https://api.greenhouse.io/v1/boards/Canonical/jobs',
-            proxy='http://squid.internal:3128' if not settings.DEBUG else None,
-        )
-        if feed is False:
-            return False, 0
-
-        job_departments = {}
-        job_count = 0
-
-        for job in feed['jobs']:
-            job_count = job_count + 1
-            department = job['metadata'][0]['value']
-            if department not in job_departments.keys():
-                job_departments[department] = []
-
-            job_departments[department].append({
-                'title': job['title'],
-                'url': job['absolute_url'],
-                'location': job['location'],
-            })
-        return job_departments, job_count
-
-    def get_context_data(self, **kwargs):
-        context = super(GreenhouseVacancies, self).get_context_data(**kwargs)
-        jobs, job_count = self.get_vacancies()
-        context['jobs'] = jobs
-        context['job_count'] = job_count
-        return context
-
-
-class CanonicalTemplateFinder(TemplateFinder):
+class TemplateFinder(View):
     """
-    Local customisations of the shared django_template_finder_view.
+    A TemplateView that guesses the template name based on the
+    url path or redirects if defined in redirects.txt.
     """
+    def dispatch_request(self, *args, **kwargs):
+        """
+        This is called when TemplateFinder is run as a view
+        It tries to find the template for the request path
+        and then passes that template name to TemplateView to render
+        """
+        path = request.path.lstrip("/")
+        matching_template = self._get_template(path)
 
-    def get_context_data(self, **kwargs):
+        if not matching_template:
+            abort(404, f"Can't find page for: {path}")
+
+        return render_template(matching_template, **self._get_context(path))
+
+    def _get_template(self, url_path):
+        """
+        Given a basic path, find an HTML or Markdown file
+        """
+
+        # Try to match HTML or Markdown files
+        if self._template_exists(url_path + ".html"):
+            return url_path + ".html"
+        elif self._template_exists(os.path.join(url_path, "index.html")):
+            return os.path.join(url_path, "index.html")
+        elif self._template_exists(url_path + ".md"):
+            return url_path + ".md"
+        elif self._template_exists(os.path.join(url_path, "index.md")):
+            return os.path.join(url_path, "index.md")
+
+        return None
+
+    def _template_exists(self, path):
+        """
+        Check if a template exists
+        without raising an exception
+        """
+        try:
+            loader = current_app.jinja_loader
+            loader.get_source({}, template=path)
+        except TemplateNotFound:
+            return False
+
+        return True
+
+    def _get_context(self, clean_path, **kwargs):
         """
         Get context data fromt the database for the given page.
         """
-
-        # Get any existing context
-        context = super(CanonicalTemplateFinder, self).get_context_data(
-            **kwargs
-        )
+        context = {}
 
         # Add job role
-        context['job_id'] = self.request.GET.get('job_id')
+        context['job_id'] = request.args.get('job_id')
 
         # Add level_* context variables
-        clean_path = self.request.path.strip('/')
         for index, path, in enumerate(clean_path.split('/')):
             context["level_" + str(index + 1)] = path
 

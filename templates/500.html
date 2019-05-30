@@ -12,7 +12,7 @@
   <link type="text/plain" rel="author" href="/static/files/humans.txt" />
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}minified/styles.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ 'minified/styles.css' | versioned_static }}" />
 </head>
   <body itemscope itemtype="http://schema.org/Product">
   <header id="navigation" class="p-navigation" role="banner">
@@ -81,7 +81,7 @@
   </footer>
 
   <!-- global nav -->
-  <script src="{{ STATIC_URL }}js/modules/global-nav/index.js"></script>
+  <script src="{{ 'js/modules/global-nav/index.js' | versioned_static }}"></script>
   <script>
     canonicalGlobalNav.createNav();
   </script>

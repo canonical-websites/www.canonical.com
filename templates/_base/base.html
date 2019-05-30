@@ -1,4 +1,3 @@
-{% load versioned_static %}
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
   <head>
@@ -14,14 +13,14 @@
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ ASSET_SERVER_URL }}f193fb82-apple-touch-icon-72x72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="{{ ASSET_SERVER_URL }}205d458b-apple-touch-icon-precomposed.png">
 
-  <link type="text/plain" rel="author" href="{% versioned_static 'files/humans.txt' %}" />
+  <link type="text/plain" rel="author" href="{{ 'files/humans.txt' | versioned_static }}" />
 
   <!-- google fonts -->
   <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,700,700italic|Ubuntu+Mono' rel='stylesheet' type='text/css' />
-  <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}minified/styles.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ 'minified/styles.css' | versioned_static }} " />
 
   <!-- cookie policy -->
-  <script src="{{ STATIC_URL }}js/modules/cookie-policy.js"></script>
+  <script src="{{ 'js/modules/cookie-policy.js' | versioned_static }}"></script>
 
   </head>
   <body itemscope itemtype="http://schema.org/Product">
@@ -86,10 +85,10 @@
     }
   </script>
 
-  <script src="{{ STATIC_URL }}js/core.js"></script>
+  <script src="{{ 'js/core.js' | versioned_static }}"></script>
 
   <!-- global nav -->
-  <script src="{{ STATIC_URL }}js/modules/global-nav/index.js"></script>
+  <script src="{{ 'js/modules/global-nav/index.js' | versioned_static }}"></script>
   <script>
     canonicalGlobalNav.createNav({ maxWidth: '1040px' });
   </script>
