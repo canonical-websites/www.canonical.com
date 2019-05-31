@@ -1,13 +1,29 @@
 $primary-row-color: #2C001E;
 
 .global-nav {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10000;
+}
+
+.global-nav__overlay {
+  background-color: $color-dark;
+  display: none;
+  height: 100vh;
+  opacity: .5;
+  position: fixed;
+  width: 100vw;
+  z-index: 9997;
+
+  &.is-active {
+    display: block;
+  }
 }
 
 .global-nav__primary-row-container {
   background-color: $primary-row-color;
   position: relative;
+  z-index: 9999;
 }
 
 .global-nav__primary-row {
@@ -107,9 +123,10 @@ $primary-row-color: #2C001E;
 .global-nav__dropdown {
   background: $color-light;
   display: none;
+  overflow: hidden;
   position: absolute;
   width: 100%;
-  z-index: 9999;
+  z-index: 9998;
 
   &.is-open {
     display: block;
@@ -126,16 +143,21 @@ $primary-row-color: #2C001E;
   }
 }
 
-.global-nav__dropdown-content {
+.global-nav__dropdown-container {
   display: none;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: $grid-max-width;
-  padding: 1.5rem;
 
   &.is-open {
     display: block;
   }
+}
+
+.global-nav__dropdown-content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $grid-max-width;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1000;
 }
 
 .global-nav__matrix {
@@ -326,4 +348,110 @@ $primary-row-color: #2C001E;
 
 .global-nav__display-flex {
   display: flex;
+}
+
+%global-nav-suru {
+  background-color: $color-mid-light;
+  opacity: .25;
+  position: absolute;
+}
+
+.global-nav__suru--1 {
+  @extend %global-nav-suru;
+  height: 26rem;
+  left: 0;
+  bottom: 0;
+  transform-origin: 0 0;
+  transform: rotate(16deg);
+  width: 95rem;
+}
+
+.global-nav__suru--2 {
+  @extend %global-nav-suru;
+  height: 30rem;
+  right: 0;
+  top: 12rem;
+  transform-origin: 100% 0;
+  transform: rotate(-50deg);
+  width: 43rem;
+}
+
+.global-nav__suru--3 {
+  @extend %global-nav-suru;
+  height: 17rem;
+  right: 0;
+  bottom: 0;
+  transform-origin: 100% 0;
+  transform: rotate(-8deg);
+  width: 127rem;
+}
+
+.global-nav__suru--4 {
+  @extend %global-nav-suru;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+  transform: rotate(45deg);
+  width: 81rem;
+}
+
+.global-nav__suru--5 {
+  @extend %global-nav-suru;
+  height: 15rem;
+  left: 0;
+  top: 0;
+  transform-origin: 0 100%;
+  transform: rotate(-45deg);
+  width: 25rem;
+}
+
+.global-nav__suru--6 {
+  @extend %global-nav-suru;
+  bottom: 0;
+  height: 26rem;
+  right: 0;
+  transform-origin: 100% 0;
+  transform: rotate(-21deg);
+  width: 73rem;
+}
+
+.global-nav__suru--7 {
+  @extend %global-nav-suru;
+  height: 58rem;
+  right: 0;
+  top: 0;
+  transform-origin: 0 0;
+  transform: rotate(-45deg);
+  width: 40rem;
+}
+
+.global-nav__suru--8 {
+  @extend %global-nav-suru;
+  height: 47rem;
+  left: 0;
+  bottom: 0;
+  transform-origin: 0 0;
+  transform: rotate(65deg);
+  width: 53rem;
+}
+
+.global-nav__suru--9 {
+  @extend %global-nav-suru;
+  bottom: 0;
+  height: 40rem;
+  right: 0;
+  transform-origin: 100% 0;
+  transform: rotate(-55deg);
+  width: 53rem;
+}
+
+.global-nav__suru--10 {
+  @extend %global-nav-suru;
+  height: 12rem;
+  right: 0;
+  bottom: 0;
+  transform-origin: 100% 0;
+  transform: rotate(-5deg);
+  width: 130rem;
 }

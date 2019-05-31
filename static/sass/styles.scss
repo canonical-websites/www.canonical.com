@@ -24,11 +24,6 @@ $grid-max-width: 75rem;
 // global nav
 @import 'custom/global-nav';
 
-// Add font-weight bold to `is-active` state
-.is-active {
-  // font-weight: bold;
-}
-
 // time elements should be grey
 time {
   color: $color-mid-dark;
