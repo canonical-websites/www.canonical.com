@@ -3,7 +3,7 @@ Django views for www.canonical.com.
 """
 from django.conf import settings
 from django.views.generic.base import TemplateView
-from django_template_finder_view import TemplateFinder
+from canonicalwebteam.django_views import TemplateFinder
 from webapp.templatetags.raw_feeds import get_raw_json_feed
 from django.views.static import serve
 
