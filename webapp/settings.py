@@ -8,6 +8,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
+import logging.config
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -27,6 +28,9 @@ ALLOWED_HOSTS = ['*']
 USE_X_FORWARDED_HOST = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+MIDDLEWARE = [
+    "talisker.django.middleware",
+]
 MIDDLEWARE_CLASSES = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
@@ -66,6 +70,7 @@ TEMPLATES = [
     },
 ]
 
+LOGGING_CONFIG = None
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -86,3 +91,5 @@ LOGGING = {
         }
     }
 }
+
+logging.config.dictConfig(LOGGING)
